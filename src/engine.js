@@ -1,8 +1,8 @@
 import { writeFile } from 'node:fs/promises';
 import { relative } from 'node:path';
 import { applyEdits, findManifests, parseManifest, readManifest } from './manifests/index.js';
-import { createResolver, normalizePypiName, pool } from './registries.js';
-import { bumpVersionText, isMajorBump } from './semver.js';
+import { createResolver, normalizePypiName, pool, publishedAt as registryPublishedAt } from './registries.js';
+import { bumpLevel, bumpVersionText, isMajorBump } from './semver.js';
 import { isSafeVersion } from './validate.js';
 
 function globToRegExp(glob) {
@@ -58,6 +58,9 @@ async function resolveFiles(files, opts) {
     includeIndirect = false,
     tracked = null, // Set of "ecosystem:name" to restrict to, or null for all
     concurrency = 12,
+    minAgeDays = 0,
+    publishedAt = registryPublishedAt,
+    now = Date.now(),
   } = opts;
   const isExcluded = makeMatcher(exclude);
   const isIncluded = include.length ? makeMatcher(include) : () => true;
@@ -121,6 +124,7 @@ async function resolveFiles(files, opts) {
       }
       dep.next = next;
       dep.major = isMajorBump(dep.version, next);
+      dep.level = bumpLevel(dep.version, next);
       if (dep.major && noMajor) {
         dep.status = 'held';
         dep.reason = 'major update (remove --no-major to apply)';
@@ -129,8 +133,26 @@ async function resolveFiles(files, opts) {
       }
     }
   }
-}
 
+  // Minimum release age: fresh releases are where compromised packages live.
+  if (minAgeDays > 0) {
+    const fresh = [];
+    for (const file of files) for (const d of file.deps) if (d.status === 'outdated') fresh.push([file.ecosystem, d]);
+    const cache = new Map();
+    await pool(fresh, 6, async ([eco, d]) => {
+      const key = `${eco}:${d.name}@${d.latest}`;
+      if (!cache.has(key)) cache.set(key, publishedAt(eco, d.name, d.latest).catch(() => null));
+      const time = await cache.get(key);
+      if (!time) return; // registry doesn't expose a date; nothing to judge by
+      d.publishedAt = time;
+      const ageDays = (now - Date.parse(time)) / 86_400_000;
+      if (ageDays < minAgeDays) {
+        d.status = 'held';
+        d.reason = `released ${ageDays < 1 ? `${Math.max(1, Math.round(ageDays * 24))}h` : `${ageDays.toFixed(1)}d`} ago (minimum age ${minAgeDays}d)`;
+      }
+    });
+  }
+}
 
 /** Write every `outdated` bump back to disk. Returns the number of edits. */
 export async function applyUpdates(analysis) {

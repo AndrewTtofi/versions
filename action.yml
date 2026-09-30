@@ -14,13 +14,19 @@ inputs:
   mode:
     description: '"update" rewrites manifests; "check" only reports (fails when outdated)'
     default: update
+  lockfiles:
+    description: Refresh lockfiles next to updated manifests (install scripts disabled)
+    default: 'true'
 outputs:
   report:
     description: Markdown summary of the changes
     value: ${{ steps.run.outputs.report }}
   outdated:
-    description: Number of outdated dependencies found
+    description: Number of dependencies updated (or outdated, in check mode)
     value: ${{ steps.run.outputs.outdated }}
+  level:
+    description: Largest change applied - none, patch, minor or major
+    value: ${{ steps.run.outputs.level }}
 runs:
   using: composite
   steps:
@@ -35,6 +41,7 @@ runs:
         MODE: ${{ inputs.mode }}
         ARGS: ${{ inputs.args }}
         ACTION_PATH: ${{ github.action_path }}
+        LOCKFILES: ${{ inputs.lockfiles }}
       run: |
         set -f  # ARGS is split into words but never glob-expanded
         case "$MODE" in update|check) ;; *) echo "mode must be update or check"; exit 2 ;; esac
@@ -43,4 +50,7 @@ runs:
         node "$ACTION_PATH/bin/agent-versions.js" "$MODE" . --json $FLAGS $ARGS > "$RUNNER_TEMP/agent-versions.json" || status=$?
         node "$ACTION_PATH/scripts/action-report.js" "$RUNNER_TEMP/agent-versions.json" >> "$GITHUB_OUTPUT"
         if [ "${status:-0}" = "2" ]; then exit 2; fi
+        if [ "$MODE" = "update" ] && [ "$LOCKFILES" = "true" ]; then
+          node "$ACTION_PATH/scripts/refresh-lockfiles.js" "$RUNNER_TEMP/agent-versions.json" . || true
+        fi
         if [ "$MODE" = "check" ] && [ "${status:-0}" != "0" ]; then exit "$status"; fi

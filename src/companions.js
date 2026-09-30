@@ -144,8 +144,10 @@ export function selectCompanions(dir, spec) {
 
 const BLOCK_RE = /<!-- agent-versions:start -->[\s\S]*?<!-- agent-versions:end -->\n?/;
 
+const readIfExists = (path) => readFile(path, 'utf8').catch((err) => (err.code === 'ENOENT' ? null : Promise.reject(err)));
+
 async function upsertBlock(path, block) {
-  const existing = existsSync(path) ? await readFile(path, 'utf8') : '';
+  const existing = (await readIfExists(path)) ?? '';
   let next;
   if (BLOCK_RE.test(existing)) next = existing.replace(BLOCK_RE, block);
   else if (!existing) next = block;
@@ -157,7 +159,7 @@ async function upsertBlock(path, block) {
 }
 
 async function writeOwnFile(path, content) {
-  const existing = existsSync(path) ? await readFile(path, 'utf8') : null;
+  const existing = await readIfExists(path);
   if (existing === content) return 'kept';
   await mkdir(dirname(path), { recursive: true });
   await writeFile(path, content);
@@ -166,10 +168,11 @@ async function writeOwnFile(path, content) {
 
 async function updateJson(path, mutate) {
   let cfg = {};
-  const existed = existsSync(path);
+  const raw = await readIfExists(path);
+  const existed = raw !== null;
   if (existed) {
     try {
-      cfg = JSON.parse(await readFile(path, 'utf8'));
+      cfg = JSON.parse(raw);
     } catch {
       return 'manual'; // JSONC with comments etc. - never clobber it
     }
@@ -198,7 +201,7 @@ function mcpSnippet(kind) {
 
 async function writeMcp(path, kind) {
   if (kind === 'codex-toml') {
-    const existing = existsSync(path) ? await readFile(path, 'utf8') : '';
+    const existing = (await readIfExists(path)) ?? '';
     if (/^\[mcp_servers\.["']?agent-versions["']?\]/m.test(existing)) return 'kept';
     const table = `[mcp_servers.agent-versions]\ncommand = "${MCP_COMMAND.command}"\nargs = [${MCP_COMMAND.args.map((a) => `"${a}"`).join(', ')}]\n`;
     await mkdir(dirname(path), { recursive: true });

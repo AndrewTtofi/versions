@@ -22,6 +22,7 @@ Before editing an existing project's dependencies, call check_project (local) or
 const commonOptions = {
   no_major: { type: 'boolean', description: 'Hold back breaking (major) upgrades.' },
   exclude: { type: 'array', items: { type: 'string' }, description: 'Package names/globs to leave untouched.' },
+  min_age_days: { type: 'number', description: 'Hold releases published fewer than this many days ago.' },
 };
 
 const TOOLS = [
@@ -123,7 +124,9 @@ export function createHandlers({ remote = false, cwd = process.cwd() } = {}) {
   const opts = (args) => {
     const exclude = args.exclude ?? [];
     assertArgs(Array.isArray(exclude) && exclude.length <= LIMITS.excludes && exclude.every((e) => typeof e === 'string' && e.length <= 214), 'exclude must be a list of package names');
-    return { resolve, noMajor: !!args.no_major, exclude };
+    const minAgeDays = args.min_age_days ?? 0;
+    assertArgs(typeof minAgeDays === 'number' && minAgeDays >= 0 && minAgeDays <= 365, 'min_age_days must be 0-365');
+    return { resolve, noMajor: !!args.no_major, exclude, minAgeDays };
   };
   // Local tools only operate inside the directory the server was started in
   // (the project), so a prompt-injected agent can't touch other checkouts.

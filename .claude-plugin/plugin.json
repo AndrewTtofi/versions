@@ -1,6 +1,6 @@
 {
   "name": "agent-versions",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Stop agents from writing stale package versions: live latest-version lookups (MCP), an outdated-dependency summary at session start, and a skill for adding/upgrading dependencies.",
   "author": { "name": "AndrewTtofi" },
   "homepage": "https://github.com/AndrewTtofi/versions",

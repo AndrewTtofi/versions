@@ -9,7 +9,7 @@ function toolVersion(tool) {
   return '—';
 }
 
-const esc = (s) => String(s).replace(/\|/g, '\\|');
+const esc = (s) => String(s).replace(/[\\|`<>]/g, (ch) => `\\${ch}`);
 
 export function renderMarkdown(snapshot) {
   const out = [];

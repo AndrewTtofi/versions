@@ -41,8 +41,9 @@ Read this before you change anything.
 | `src/collect.js`, `scripts/collect.js` | Build the published snapshot from `sources.json` |
 | `src/snapshot.js` | Load the snapshot (remote, then bundled fallback) |
 | `.claude-plugin/`, `.mcp.json`, `skills/`, `hooks/` | Claude Code plugin |
-| `action.yml`, `scripts/action-report.js` | GitHub Action |
-| `templates/` | Files written by `init` |
+| `action.yml`, `scripts/action-report.js` | GitHub Action (outputs `report`, `outdated`, `level`) |
+| `scripts/refresh-lockfiles.js` | Lockfile refresh in the write-token job. It must never run package code: keep install scripts disabled |
+| `templates/` | Files written by `init`. `workflow.yml` is the update, verify and automerge pipeline. The verify job must stay read-only |
 | `api/mcp.js` | Serverless entry for the remote connector |
 
 ## Common tasks

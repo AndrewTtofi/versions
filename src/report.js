@@ -31,7 +31,7 @@ export function formatAnalysis(analysis, { verbose = false } = {}) {
     const rows = [[c.dim('package'), c.dim('current'), c.dim('latest'), c.dim('change')]];
     for (const d of shown) {
       if (d.status === 'outdated' || d.status === 'held') {
-        const mark = d.status === 'held' ? c.dim('held: major') : d.major ? c.red('major') : c.yellow('update');
+        const mark = d.status === 'held' ? c.dim(`held: ${d.reason}`) : d.level === 'major' ? c.red('major') : d.level === 'minor' ? c.yellow('minor') : c.green('patch');
         rows.push([d.alias ?? d.name, `${d.prefix ?? ''}${d.version}`, c.green(d.latest), `${mark} -> ${d.prefix ?? ''}${d.next}`]);
       } else {
         rows.push([d.alias ?? d.name, d.spec || '', '', c.dim(`${d.status}: ${d.reason}`)]);
@@ -62,6 +62,8 @@ export function analysisToJSON(analysis) {
         latest: d.latest ?? null,
         next: d.next ? `${d.prefix ?? ''}${d.next}` : null,
         major: d.major ?? false,
+        level: d.level ?? null,
+        ...(d.publishedAt ? { publishedAt: d.publishedAt } : {}),
         status: d.status,
         ...(d.reason ? { reason: d.reason } : {}),
       })),

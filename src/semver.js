@@ -3,14 +3,19 @@
 
 const VERSION_RE = /^v?(\d+(?:\.\d+)*)(.*)$/i;
 
+const MAX_VERSION_LENGTH = 256; // real versions are short; this also bounds regex work
+
 export function parseVersion(input) {
   if (input == null) return null;
-  const m = String(input).trim().match(VERSION_RE);
+  const text = String(input).trim();
+  if (text.length > MAX_VERSION_LENGTH) return null;
+  const m = text.match(VERSION_RE);
   if (!m) return null;
   const parts = m[1].split('.').map(Number);
   let rest = m[2];
   // Build metadata ("+incompatible", "+build.5") never affects precedence.
-  rest = rest.replace(/\+.*$/, '');
+  const plus = rest.indexOf('+');
+  if (plus !== -1) rest = rest.slice(0, plus);
   // PEP 440 post releases sort after the release; treat them as releases.
   if (/^[.-]?post\d*$/i.test(rest)) rest = '';
   const pre = rest.replace(/^[-.]/, '');
@@ -102,3 +107,22 @@ export function bumpVersionText(current, latest) {
   if (compareVersions(next, current) <= 0) return null;
   return next;
 }
+
+/**
+ * Size of an update: 'major' (breaking under caret rules), 'minor' (the
+ * component after the first non-zero one changed) or 'patch' (anything smaller).
+ */
+export function bumpLevel(from, to) {
+  if (isMajorBump(from, to)) return 'major';
+  const a = parseVersion(from);
+  const b = parseVersion(to);
+  if (!a || !b) return 'major';
+  const firstNonZero = a.parts.findIndex((p) => p !== 0);
+  const changed = Array.from({ length: Math.max(a.parts.length, b.parts.length) }, (_, i) => i).find(
+    (i) => (a.parts[i] ?? 0) !== (b.parts[i] ?? 0),
+  );
+  if (changed === undefined) return 'patch';
+  return changed <= Math.max(firstNonZero, 0) + 1 ? 'minor' : 'patch';
+}
+
+export const LEVEL_RANK = { none: 0, patch: 1, minor: 2, major: 3 };

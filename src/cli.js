@@ -23,14 +23,16 @@ Commands:
   latest <pkg...>        Latest version of packages: zod npm:zod pypi:requests cargo:serde go:<module>
   tools                  Latest versions of AI coding tools (Claude Code, Codex, Gemini CLI, ...)
   stack <tool>           Dependencies an AI tool uses, with latest versions
-  init [dir]             Set up a project: config, scheduled update PRs, rules for every coding
-                         companion found (--for cursor,windsurf|all|list, --mcp for MCP configs)
+  init [dir]             Set up a project: config, daily update PRs with safe auto-merge, rules
+                         for every coding companion found (--for cursor,windsurf|all|list,
+                         --mcp, --automerge none|patch|minor|major, --verify "<cmd>", --min-age N)
   mcp                    Run the MCP server over stdio (--http [--port N] [--host H] for connectors)
 
 Options:
   --no-major             Hold back breaking (major) upgrades
   --tracked [tool]       Only touch dependencies that tracked AI tools also use
   --snapshot             Use the published snapshot instead of querying registries live
+  --min-age <days>       Hold releases younger than this (supply-chain safety)
   --exclude <a,b>        Package names/globs to leave untouched
   --peer                 Include peerDependencies
   --indirect             Include indirect Go requirements
@@ -68,15 +70,24 @@ const OPTIONS = {
   'no-agents': { type: 'boolean' },
   mcp: { type: 'boolean' },
   for: { type: 'string' },
+  'min-age': { type: 'string' },
+  automerge: { type: 'string' },
+  verify: { type: 'string' },
   host: { type: 'string' },
   force: { type: 'boolean' },
 };
 
 async function loadConfig(dir) {
   const path = join(dir, CONFIG_FILE);
-  if (!existsSync(path)) return {};
+  let raw;
   try {
-    return JSON.parse(await readFile(path, 'utf8'));
+    raw = await readFile(path, 'utf8');
+  } catch (err) {
+    if (err.code === 'ENOENT') return {};
+    throw err;
+  }
+  try {
+    return JSON.parse(raw);
   } catch (err) {
     throw new Error(`Could not parse ${path}: ${err.message}`);
   }
@@ -92,7 +103,9 @@ async function buildOptions(dir, values) {
     includeIndirect: values.indirect ?? config.includeIndirect ?? false,
     exclude: [...(config.exclude ?? []), ...split(values.exclude)],
     include: config.include ?? [],
+    minAgeDays: Number(values['min-age'] ?? config.minReleaseAgeDays ?? 0),
   };
+  if (!Number.isFinite(opts.minAgeDays) || opts.minAgeDays < 0) throw new Error('--min-age must be a number of days');
   const useSnapshot = values.snapshot ?? config.source === 'snapshot';
   const tracked = values.tracked || values.tool ? values.tool ?? true : config.tracked;
   if (useSnapshot || tracked) {
@@ -187,10 +200,36 @@ async function cmdStack(tool, values) {
 }
 
 async function writeIfAbsent(path, content, force, log) {
-  if (existsSync(path) && !force) return log(`  kept     ${path} (exists; --force to overwrite)`);
   await mkdir(dirname(path), { recursive: true });
-  await writeFile(path, content);
+  try {
+    // 'wx' fails atomically if the file exists, so there's no check-then-write race.
+    await writeFile(path, content, { flag: force ? 'w' : 'wx' });
+  } catch (err) {
+    if (err.code === 'EEXIST') return log(`  kept     ${path} (exists; --force to overwrite)`);
+    throw err;
+  }
   log(`  wrote    ${path}`);
+}
+
+/** Best-effort install+test command for the verify job (tools preinstalled on ubuntu-latest). */
+async function detectVerify(dir) {
+  const steps = [];
+  const has = (f) => existsSync(join(dir, f));
+  if (has('package.json')) {
+    let test = '';
+    try {
+      test = JSON.parse(await readFile(join(dir, 'package.json'), 'utf8')).scripts?.test ?? '';
+    } catch {}
+    const runsTests = test && !/no test specified/.test(test);
+    if (has('pnpm-lock.yaml')) steps.push('corepack enable', 'pnpm install --frozen-lockfile', runsTests && 'pnpm test');
+    else if (has('yarn.lock')) steps.push('corepack enable', 'yarn install --immutable', runsTests && 'yarn test');
+    else if (has('package-lock.json')) steps.push('npm ci', runsTests && 'npm test');
+    else if (!has('bun.lock') && !has('bun.lockb')) steps.push('npm install', runsTests && 'npm test');
+  }
+  if (has('Cargo.toml')) steps.push('cargo test');
+  if (has('go.mod')) steps.push('go test ./...');
+  if (has('uv.lock')) steps.push('pipx run uv sync --locked', 'pipx run uv run pytest');
+  return steps.filter(Boolean).join(' && ');
 }
 
 async function cmdInit(dir, values) {
@@ -205,9 +244,20 @@ async function cmdInit(dir, values) {
   await writeIfAbsent(join(dir, CONFIG_FILE), JSON.stringify({ noMajor: !!values['no-major'], exclude: [] }, null, 2) + '\n', values.force, log);
 
   if (!values['no-workflow']) {
-    const args = values['no-major'] ? '--no-major' : "''";
-    const workflow = (await readFile(join(ROOT, 'templates', 'workflow.yml'), 'utf8')).replace('__ARGS__', args).replace('__REF__', `v${VERSION}`);
+    const automerge = values.automerge ?? 'minor';
+    if (!['none', 'patch', 'minor', 'major'].includes(automerge)) throw new Error('--automerge must be none, patch, minor or major');
+    const minAge = values['min-age'] ?? '3';
+    if (!/^\d{1,3}$/.test(minAge)) throw new Error('--min-age must be a whole number of days');
+    const verify = values.verify ?? (await detectVerify(dir));
+    if (/[\n\r]/.test(verify)) throw new Error('--verify must be a single line');
+    const args = [values['no-major'] && '--no-major', minAge !== '0' && `--min-age ${minAge}`].filter(Boolean).join(' ') || "''";
+    const workflow = (await readFile(join(ROOT, 'templates', 'workflow.yml'), 'utf8'))
+      .replace('__ARGS__', args)
+      .replace('__REF__', `v${VERSION}`)
+      .replace('__AUTOMERGE__', automerge)
+      .replace('__VERIFY__', `'${verify.replace(/'/g, "''")}'`);
     await writeIfAbsent(join(dir, '.github', 'workflows', 'agent-versions.yml'), workflow, values.force, log);
+    console.log(c.dim(`  auto-merge: up to ${automerge} updates, releases older than ${minAge} day(s), verified by: ${verify || '(required status checks)'}`));
   }
   if (!values['no-agents']) {
     const block = await readFile(join(ROOT, 'templates', 'agents-snippet.md'), 'utf8');
