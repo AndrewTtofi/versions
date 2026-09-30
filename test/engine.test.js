@@ -93,3 +93,16 @@ test('analyzeManifestText returns updated content for all ecosystems', async () 
 
   await assert.rejects(analyzeManifestText('Gemfile', '', { resolve: fakeResolve }), /Unsupported manifest/);
 });
+
+test('collect records lookup failures instead of aborting the run', async () => {
+  const { collect } = await import('../src/collect.js');
+  const sources = { tools: [{ id: 't', name: 'T', packages: { npm: ['zod', 'flaky'] } }] };
+  // packageDeps/repos are not used, so no network is touched.
+  const resolve = async (eco, name) => {
+    if (name === 'flaky') throw new Error('429 Too Many Requests');
+    return '4.1.0';
+  };
+  const snap = await collect(sources, { resolve, previous: null });
+  assert.equal(snap.tools.t.packages.npm.zod, '4.1.0');
+  assert.ok(snap.errors.some((e) => e.package === 'npm:flaky'));
+});

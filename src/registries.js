@@ -17,6 +17,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 export async function fetchText(url, { headers = {}, retries = 3 } = {}) {
   let lastError;
   for (let attempt = 0; attempt <= retries; attempt++) {
+    let wait = 500 * 2 ** attempt;
     try {
       const res = await fetch(url, {
         headers: { 'user-agent': USER_AGENT, ...headers },
@@ -26,10 +27,15 @@ export async function fetchText(url, { headers = {}, retries = 3 } = {}) {
       if (res.ok) return await res.text();
       lastError = new Error(`${res.status} ${res.statusText} for ${url}`);
       if (res.status < 500 && res.status !== 429) break;
+      if (res.status === 429) {
+        // Honour Retry-After (seconds), capped so one package can't stall a run.
+        const after = Number(res.headers.get('retry-after'));
+        wait = Math.min(Number.isFinite(after) && after > 0 ? after * 1000 : 2000 * 2 ** attempt, 30_000);
+      }
     } catch (err) {
       lastError = err;
     }
-    if (attempt < retries) await sleep(500 * 2 ** attempt);
+    if (attempt < retries) await sleep(wait + Math.random() * 250);
   }
   throw lastError;
 }
