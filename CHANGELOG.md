@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.3.0 - 2026-09-30
+
+- **Auto-merge for update PRs:** the workflow from `init` merges update PRs when the
+  largest change is within `--automerge` (default `minor`), after a separate read-only
+  verify job runs your tests. Anything bigger is labelled `needs-review`. The gate
+  fails closed: an unknown level or policy never merges.
+- **Minimum release age:** `--min-age <days>` (config `minReleaseAgeDays`, MCP `min_age_days`)
+  holds releases newer than N days. `init` defaults to 3.
+- **Lockfiles:** the Action refreshes npm, pnpm, yarn, bun, uv, poetry, Cargo and Go
+  lockfiles next to updated manifests, with install scripts disabled.
+- Updates are classified as patch, minor or major. The Action outputs the largest as `level`.
+- The generated workflow and the data feed both run once a day.
+- Fixed the CodeQL findings: npm path escaping, markdown escaping, a regex ReDoS, and file races.
+
 ## 0.2.0 - 2026-09-30
 
 - **Coding companions:** `init` detects Cursor, Windsurf, GitHub Copilot, Cline,
