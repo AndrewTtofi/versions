@@ -1,6 +1,6 @@
 {
   "name": "agent-versions",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Dependabot for AI coding: always-fresh versions of every package Claude Code, Codex, Gemini CLI and friends use - as a CLI, MCP server/connector, Claude Code plugin and GitHub Action.",
   "type": "module",
   "bin": {

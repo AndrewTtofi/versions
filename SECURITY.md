@@ -33,7 +33,7 @@ Only the latest release and `main` receive security fixes.
 
 ## Using agent-versions safely
 
-- **Pin what you execute.** Prefer `npx -y github:AndrewTtofi/versions#v0.2.0` (or a
+- **Pin what you execute.** Prefer `npx -y github:AndrewTtofi/versions#v0.3.0` (or a
   commit SHA) over the moving `main`, and `uses: AndrewTtofi/versions@<sha>` in workflows.
   `init` already pins the Action to the release that generated it.
 - **Auto-merge is a trade-off.** Keep `--min-age` at 3 days or more. Set `--automerge patch`

@@ -197,7 +197,7 @@ the URL. The endpoint is read-only and stateless, and it needs no secrets.
 
 ```yaml
 - uses: actions/checkout@v7
-- uses: AndrewTtofi/versions@v0.2.0   # pin a release or commit SHA
+- uses: AndrewTtofi/versions@v0.3.0   # pin a release or commit SHA
   id: versions
   with:
     args: --no-major --exclude "eslint*"   # any CLI flags

@@ -95,8 +95,9 @@ jobs:
           PR: ${{ needs.update.outputs.pr }}
           LEVEL: ${{ needs.update.outputs.level }}
         run: |
-          rank() { case "$1" in patch) echo 1;; minor) echo 2;; major) echo 3;; *) echo 0;; esac; }
-          if [ "$(rank "$AUTOMERGE")" -eq 0 ] || [ "$(rank "$LEVEL")" -gt "$(rank "$AUTOMERGE")" ]; then
+          rank() { case "$1" in none) echo 0;; patch) echo 1;; minor) echo 2;; major) echo 3;; *) echo 9;; esac; }
+          # Fail closed: an unknown policy or level never merges.
+          if [ "$(rank "$AUTOMERGE")" -eq 0 ] || [ "$(rank "$AUTOMERGE")" -eq 9 ] || [ "$(rank "$LEVEL")" -gt "$(rank "$AUTOMERGE")" ]; then
             gh pr edit "$PR" --repo "$GITHUB_REPOSITORY" --add-label needs-review || true
             gh pr comment "$PR" --repo "$GITHUB_REPOSITORY" --body "Contains a **$LEVEL** update, above the auto-merge policy (\`$AUTOMERGE\`). Please review." || true
             exit 0

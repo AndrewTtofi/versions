@@ -94,3 +94,18 @@ test('init writes the auto-merge policy', async () => {
 
   await assert.rejects(run(process.execPath, [bin, 'init', dir, '--no-agents', '--force', '--verify', "a\nb"]), /single line/);
 });
+
+test('auto-merge gate fails closed (runs the real script from the template)', async () => {
+  const tpl = await readFile(fileURLToPath(new URL('../templates/workflow.yml', import.meta.url)), 'utf8');
+  const lines = tpl.split('\n');
+  const start = lines.findIndex((l) => l.includes('rank() {'));
+  const gate = lines.slice(start, start + 3).map((l) => l.trim()).join('\n') + '\n  echo review; exit 0\nfi\necho merge\n';
+  const decide = async (AUTOMERGE, LEVEL) =>
+    (await run('bash', ['-c', gate], { env: { PATH: process.env.PATH, AUTOMERGE, LEVEL } })).stdout.trim();
+  const cases = [
+    ['minor', 'patch', 'merge'], ['minor', 'minor', 'merge'], ['minor', 'major', 'review'],
+    ['minor', '', 'review'], ['patch', 'minor', 'review'], ['none', 'patch', 'review'],
+    ['bogus', 'patch', 'review'], ['major', 'major', 'merge'], ['minor', 'none', 'merge'],
+  ];
+  for (const [policy, level, expected] of cases) assert.equal(await decide(policy, level), expected, `${policy}/${level || '(empty)'}`);
+});
