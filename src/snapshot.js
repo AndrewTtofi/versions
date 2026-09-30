@@ -1,5 +1,6 @@
-// Loads the published snapshot (data/latest.json), which the scheduled
-// GitHub Action refreshes. Falls back to the copy bundled with the package.
+// Loads the published snapshot, which the scheduled workflow refreshes on the
+// `data` branch. Falls back to the copy bundled with the package (refreshed at
+// release time, so it may lag).
 
 import { readFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
@@ -9,7 +10,7 @@ import { fetchJSON } from './registries.js';
 
 export const SNAPSHOT_URL =
   process.env.AGENT_VERSIONS_SNAPSHOT_URL ||
-  'https://raw.githubusercontent.com/AndrewTtofi/versions/main/data/latest.json';
+  'https://raw.githubusercontent.com/AndrewTtofi/versions/data/latest.json';
 
 const BUNDLED = join(dirname(fileURLToPath(import.meta.url)), '..', 'data', 'latest.json');
 

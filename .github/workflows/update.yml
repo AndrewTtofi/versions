@@ -1,5 +1,6 @@
-# Keeps data/latest.json and VERSIONS.md current. Anyone reading the snapshot
-# (CLI --snapshot/--tracked, MCP tools, the plugin) gets these values.
+# Publishes the live feed to the `data` branch every 4 hours. `main` is
+# protected and never written by automation; `data` only ever holds
+# latest.json and VERSIONS.md.
 name: update-snapshot
 
 on:
@@ -29,20 +30,35 @@ jobs:
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 24
+      - name: Start from the currently published feed
+        run: |
+          if git fetch --depth=1 origin data; then
+            git show FETCH_HEAD:latest.json > data/latest.json
+          fi
       - run: node scripts/collect.js
         env:
           GITHUB_TOKEN: ${{ github.token }}
-      - name: Refuse to publish anything but data
+      - name: Validate output
         run: |
-          changed=$(git status --porcelain | awk '{print $2}' | grep -v -E '^(data/latest\.json|VERSIONS\.md)$' || true)
-          if [ -n "$changed" ]; then echo "Unexpected changes: $changed"; exit 1; fi
-          node -e 'JSON.parse(require("fs").readFileSync("data/latest.json","utf8"))'
-      - name: Commit if changed
+          node -e '
+            const s = JSON.parse(require("fs").readFileSync("data/latest.json", "utf8"));
+            if (!s.packages || !s.tools || Object.keys(s.tools).length === 0) throw new Error("empty snapshot");
+          '
+      - name: Publish to the data branch
         run: |
-          if git diff --quiet -- data VERSIONS.md; then echo "No changes"; exit 0; fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/latest.json VERSIONS.md
-          git commit -m "chore(data): refresh latest versions"
-          git pull --rebase
-          git push
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          feed="$RUNNER_TEMP/feed"
+          if git ls-remote --exit-code --heads origin data >/dev/null; then
+            git fetch -q --depth=1 origin data
+            git worktree add -q --detach "$feed" FETCH_HEAD
+          else
+            git worktree add -q --detach "$feed"
+            git -C "$feed" switch -q --orphan data
+          fi
+          cp data/latest.json VERSIONS.md "$feed/"
+          cd "$feed"
+          git add latest.json VERSIONS.md
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -qm "chore(data): refresh latest versions"
+          git push -q origin HEAD:refs/heads/data

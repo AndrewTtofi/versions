@@ -26,8 +26,8 @@ Only the latest release and `main` receive security fixes.
 | Registry requests | Crafted package names (`../`, query strings) steer requests | Per-ecosystem name validation before any URL is built. Registry hosts are fixed |
 | Local MCP tools | A prompt-injected agent points `update_project` at other directories | Local tools are confined to the server's working directory |
 | Remote MCP endpoint | Abuse, amplification, DNS rebinding, CSRF | Read-only tools only. Binds to localhost by default. Origin allow-list, per-client rate limit, and caps on body, batch, package and manifest sizes. No secrets, no state |
-| Published snapshot | A malicious manifest in a tracked repo poisons `data/latest.json` | Names are validated and release tags sanitised. The workflow may only change `data/latest.json` and `VERSIONS.md`, and never runs on forks |
-| This repository | Malicious PRs, tag moves, stolen tokens | Protected `main` (reviews, CODEOWNERS, status checks, no force-push or deletion). Actions pinned to commit SHAs. Least-privilege `GITHUB_TOKEN`. Fork PR workflows need approval. Secret scanning with push protection. Zero runtime dependencies |
+| Published snapshot | A malicious manifest in a tracked repo poisons `data/latest.json` | Names are validated and release tags sanitised. The feed lives on a separate `data` branch, so automation never writes to `main`. The workflow never runs on forks |
+| This repository | Malicious PRs, tag moves, stolen tokens | Protected `main` (PRs only, code-owner review, required CI, no force-push or deletion). Release tags are immutable. Actions pinned to commit SHAs. Least-privilege `GITHUB_TOKEN`. Fork PR workflows need approval. Secret scanning with push protection. Zero runtime dependencies |
 | People running the code | Executing whatever is on `main` | Pin a release (see below) |
 
 ## Using agent-versions safely

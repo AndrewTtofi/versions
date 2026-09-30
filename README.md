@@ -15,7 +15,7 @@ It ships in several forms, so it fits wherever you work:
 | **Rules for every companion** | `init` writes the native rules file for 17 coding companions, so each agent looks versions up instead of guessing |
 | **CLI** | `check`, `update`, `latest`, `tools`, `stack`, `init` |
 | **GitHub Action** | Scheduled pull requests that bump dependencies to the latest releases |
-| **Data feed** | [`data/latest.json`](data/latest.json) and [`VERSIONS.md`](VERSIONS.md), refreshed every 4 hours |
+| **Data feed** | [`latest.json`](https://raw.githubusercontent.com/AndrewTtofi/versions/data/latest.json) and [`VERSIONS.md`](https://github.com/AndrewTtofi/versions/blob/data/VERSIONS.md) on the `data` branch, refreshed every 4 hours |
 
 Supports `package.json` (including overrides and pnpm/bun catalogs),
 `pyproject.toml` (PEP 621, dependency groups, uv, Poetry), `requirements*.txt`,
@@ -229,7 +229,8 @@ For every tool in [`sources.json`](sources.json) it:
 2. finds every manifest in its public repositories, skipping tests, examples, docs
    and vendored code, or reads the published package's dependencies for closed-source tools,
 3. drops the repository's own internal packages, then resolves the latest release of every remaining dependency,
-4. commits `data/latest.json` and `VERSIONS.md` if anything changed.
+4. publishes `latest.json` and `VERSIONS.md` to the `data` branch if anything changed.
+   `main` is protected and is never written by automation.
 
 The CLI and MCP tools query registries **live** by default, so they are never
 more out of date than the registries themselves. The snapshot powers `tools`,
