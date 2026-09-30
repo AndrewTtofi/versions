@@ -102,3 +102,22 @@ export function bumpVersionText(current, latest) {
   if (compareVersions(next, current) <= 0) return null;
   return next;
 }
+
+/**
+ * Size of an update: 'major' (breaking under caret rules), 'minor' (the
+ * component after the first non-zero one changed) or 'patch' (anything smaller).
+ */
+export function bumpLevel(from, to) {
+  if (isMajorBump(from, to)) return 'major';
+  const a = parseVersion(from);
+  const b = parseVersion(to);
+  if (!a || !b) return 'major';
+  const firstNonZero = a.parts.findIndex((p) => p !== 0);
+  const changed = Array.from({ length: Math.max(a.parts.length, b.parts.length) }, (_, i) => i).find(
+    (i) => (a.parts[i] ?? 0) !== (b.parts[i] ?? 0),
+  );
+  if (changed === undefined) return 'patch';
+  return changed <= Math.max(firstNonZero, 0) + 1 ? 'minor' : 'patch';
+}
+
+export const LEVEL_RANK = { none: 0, patch: 1, minor: 2, major: 3 };

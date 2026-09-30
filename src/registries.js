@@ -99,6 +99,47 @@ export async function latestGithubRelease(repo) {
   return data?.tag_name ?? null;
 }
 
+// --- Release dates (for the minimum-release-age safeguard) -------------
+
+async function publishedNpm(name, version) {
+  const doc = await fetchJSON(`${NPM_REGISTRY}/${name.replace('/', '%2f')}`);
+  return doc?.time?.[version] ?? null;
+}
+
+async function publishedPypi(name, version) {
+  const data = await fetchJSON(`${PYPI}/pypi/${normalizePypiName(name)}/${encodeURIComponent(version)}/json`);
+  const times = (data?.urls ?? []).map((u) => u.upload_time_iso_8601).filter(Boolean).sort();
+  return times[0] ?? null;
+}
+
+// crates.io's API allows ~1 request/second; serialise these calls.
+let crateQueue = Promise.resolve();
+function publishedCrate(name, version) {
+  const run = crateQueue.then(async () => {
+    const data = await fetchJSON(`https://crates.io/api/v1/crates/${name}/${encodeURIComponent(version)}`);
+    await sleep(1000);
+    return data?.version?.created_at ?? null;
+  });
+  crateQueue = run.catch(() => {});
+  return run;
+}
+
+async function publishedGo(module, version) {
+  const data = await fetchJSON(`${GO_PROXY}/${escapeGoModule(module)}/@v/${encodeURIComponent(version)}.info`);
+  return data?.Time ?? null;
+}
+
+const PUBLISHED = { npm: publishedNpm, pypi: publishedPypi, cargo: publishedCrate, go: publishedGo };
+
+/** ISO date a version was published, or null if the registry doesn't say. */
+export async function publishedAt(ecosystem, name, version) {
+  const lookup = PUBLISHED[ecosystem];
+  if (!lookup) return null;
+  if (!isValidPackageName(ecosystem, name) || !isSafeVersion(version)) throw new Error('Invalid package or version');
+  const time = await lookup(name, version);
+  return typeof time === 'string' && !Number.isNaN(Date.parse(time)) ? time : null;
+}
+
 const LOOKUPS = { npm: latestNpm, pypi: latestPypi, cargo: latestCrate, go: latestGo };
 
 /** Validated lookup: rejects malformed names and anything that isn't a plain version. */

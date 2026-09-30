@@ -58,10 +58,8 @@ npx -y github:AndrewTtofi/versions init --no-major --mcp
 
 It works out which coding companions the project uses and writes:
 
-- **`.github/workflows/agent-versions.yml`**: every Monday it runs
-  `update` and opens (or refreshes) one PR with a table of what changed, just like
-  Dependabot. Enable *Settings → Actions → General → Allow GitHub Actions to
-  create and approve pull requests*.
+- **`.github/workflows/agent-versions.yml`**: runs daily, opens (or refreshes) one PR
+  with a table of what changed, and **auto-merges it when it's safe** (see below).
 - **`AGENTS.md`** plus **each companion's own rules file**: a short rule telling the agent to
   look versions up instead of guessing, and how to upgrade (table below).
 - **MCP configs** (with `--mcp`): connects the MCP server for everyone who opens the
@@ -87,6 +85,39 @@ to choose, `--for all` for every companion, or `--for list` to see them.
 | Kiro / Amazon Q | `.kiro/steering/…` / `.amazonq/rules/…` | `.kiro/settings/mcp.json` / `.amazonq/mcp.json` |
 | Zed | `.rules` (if present, else `AGENTS.md`) | `.zed/settings.json` |
 | Aider | adds `read: [AGENTS.md]` to `.aider.conf.yml` | — |
+
+## Automatic merging
+
+The generated workflow has three jobs, each with only the permissions it needs:
+
+```text
+update     new releases older than --min-age days -> rewrite manifests -> refresh lockfiles
+           (install scripts disabled) -> open/refresh one PR               [contents+PR write]
+verify     check out the PR, run VERIFY (install + tests)                  [read-only, no secrets]
+automerge  if verify passed and the largest change <= AUTOMERGE -> squash-merge
+           otherwise label it needs-review and comment                     [contents+PR write]
+```
+
+```bash
+npx -y github:AndrewTtofi/versions init --automerge minor --min-age 3 --verify "npm ci && npm test"
+```
+
+| Setting | Default | Meaning |
+|---|---|---|
+| `--automerge` | `minor` | Largest change merged without a human: `none`, `patch`, `minor`, `major` |
+| `--min-age` | `3` | Releases younger than this many days are held until a later run. Malicious releases are usually caught and yanked within hours to days |
+| `--verify` | detected | The install and test command. Detected from `package.json` scripts and lockfiles, `Cargo.toml`, `go.mod` or `uv.lock` |
+
+These are the `AUTOMERGE`/`VERIFY` env values and `args` in the workflow file, so you can edit them there later.
+
+Enable *Settings → Actions → General → Allow GitHub Actions to create and approve pull
+requests* and *Settings → General → Allow auto-merge*. With branch protection and
+required checks, the PR uses GitHub's native auto-merge and waits for them. Add a
+secret `AGENT_VERSIONS_TOKEN` (a fine-grained PAT or GitHub App token with contents and pull-requests
+write) if your own CI should run on the PR, or if the merge should trigger deploy workflows.
+Events created by the default `GITHUB_TOKEN` don't trigger other workflows.
+
+Majors are never merged under the default policy. You get a labelled PR to review instead.
 
 ## Claude Code plugin
 
@@ -195,7 +226,7 @@ agent-versions <command> [options]
   --no-major        Hold back breaking upgrades (1.x→2.x, 0.3→0.4)
   --tracked [--tool <id>]  Only touch deps that tracked AI tools also use (optionally one tool)
   --snapshot        Use the published snapshot instead of live registries (fast, reproducible)
-  --exclude a,b*    Leave packages alone          --peer / --indirect   Include peer deps / indirect Go deps
+  --min-age <days>  Hold releases younger than this   --exclude a,b*    Leave packages alone          --peer / --indirect   Include peer deps / indirect Go deps
   --dry-run         Preview update                --fail               check exits 1 when outdated (CI)
   --brief | --json  Output formats                --no-recursive        Top-level manifests only
 ```
@@ -212,6 +243,7 @@ agent-versions <command> [options]
   "includePeer": false,
   "includeIndirect": false,
   "tracked": false,
+  "minReleaseAgeDays": 3,
   "source": "live"
 }
 ```
