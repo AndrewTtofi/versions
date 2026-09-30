@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-30T16:19:32.685Z",
+  "generatedAt": "2026-09-30T16:34:37.080Z",
   "tools": {
     "claude-code": {
       "name": "Claude Code",
@@ -3366,7 +3366,7 @@
         ]
       },
       "github.com/posthog/posthog-go": {
-        "latest": "v1.28.0",
+        "latest": "v1.28.1",
         "usedBy": [
           "crush"
         ]
@@ -3862,12 +3862,6 @@
           "opencode"
         ]
       },
-      "@ai-sdk/deepseek": {
-        "latest": "3.0.57",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "@ai-sdk/gateway": {
         "latest": "4.0.101",
         "usedBy": [
@@ -3916,12 +3910,6 @@
         "usedBy": [
           "cline",
           "opencode"
-        ]
-      },
-      "@ai-sdk/otel": {
-        "latest": "1.0.123",
-        "usedBy": [
-          "cline"
         ]
       },
       "@ai-sdk/perplexity": {
@@ -4053,12 +4041,6 @@
           "opencode"
         ]
       },
-      "@aws-sdk/client-sagemaker-runtime": {
-        "latest": "3.1143.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "@aws-sdk/client-sts": {
         "latest": "3.1143.0",
         "usedBy": [
@@ -4106,86 +4088,11 @@
           "qwen-code"
         ]
       },
-      "@base-ui/react": {
-        "latest": "1.8.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@biomejs/biome": {
-        "latest": "2.5.15",
-        "usedBy": [
-          "cline",
-          "continue"
-        ]
-      },
-      "@blaxel/core": {
-        "latest": "0.3.24",
-        "usedBy": [
-          "openai-agents"
-        ]
-      },
-      "@bufbuild/buf": {
-        "latest": "1.73.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "@bufbuild/protobuf": {
         "latest": "2.16.0",
         "usedBy": [
           "cline",
           "gemini-cli"
-        ]
-      },
-      "@changesets/changelog-github": {
-        "latest": "1.0.1",
-        "usedBy": [
-          "mcp"
-        ]
-      },
-      "@changesets/cli": {
-        "latest": "3.0.3",
-        "usedBy": [
-          "goose",
-          "mcp",
-          "openai-agents"
-        ]
-      },
-      "@chat-adapter/discord": {
-        "latest": "4.41.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@chat-adapter/gchat": {
-        "latest": "4.41.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@chat-adapter/linear": {
-        "latest": "4.41.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@chat-adapter/slack": {
-        "latest": "4.41.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@chat-adapter/telegram": {
-        "latest": "4.41.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@chat-adapter/whatsapp": {
-        "latest": "4.41.1",
-        "usedBy": [
-          "cline"
         ]
       },
       "@clack/prompts": {
@@ -4216,70 +4123,10 @@
           "opencode"
         ]
       },
-      "@codemirror/autocomplete": {
-        "latest": "6.20.3",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "@codemirror/commands": {
-        "latest": "6.11.1",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "@codemirror/language": {
-        "latest": "6.12.4",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "@codemirror/merge": {
-        "latest": "6.12.2",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "@codemirror/state": {
-        "latest": "6.7.6",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "@codemirror/view": {
-        "latest": "6.43.13",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
       "@corvu/drawer": {
         "latest": "0.2.4",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "@datafe-open/markdown-chart": {
-        "latest": "0.3.4",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "@datafe-open/markdown-chart-echarts": {
-        "latest": "0.3.4",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "@datafe-open/markdown-chart-react": {
-        "latest": "0.3.4",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "@daytonaio/sdk": {
-        "latest": "0.220.0",
-        "usedBy": [
-          "openai-agents"
         ]
       },
       "@dnd-kit/abstract": {
@@ -4306,48 +4153,6 @@
           "opencode"
         ]
       },
-      "@docusaurus/core": {
-        "latest": "3.10.2",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@docusaurus/module-type-aliases": {
-        "latest": "3.10.2",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@docusaurus/plugin-client-redirects": {
-        "latest": "3.10.2",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@docusaurus/preset-classic": {
-        "latest": "3.10.2",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@docusaurus/tsconfig": {
-        "latest": "3.10.2",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@docusaurus/types": {
-        "latest": "3.10.2",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@e2b/code-interpreter": {
-        "latest": "2.8.0",
-        "usedBy": [
-          "openai-agents"
-        ]
-      },
       "@effect/opentelemetry": {
         "latest": "0.64.1",
         "usedBy": [
@@ -4372,78 +4177,6 @@
           "opencode"
         ]
       },
-      "@electron-forge/cli": {
-        "latest": "8.0.1",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@electron-forge/maker-deb": {
-        "latest": "8.0.1",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@electron-forge/maker-flatpak": {
-        "latest": "8.0.1",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@electron-forge/maker-rpm": {
-        "latest": "8.0.1",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@electron-forge/maker-squirrel": {
-        "latest": "8.0.1",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@electron-forge/maker-zip": {
-        "latest": "8.0.1",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@electron-forge/plugin-auto-unpack-natives": {
-        "latest": "8.0.1",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@electron-forge/plugin-fuses": {
-        "latest": "8.0.1",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@electron-forge/plugin-vite": {
-        "latest": "8.0.1",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@electron/asar": {
-        "latest": "4.3.1",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "@electron/fuses": {
-        "latest": "2.1.3",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@electron/rebuild": {
-        "latest": "4.2.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "@emnapi/core": {
         "latest": "1.11.3",
         "usedBy": [
@@ -4453,23 +4186,6 @@
       "@emnapi/runtime": {
         "latest": "1.11.3",
         "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "@eslint/eslintrc": {
-        "latest": "3.3.7",
-        "usedBy": [
-          "openhands",
-          "qwen-code"
-        ]
-      },
-      "@eslint/js": {
-        "latest": "10.0.1",
-        "usedBy": [
-          "cline",
-          "goose",
-          "openai-agents",
-          "openhands",
           "qwen-code"
         ]
       },
@@ -4485,40 +4201,10 @@
           "opencode"
         ]
       },
-      "@floating-ui/react": {
-        "latest": "0.27.20",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@fontsource-variable/geist-mono": {
-        "latest": "5.3.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@fontsource-variable/inter": {
-        "latest": "5.3.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "@fontsource/ibm-plex-mono": {
         "latest": "5.3.0",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "@formatjs/cli": {
-        "latest": "6.16.32",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@formatjs/icu-messageformat-parser": {
-        "latest": "3.5.20",
-        "usedBy": [
-          "goose"
         ]
       },
       "@gitbeaker/rest": {
@@ -4584,18 +4270,6 @@
           "qwen-code"
         ]
       },
-      "@google/generative-ai": {
-        "latest": "0.24.1",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@gramio/format": {
-        "latest": "0.12.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "@grpc/grpc-js": {
         "latest": "1.14.5",
         "usedBy": [
@@ -4603,47 +4277,10 @@
           "gemini-cli"
         ]
       },
-      "@grpc/proto-loader": {
-        "latest": "0.8.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@grpc/reflection": {
-        "latest": "1.0.4",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "@happy-dom/global-registrator": {
         "latest": "20.14.5",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "@headlessui/react": {
-        "latest": "2.2.10",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@heroicons/react": {
-        "latest": "2.2.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@heroui/react": {
-        "latest": "3.2.6",
-        "usedBy": [
-          "cline",
-          "openhands"
-        ]
-      },
-      "@heroui/theme": {
-        "latest": "2.4.26",
-        "usedBy": [
-          "cline"
         ]
       },
       "@hey-api/openapi-ts": {
@@ -4678,54 +4315,6 @@
           "opencode"
         ]
       },
-      "@img/sharp-darwin-arm64": {
-        "latest": "0.35.5",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@img/sharp-darwin-x64": {
-        "latest": "0.35.5",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@img/sharp-linux-arm": {
-        "latest": "0.35.5",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@img/sharp-linux-arm64": {
-        "latest": "0.35.5",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@img/sharp-linux-x64": {
-        "latest": "0.35.5",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@img/sharp-win32-x64": {
-        "latest": "0.35.5",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@jerome-benoit/sap-ai-provider": {
-        "latest": "5.0.3",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@jitl/quickjs-singlefile-mjs-release-sync": {
-        "latest": "0.32.0",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
       "@jsx-email/all": {
         "latest": "3.0.1",
         "usedBy": [
@@ -4748,30 +4337,6 @@
         "latest": "0.13.14",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "@langfuse/core": {
-        "latest": "5.11.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@langfuse/otel": {
-        "latest": "5.11.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@langfuse/tracing": {
-        "latest": "5.11.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@langfuse/vercel-ai-sdk": {
-        "latest": "5.11.1",
-        "usedBy": [
-          "cline"
         ]
       },
       "@larksuiteoapi/node-sdk": {
@@ -4835,51 +4400,6 @@
           "qwen-code"
         ]
       },
-      "@mcp-ui/client": {
-        "latest": "7.1.1",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@mdx-js/react": {
-        "latest": "3.1.1",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@microlink/react-json-view": {
-        "latest": "1.31.38",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "@microsoft/tui-test": {
-        "latest": "0.0.4",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@modelcontextprotocol/client": {
-        "latest": "2.2.0",
-        "usedBy": [
-          "openai-agents",
-          "qwen-code"
-        ]
-      },
-      "@modelcontextprotocol/core": {
-        "latest": "2.2.0",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "@modelcontextprotocol/ext-apps": {
-        "latest": "2.0.3",
-        "usedBy": [
-          "continue",
-          "goose",
-          "qwen-code"
-        ]
-      },
       "@modelcontextprotocol/sdk": {
         "latest": "1.31.0",
         "usedBy": [
@@ -4890,42 +4410,6 @@
           "gemini-cli",
           "goose",
           "opencode",
-          "qwen-code"
-        ]
-      },
-      "@monaco-editor/react": {
-        "latest": "4.7.0",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "@mozilla/readability": {
-        "latest": "0.6.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@mswjs/socket.io-binding": {
-        "latest": "0.2.0",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "@nestjs/common": {
-        "latest": "12.1.2",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@node-rs/jieba": {
-        "latest": "2.0.3",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "@node-rs/jieba-wasm32-wasi": {
-        "latest": "2.0.3",
-        "usedBy": [
           "qwen-code"
         ]
       },
@@ -4976,28 +4460,10 @@
           "openai-agents"
         ]
       },
-      "@openapitools/openapi-generator-cli": {
-        "latest": "2.41.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "@openauthjs/openauth": {
         "latest": "0.4.3",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "@openhands/extensions": {
-        "latest": "0.25.0",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "@openhands/typescript-client": {
-        "latest": "1.50.0",
-        "usedBy": [
-          "openhands"
         ]
       },
       "@openrouter/ai-sdk-provider": {
@@ -5056,12 +4522,6 @@
           "qwen-code"
         ]
       },
-      "@opentelemetry/exporter-logs-otlp-proto": {
-        "latest": "0.222.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "@opentelemetry/exporter-metrics-otlp-grpc": {
         "latest": "0.222.0",
         "usedBy": [
@@ -5078,12 +4538,6 @@
           "continue",
           "gemini-cli",
           "qwen-code"
-        ]
-      },
-      "@opentelemetry/exporter-metrics-otlp-proto": {
-        "latest": "0.222.0",
-        "usedBy": [
-          "cline"
         ]
       },
       "@opentelemetry/exporter-trace-otlp-grpc": {
@@ -5103,29 +4557,11 @@
           "qwen-code"
         ]
       },
-      "@opentelemetry/exporter-trace-otlp-proto": {
-        "latest": "0.222.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@opentelemetry/instrumentation-fs": {
-        "latest": "0.41.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "@opentelemetry/instrumentation-http": {
         "latest": "0.222.0",
         "usedBy": [
           "continue",
           "gemini-cli",
-          "qwen-code"
-        ]
-      },
-      "@opentelemetry/instrumentation-undici": {
-        "latest": "0.32.0",
-        "usedBy": [
           "qwen-code"
         ]
       },
@@ -5195,12 +4631,6 @@
           "qwen-code"
         ]
       },
-      "@opentui-ui/dialog": {
-        "latest": "0.1.3",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "@opentui/core": {
         "latest": "0.5.14",
         "usedBy": [
@@ -5226,24 +4656,6 @@
         "latest": "0.5.14",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "@orama/orama": {
-        "latest": "3.1.18",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@panzoom/panzoom": {
-        "latest": "4.6.2",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@paper-design/shaders-react": {
-        "latest": "0.0.81",
-        "usedBy": [
-          "cline"
         ]
       },
       "@parcel/watcher": {
@@ -5329,193 +4741,10 @@
           "qwen-code"
         ]
       },
-      "@radix-ui/react-accordion": {
-        "latest": "1.2.20",
-        "usedBy": [
-          "continue",
-          "goose"
-        ]
-      },
-      "@radix-ui/react-alert-dialog": {
-        "latest": "1.1.23",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@radix-ui/react-avatar": {
-        "latest": "1.2.6",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@radix-ui/react-checkbox": {
-        "latest": "1.3.11",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@radix-ui/react-collapsible": {
-        "latest": "1.1.20",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@radix-ui/react-dialog": {
-        "latest": "1.1.23",
-        "usedBy": [
-          "cline",
-          "continue",
-          "goose"
-        ]
-      },
-      "@radix-ui/react-dropdown-menu": {
-        "latest": "2.1.24",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@radix-ui/react-hover-card": {
-        "latest": "1.1.23",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@radix-ui/react-icons": {
-        "latest": "1.3.2",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@radix-ui/react-label": {
-        "latest": "2.1.15",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@radix-ui/react-popover": {
-        "latest": "1.1.23",
-        "usedBy": [
-          "cline",
-          "goose"
-        ]
-      },
-      "@radix-ui/react-portal": {
-        "latest": "1.1.17",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@radix-ui/react-progress": {
-        "latest": "1.1.16",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@radix-ui/react-radio-group": {
-        "latest": "1.4.7",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@radix-ui/react-scroll-area": {
-        "latest": "1.2.18",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@radix-ui/react-select": {
-        "latest": "2.3.7",
-        "usedBy": [
-          "cline",
-          "goose"
-        ]
-      },
-      "@radix-ui/react-separator": {
-        "latest": "1.1.15",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@radix-ui/react-slider": {
-        "latest": "1.4.7",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@radix-ui/react-slot": {
-        "latest": "1.3.3",
-        "usedBy": [
-          "cline",
-          "goose"
-        ]
-      },
-      "@radix-ui/react-switch": {
-        "latest": "1.3.7",
-        "usedBy": [
-          "cline",
-          "goose"
-        ]
-      },
-      "@radix-ui/react-tabs": {
-        "latest": "1.1.21",
-        "usedBy": [
-          "continue",
-          "goose"
-        ]
-      },
-      "@radix-ui/react-tooltip": {
-        "latest": "1.2.16",
-        "usedBy": [
-          "cline",
-          "goose"
-        ]
-      },
-      "@radix-ui/react-use-controllable-state": {
-        "latest": "1.2.6",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@radix-ui/react-visually-hidden": {
-        "latest": "1.2.11",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@react-router/dev": {
-        "latest": "8.4.0",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "@react-router/node": {
-        "latest": "8.4.0",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "@react-router/serve": {
-        "latest": "8.4.0",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "@reduxjs/toolkit": {
-        "latest": "2.13.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "@remotion/cli": {
         "latest": "4.0.531",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "@rive-app/react-webgl2": {
-        "latest": "4.35.0",
-        "usedBy": [
-          "cline"
         ]
       },
       "@rollup/plugin-commonjs": {
@@ -5530,96 +4759,6 @@
           "claude-code"
         ]
       },
-      "@rollup/rollup-linux-arm64-gnu": {
-        "latest": "4.63.5",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@rollup/rollup-linux-x64-gnu": {
-        "latest": "4.63.5",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@rollup/rollup-win32-x64-msvc": {
-        "latest": "4.63.5",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@runloop/api-client": {
-        "latest": "1.32.0",
-        "usedBy": [
-          "openai-agents"
-        ]
-      },
-      "@sap-cloud-sdk/connectivity": {
-        "latest": "4.9.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@sap-cloud-sdk/http-client": {
-        "latest": "4.9.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@sap-cloud-sdk/openapi": {
-        "latest": "4.9.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@sap-cloud-sdk/resilience": {
-        "latest": "4.9.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@sap-cloud-sdk/util": {
-        "latest": "4.9.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@semantic-release/changelog": {
-        "latest": "7.0.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@semantic-release/commit-analyzer": {
-        "latest": "13.0.1",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@semantic-release/git": {
-        "latest": "11.0.1",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@semantic-release/github": {
-        "latest": "12.0.10",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@semantic-release/npm": {
-        "latest": "13.2.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@semantic-release/release-notes-generator": {
-        "latest": "14.1.1",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "@sentry/solid": {
         "latest": "11.1.0",
         "usedBy": [
@@ -5632,34 +4771,10 @@
           "opencode"
         ]
       },
-      "@shadcn/lint": {
-        "latest": "0.2.0",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "@shikijs/colorized-brackets": {
-        "latest": "4.4.3",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@shikijs/langs": {
-        "latest": "4.4.3",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "@shikijs/stream": {
         "latest": "4.4.3",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "@shikijs/themes": {
-        "latest": "4.4.3",
-        "usedBy": [
-          "cline"
         ]
       },
       "@shikijs/transformers": {
@@ -5889,52 +5004,10 @@
           "opencode"
         ]
       },
-      "@storybook/react-vite": {
-        "latest": "10.6.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@streamdown/cjk": {
-        "latest": "1.0.4",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@streamparser/json": {
-        "latest": "0.0.26",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "@stripe/stripe-js": {
         "latest": "9.17.0",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "@stryker-mutator/core": {
-        "latest": "10.0.0",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "@stryker-mutator/vitest-runner": {
-        "latest": "10.0.0",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "@stylistic/eslint-plugin": {
-        "latest": "5.10.0",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "@swc/cli": {
-        "latest": "0.8.1",
-        "usedBy": [
-          "continue"
         ]
       },
       "@swc/core": {
@@ -5944,42 +5017,10 @@
           "continue"
         ]
       },
-      "@swc/core-linux-x64-gnu": {
-        "latest": "1.16.13",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "@swc/jest": {
         "latest": "0.2.39",
         "usedBy": [
           "codex"
-        ]
-      },
-      "@tailwindcss/line-clamp": {
-        "latest": "0.4.4",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@tailwindcss/oxide-linux-x64-gnu": {
-        "latest": "4.3.3",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@tailwindcss/postcss": {
-        "latest": "4.3.3",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@tailwindcss/typography": {
-        "latest": "0.5.20",
-        "usedBy": [
-          "continue",
-          "goose",
-          "openhands"
         ]
       },
       "@tailwindcss/vite": {
@@ -5989,36 +5030,6 @@
           "goose",
           "opencode",
           "openhands",
-          "qwen-code"
-        ]
-      },
-      "@tanstack/eslint-plugin-query": {
-        "latest": "5.104.0",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "@tanstack/react-form": {
-        "latest": "1.33.5",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "@tanstack/react-query": {
-        "latest": "5.104.0",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "@tanstack/react-table": {
-        "latest": "9.2.4",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "@tanstack/react-virtual": {
-        "latest": "3.14.13",
-        "usedBy": [
           "qwen-code"
         ]
       },
@@ -6034,12 +5045,6 @@
           "opencode"
         ]
       },
-      "@tauri-apps/cli": {
-        "latest": "2.12.0",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
       "@teddyzhu/clipboard": {
         "latest": "0.0.10",
         "usedBy": [
@@ -6052,31 +5057,7 @@
           "qwen-code"
         ]
       },
-      "@teddyzhu/clipboard-darwin-x64": {
-        "latest": "0.0.10",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
       "@teddyzhu/clipboard-linux-arm64-gnu": {
-        "latest": "0.0.10",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "@teddyzhu/clipboard-linux-x64-gnu": {
-        "latest": "0.0.10",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "@teddyzhu/clipboard-win32-arm64-msvc": {
-        "latest": "0.0.10",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "@teddyzhu/clipboard-win32-x64-msvc": {
         "latest": "0.0.10",
         "usedBy": [
           "qwen-code"
@@ -6096,15 +5077,6 @@
           "qwen-code"
         ]
       },
-      "@testing-library/jest-dom": {
-        "latest": "7.0.1",
-        "usedBy": [
-          "cline",
-          "continue",
-          "goose",
-          "openhands"
-        ]
-      },
       "@testing-library/react": {
         "latest": "16.3.3",
         "usedBy": [
@@ -6115,97 +5087,10 @@
           "qwen-code"
         ]
       },
-      "@testing-library/user-event": {
-        "latest": "14.6.7",
-        "usedBy": [
-          "cline",
-          "continue",
-          "goose",
-          "openhands"
-        ]
-      },
       "@thisbeyond/solid-dnd": {
         "latest": "0.7.5",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "@tiptap/core": {
-        "latest": "3.31.4",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@tiptap/extension-document": {
-        "latest": "3.31.4",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@tiptap/extension-dropcursor": {
-        "latest": "3.31.4",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@tiptap/extension-history": {
-        "latest": "3.31.4",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@tiptap/extension-image": {
-        "latest": "3.31.4",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@tiptap/extension-mention": {
-        "latest": "3.31.4",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@tiptap/extension-paragraph": {
-        "latest": "3.31.4",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@tiptap/extension-placeholder": {
-        "latest": "3.31.4",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@tiptap/extension-text": {
-        "latest": "3.31.4",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@tiptap/pm": {
-        "latest": "3.31.4",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@tiptap/react": {
-        "latest": "3.31.4",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@tiptap/starter-kit": {
-        "latest": "3.31.4",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@tiptap/suggestion": {
-        "latest": "3.31.4",
-        "usedBy": [
-          "continue"
         ]
       },
       "@tsconfig/bun": {
@@ -6238,12 +5123,6 @@
           "codex"
         ]
       },
-      "@types/better-sqlite3": {
-        "latest": "9.6.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "@types/bun": {
         "latest": "1.4.2",
         "usedBy": [
@@ -6252,35 +5131,16 @@
           "opencode"
         ]
       },
-      "@types/chai": {
-        "latest": "5.2.3",
-        "usedBy": [
-          "cline",
-          "continue"
-        ]
-      },
       "@types/chrome": {
         "latest": "0.3.4",
         "usedBy": [
           "qwen-code"
         ]
       },
-      "@types/clone-deep": {
-        "latest": "4.0.4",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "@types/command-exists": {
         "latest": "1.2.3",
         "usedBy": [
           "gemini-cli",
-          "qwen-code"
-        ]
-      },
-      "@types/commander": {
-        "latest": "2.12.5",
-        "usedBy": [
           "qwen-code"
         ]
       },
@@ -6305,18 +5165,6 @@
           "opencode"
         ]
       },
-      "@types/date-fns": {
-        "latest": "2.6.3",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@types/debug": {
-        "latest": "4.1.13",
-        "usedBy": [
-          "openai-agents"
-        ]
-      },
       "@types/diff": {
         "latest": "8.0.0",
         "usedBy": [
@@ -6324,23 +5172,10 @@
           "qwen-code"
         ]
       },
-      "@types/dompurify": {
-        "latest": "3.2.0",
-        "usedBy": [
-          "cline",
-          "continue"
-        ]
-      },
       "@types/dotenv": {
         "latest": "8.2.3",
         "usedBy": [
           "qwen-code"
-        ]
-      },
-      "@types/electron-squirrel-startup": {
-        "latest": "1.0.2",
-        "usedBy": [
-          "goose"
         ]
       },
       "@types/express": {
@@ -6359,28 +5194,10 @@
           "qwen-code"
         ]
       },
-      "@types/follow-redirects": {
-        "latest": "1.14.4",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "@types/fs-extra": {
         "latest": "11.0.4",
         "usedBy": [
           "gemini-cli"
-        ]
-      },
-      "@types/get-folder-size": {
-        "latest": "3.0.4",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@types/glob": {
-        "latest": "9.0.0",
-        "usedBy": [
-          "continue"
         ]
       },
       "@types/hast": {
@@ -6396,30 +5213,12 @@
           "gemini-cli"
         ]
       },
-      "@types/ignore-walk": {
-        "latest": "4.0.3",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@types/ink-testing-library": {
-        "latest": "1.0.4",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "@types/jest": {
         "latest": "30.0.0",
         "usedBy": [
           "claude-code",
           "cline",
           "codex",
-          "continue"
-        ]
-      },
-      "@types/jquery": {
-        "latest": "4.0.1",
-        "usedBy": [
           "continue"
         ]
       },
@@ -6437,36 +5236,16 @@
           "qwen-code"
         ]
       },
-      "@types/json-schema": {
-        "latest": "7.0.15",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "@types/json-stable-stringify": {
         "latest": "1.2.0",
         "usedBy": [
           "gemini-cli"
         ]
       },
-      "@types/jszip": {
-        "latest": "3.4.1",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "@types/katex": {
         "latest": "0.16.8",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "@types/lodash": {
-        "latest": "4.17.25",
-        "usedBy": [
-          "cline",
-          "continue",
-          "goose"
         ]
       },
       "@types/luxon": {
@@ -6486,12 +5265,6 @@
         "usedBy": [
           "gemini-cli",
           "qwen-code"
-        ]
-      },
-      "@types/mdast": {
-        "latest": "4.0.4",
-        "usedBy": [
-          "openhands"
         ]
       },
       "@types/mime-types": {
@@ -6524,24 +5297,6 @@
           "qwen-code"
         ]
       },
-      "@types/mozilla-readability": {
-        "latest": "0.2.1",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@types/mustache": {
-        "latest": "4.2.6",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@types/nock": {
-        "latest": "11.1.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "@types/node": {
         "latest": "26.6.3",
         "usedBy": [
@@ -6558,12 +5313,6 @@
           "qwen-code"
         ]
       },
-      "@types/node-fetch": {
-        "latest": "2.6.13",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "@types/npm-package-arg": {
         "latest": "6.1.4",
         "usedBy": [
@@ -6576,30 +5325,12 @@
           "opencode"
         ]
       },
-      "@types/pdf-parse": {
-        "latest": "1.1.5",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@types/pg": {
-        "latest": "8.23.1",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "@types/picomatch": {
         "latest": "4.0.3",
         "usedBy": [
           "cline",
           "gemini-cli",
           "qwen-code"
-        ]
-      },
-      "@types/plist": {
-        "latest": "3.0.5",
-        "usedBy": [
-          "continue"
         ]
       },
       "@types/prompts": {
@@ -6648,32 +5379,6 @@
           "qwen-code"
         ]
       },
-      "@types/react-router-dom": {
-        "latest": "5.3.3",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@types/react-syntax-highlighter": {
-        "latest": "15.5.13",
-        "usedBy": [
-          "continue",
-          "goose",
-          "openhands"
-        ]
-      },
-      "@types/redux-logger": {
-        "latest": "3.0.13",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@types/request": {
-        "latest": "2.48.13",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "@types/semver": {
         "latest": "7.8.0",
         "usedBy": [
@@ -6690,24 +5395,6 @@
           "gemini-cli",
           "openhands",
           "qwen-code"
-        ]
-      },
-      "@types/should": {
-        "latest": "13.0.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@types/sinon": {
-        "latest": "22.0.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@types/styled-components": {
-        "latest": "5.1.36",
-        "usedBy": [
-          "continue"
         ]
       },
       "@types/supertest": {
@@ -6736,12 +5423,6 @@
           "qwen-code"
         ]
       },
-      "@types/unist": {
-        "latest": "3.0.3",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "@types/uuid": {
         "latest": "11.0.0",
         "usedBy": [
@@ -6760,22 +5441,10 @@
           "qwen-code"
         ]
       },
-      "@types/vscode-webview": {
-        "latest": "1.57.5",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "@types/which": {
         "latest": "3.0.4",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "@types/win-ca": {
-        "latest": "3.5.4",
-        "usedBy": [
-          "continue"
         ]
       },
       "@types/ws": {
@@ -6832,28 +5501,10 @@
           "qwen-code"
         ]
       },
-      "@typescript-eslint/utils": {
-        "latest": "8.71.0",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
       "@typescript/native-preview": {
         "latest": "7.0.0-dev.20260707.2",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "@ubjs/core": {
-        "latest": "0.31.0-6",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "@uidotdev/usehooks": {
-        "latest": "2.4.1",
-        "usedBy": [
-          "openhands"
         ]
       },
       "@upstash/redis": {
@@ -6867,38 +5518,6 @@
         "usedBy": [
           "claude-code",
           "opencode"
-        ]
-      },
-      "@vercel/ncc": {
-        "latest": "0.45.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@vercel/react-router": {
-        "latest": "1.3.7",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "@vercel/sandbox": {
-        "latest": "3.5.1",
-        "usedBy": [
-          "openai-agents"
-        ]
-      },
-      "@vitejs/plugin-react": {
-        "latest": "6.1.1",
-        "usedBy": [
-          "goose",
-          "qwen-code"
-        ]
-      },
-      "@vitejs/plugin-react-swc": {
-        "latest": "4.3.3",
-        "usedBy": [
-          "cline",
-          "continue"
         ]
       },
       "@vitest/coverage-v8": {
@@ -6918,25 +5537,6 @@
         "usedBy": [
           "gemini-cli",
           "qwen-code"
-        ]
-      },
-      "@vitest/ui": {
-        "latest": "5.0.3",
-        "usedBy": [
-          "continue",
-          "goose"
-        ]
-      },
-      "@vscode/codicons": {
-        "latest": "0.0.46-24",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "@vscode/ripgrep": {
-        "latest": "1.18.0",
-        "usedBy": [
-          "continue"
         ]
       },
       "@vscode/test-cli": {
@@ -6963,12 +5563,6 @@
           "qwen-code"
         ]
       },
-      "@vscode/webview-ui-toolkit": {
-        "latest": "1.4.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "@webgpu/types": {
         "latest": "0.1.74",
         "usedBy": [
@@ -6978,25 +5572,6 @@
       "@wecom/aibot-node-sdk": {
         "latest": "1.0.7",
         "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "@workos-inc/node": {
-        "latest": "11.0.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@xenova/transformers": {
-        "latest": "2.17.2",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "@xterm/addon-fit": {
-        "latest": "0.11.0",
-        "usedBy": [
-          "openhands",
           "qwen-code"
         ]
       },
@@ -7014,12 +5589,6 @@
           "qwen-code"
         ]
       },
-      "@xyflow/react": {
-        "latest": "12.12.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "@zip.js/zip.js": {
         "latest": "2.20.0",
         "usedBy": [
@@ -7031,24 +5600,6 @@
         "usedBy": [
           "opencode",
           "qwen-code"
-        ]
-      },
-      "acorn-walk": {
-        "latest": "8.3.5",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "adf-to-md": {
-        "latest": "1.2.1",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "adm-zip": {
-        "latest": "0.6.1",
-        "usedBy": [
-          "continue"
         ]
       },
       "ai": {
@@ -7068,24 +5619,6 @@
           "opencode"
         ]
       },
-      "ai-sdk-provider-claude-code": {
-        "latest": "4.3.3",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "ai-sdk-provider-codex-cli": {
-        "latest": "2.3.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "ai-sdk-provider-opencode-sdk": {
-        "latest": "4.1.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "ajv": {
         "latest": "8.20.0",
         "usedBy": [
@@ -7100,12 +5633,6 @@
           "qwen-code"
         ]
       },
-      "anser": {
-        "latest": "2.3.5",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "ansi-escapes": {
         "latest": "7.3.0",
         "usedBy": [
@@ -7118,12 +5645,6 @@
         "usedBy": [
           "gemini-cli",
           "qwen-code"
-        ]
-      },
-      "ansi-to-react": {
-        "latest": "6.2.6",
-        "usedBy": [
-          "cline"
         ]
       },
       "archiver": {
@@ -7143,21 +5664,6 @@
         "latest": "7.3.5",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "async-mutex": {
-        "latest": "0.5.0",
-        "usedBy": [
-          "continue",
-          "qwen-code"
-        ]
-      },
-      "autoprefixer": {
-        "latest": "10.6.1",
-        "usedBy": [
-          "continue",
-          "goose",
-          "qwen-code"
         ]
       },
       "aws4fetch": {
@@ -7188,12 +5694,6 @@
           "qwen-code"
         ]
       },
-      "better-sqlite3": {
-        "latest": "13.0.3",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "bonjour-service": {
         "latest": "1.4.4",
         "usedBy": [
@@ -7212,26 +5712,6 @@
           "codex"
         ]
       },
-      "c8": {
-        "latest": "12.0.0",
-        "usedBy": [
-          "cline",
-          "qwen-code"
-        ]
-      },
-      "cargo-cp-artifact": {
-        "latest": "0.1.9",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "chai": {
-        "latest": "6.2.2",
-        "usedBy": [
-          "cline",
-          "continue"
-        ]
-      },
       "chalk": {
         "latest": "6.0.1",
         "usedBy": [
@@ -7241,29 +5721,10 @@
           "qwen-code"
         ]
       },
-      "chardet": {
-        "latest": "2.2.0",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
       "chart.js": {
         "latest": "4.5.1",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "chat": {
-        "latest": "4.41.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "cheerio": {
-        "latest": "1.2.0",
-        "usedBy": [
-          "cline",
-          "continue"
         ]
       },
       "chokidar": {
@@ -7281,22 +5742,6 @@
           "gemini-cli"
         ]
       },
-      "chrome-launcher": {
-        "latest": "1.2.2",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "class-variance-authority": {
-        "latest": "0.7.1",
-        "usedBy": [
-          "cline",
-          "continue",
-          "goose",
-          "openhands",
-          "qwen-code"
-        ]
-      },
       "cli-spinners": {
         "latest": "3.4.0",
         "usedBy": [
@@ -7311,39 +5756,10 @@
           "opencode"
         ]
       },
-      "clone-deep": {
-        "latest": "4.0.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "cloudflare": {
         "latest": "7.2.0",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "clsx": {
-        "latest": "2.1.1",
-        "usedBy": [
-          "cline",
-          "continue",
-          "goose",
-          "openhands",
-          "qwen-code"
-        ]
-      },
-      "cmdk": {
-        "latest": "1.1.1",
-        "usedBy": [
-          "cline",
-          "continue"
-        ]
-      },
-      "codemirror": {
-        "latest": "6.0.2",
-        "usedBy": [
-          "qwen-code"
         ]
       },
       "color-convert": {
@@ -7359,45 +5775,11 @@
           "qwen-code"
         ]
       },
-      "commander": {
-        "latest": "15.0.0",
-        "usedBy": [
-          "cline",
-          "continue",
-          "mcp",
-          "qwen-code"
-        ]
-      },
       "comment-json": {
         "latest": "5.0.0",
         "usedBy": [
           "continue",
           "gemini-cli"
-        ]
-      },
-      "compare-versions": {
-        "latest": "6.1.1",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "concurrently": {
-        "latest": "10.0.5",
-        "usedBy": [
-          "continue",
-          "openai-agents"
-        ]
-      },
-      "consola": {
-        "latest": "3.4.2",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "conventional-changelog-conventionalcommits": {
-        "latest": "10.4.0",
-        "usedBy": [
-          "continue"
         ]
       },
       "cors": {
@@ -7407,12 +5789,6 @@
           "gemini-cli",
           "goose",
           "qwen-code"
-        ]
-      },
-      "cronstrue": {
-        "latest": "3.27.0",
-        "usedBy": [
-          "goose"
         ]
       },
       "cross-env": {
@@ -7437,41 +5813,10 @@
           "opencode"
         ]
       },
-      "date-fns": {
-        "latest": "4.4.0",
-        "usedBy": [
-          "continue",
-          "goose"
-        ]
-      },
-      "dbinfoz": {
-        "latest": "0.14.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "debounce": {
-        "latest": "3.0.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "debug": {
-        "latest": "4.4.3",
-        "usedBy": [
-          "openai-agents"
-        ]
-      },
       "decimal.js": {
         "latest": "10.6.0",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "dedent": {
-        "latest": "1.7.2",
-        "usedBy": [
-          "goose"
         ]
       },
       "deep-object-diff": {
@@ -7479,12 +5824,6 @@
         "usedBy": [
           "claude-code",
           "codex"
-        ]
-      },
-      "default-shell": {
-        "latest": "2.2.0",
-        "usedBy": [
-          "cline"
         ]
       },
       "depcheck": {
@@ -7509,28 +5848,10 @@
           "qwen-code"
         ]
       },
-      "dify-ai-provider": {
-        "latest": "1.1.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "dingtalk-stream-sdk-nodejs": {
         "latest": "2.0.4",
         "usedBy": [
           "qwen-code"
-        ]
-      },
-      "discord.js": {
-        "latest": "14.27.0",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "discraft": {
-        "latest": "1.7.11",
-        "usedBy": [
-          "goose"
         ]
       },
       "domexception": {
@@ -7564,13 +5885,6 @@
           "gemini-cli"
         ]
       },
-      "downshift": {
-        "latest": "9.4.0",
-        "usedBy": [
-          "continue",
-          "openhands"
-        ]
-      },
       "drizzle-kit": {
         "latest": "0.31.11",
         "usedBy": [
@@ -7581,24 +5895,6 @@
         "latest": "0.45.3",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "dts-bundle-generator": {
-        "latest": "9.5.1",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "e2b": {
-        "latest": "2.51.0",
-        "usedBy": [
-          "openai-agents"
-        ]
-      },
-      "echarts": {
-        "latest": "6.1.0",
-        "usedBy": [
-          "qwen-code"
         ]
       },
       "edge-runtime": {
@@ -7637,23 +5933,11 @@
           "opencode"
         ]
       },
-      "electron-devtools-installer": {
-        "latest": "4.0.0",
-        "usedBy": [
-          "goose"
-        ]
-      },
       "electron-log": {
         "latest": "5.4.4",
         "usedBy": [
           "goose",
           "opencode"
-        ]
-      },
-      "electron-squirrel-startup": {
-        "latest": "1.0.1",
-        "usedBy": [
-          "goose"
         ]
       },
       "electron-store": {
@@ -7682,12 +5966,6 @@
           "opencode"
         ]
       },
-      "embla-carousel-react": {
-        "latest": "8.6.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "esbuild": {
         "latest": "0.28.2",
         "usedBy": [
@@ -7704,18 +5982,6 @@
         "usedBy": [
           "gemini-cli",
           "qwen-code"
-        ]
-      },
-      "esbuild-visualizer": {
-        "latest": "0.7.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "escape-carriage": {
-        "latest": "1.3.1",
-        "usedBy": [
-          "continue"
         ]
       },
       "eslint": {
@@ -7743,20 +6009,6 @@
           "qwen-code"
         ]
       },
-      "eslint-import-resolver-typescript": {
-        "latest": "4.4.5",
-        "usedBy": [
-          "continue",
-          "mcp",
-          "openhands"
-        ]
-      },
-      "eslint-plugin": {
-        "latest": "1.0.1",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
       "eslint-plugin-check-file": {
         "latest": "3.3.2",
         "usedBy": [
@@ -7769,12 +6021,6 @@
           "gemini-cli"
         ]
       },
-      "eslint-plugin-i18next": {
-        "latest": "6.1.5",
-        "usedBy": [
-          "openhands"
-        ]
-      },
       "eslint-plugin-import": {
         "latest": "2.32.0",
         "usedBy": [
@@ -7784,22 +6030,10 @@
           "qwen-code"
         ]
       },
-      "eslint-plugin-import-x": {
-        "latest": "4.17.1",
-        "usedBy": [
-          "openhands"
-        ]
-      },
       "eslint-plugin-jest": {
         "latest": "29.16.6",
         "usedBy": [
           "codex"
-        ]
-      },
-      "eslint-plugin-jsx-a11y": {
-        "latest": "6.10.2",
-        "usedBy": [
-          "openhands"
         ]
       },
       "eslint-plugin-license-header": {
@@ -7808,22 +6042,10 @@
           "qwen-code"
         ]
       },
-      "eslint-plugin-no-barrel-files": {
-        "latest": "2.2.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "eslint-plugin-node-import": {
         "latest": "1.2.0",
         "usedBy": [
           "codex"
-        ]
-      },
-      "eslint-plugin-notice": {
-        "latest": "1.0.0",
-        "usedBy": [
-          "qwen-code"
         ]
       },
       "eslint-plugin-prettier": {
@@ -7853,24 +6075,6 @@
           "qwen-code"
         ]
       },
-      "eslint-plugin-react-refresh": {
-        "latest": "0.5.7",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "eslint-plugin-simple-import-sort": {
-        "latest": "14.0.0",
-        "usedBy": [
-          "mcp"
-        ]
-      },
-      "eslint-plugin-unicorn": {
-        "latest": "76.0.0",
-        "usedBy": [
-          "mcp"
-        ]
-      },
       "eslint-plugin-unused-imports": {
         "latest": "4.4.1",
         "usedBy": [
@@ -7878,12 +6082,6 @@
           "continue",
           "openai-agents",
           "openhands"
-        ]
-      },
-      "exceljs": {
-        "latest": "4.4.0",
-        "usedBy": [
-          "cline"
         ]
       },
       "execa": {
@@ -7946,19 +6144,6 @@
           "qwen-code"
         ]
       },
-      "fast-uri": {
-        "latest": "4.2.1",
-        "usedBy": [
-          "cline",
-          "qwen-code"
-        ]
-      },
-      "fast-xml-parser": {
-        "latest": "5.11.2",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
       "fastest-levenshtein": {
         "latest": "1.0.16",
         "usedBy": [
@@ -7974,60 +6159,16 @@
           "qwen-code"
         ]
       },
-      "filtrex": {
-        "latest": "3.1.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "find-up": {
-        "latest": "8.0.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "firebase": {
-        "latest": "12.19.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "fkill": {
-        "latest": "10.0.3",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "follow-redirects": {
-        "latest": "1.16.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "formdata-node": {
         "latest": "6.0.3",
         "usedBy": [
           "codex"
         ]
       },
-      "framer-motion": {
-        "latest": "13.4.6",
-        "usedBy": [
-          "cline",
-          "goose",
-          "openhands"
-        ]
-      },
       "fs-extra": {
         "latest": "11.4.1",
         "usedBy": [
           "gemini-cli"
-        ]
-      },
-      "fuse.js": {
-        "latest": "7.5.0",
-        "usedBy": [
-          "cline"
         ]
       },
       "fuzzysort": {
@@ -8043,18 +6184,6 @@
           "continue",
           "gemini-cli",
           "qwen-code"
-        ]
-      },
-      "geist": {
-        "latest": "1.7.2",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "get-folder-size": {
-        "latest": "5.0.0",
-        "usedBy": [
-          "cline"
         ]
       },
       "gitlab-ai-provider": {
@@ -8082,13 +6211,6 @@
           "qwen-code"
         ]
       },
-      "globby": {
-        "latest": "16.2.4",
-        "usedBy": [
-          "cline",
-          "goose"
-        ]
-      },
       "google-artifactregistry-auth": {
         "latest": "3.5.0",
         "usedBy": [
@@ -8105,18 +6227,6 @@
           "qwen-code"
         ]
       },
-      "gpt-tokenizer": {
-        "latest": "4.0.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "gradient-string": {
-        "latest": "3.0.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "grammy": {
         "latest": "1.46.0",
         "usedBy": [
@@ -8131,30 +6241,6 @@
           "opencode"
         ]
       },
-      "grpc-health-check": {
-        "latest": "2.1.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "grpc-tools": {
-        "latest": "1.13.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "handlebars": {
-        "latest": "4.7.9",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "happy-dom": {
-        "latest": "20.14.5",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "heap-snapshot-toolkit": {
         "latest": "1.1.3",
         "usedBy": [
@@ -8167,12 +6253,6 @@
           "continue",
           "gemini-cli",
           "qwen-code"
-        ]
-      },
-      "highlightable": {
-        "latest": "1.3.0-beta.0",
-        "usedBy": [
-          "continue"
         ]
       },
       "hono": {
@@ -8205,23 +6285,11 @@
           "opencode"
         ]
       },
-      "http-proxy": {
-        "latest": "1.18.1",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "http-proxy-agent": {
         "latest": "9.1.0",
         "usedBy": [
           "continue",
           "gemini-cli"
-        ]
-      },
-      "http-proxy-middleware": {
-        "latest": "4.2.0",
-        "usedBy": [
-          "continue"
         ]
       },
       "https-proxy-agent": {
@@ -8230,12 +6298,6 @@
           "continue",
           "gemini-cli",
           "qwen-code"
-        ]
-      },
-      "httpxy": {
-        "latest": "0.5.5",
-        "usedBy": [
-          "openhands"
         ]
       },
       "husky": {
@@ -8256,24 +6318,6 @@
           "opencode"
         ]
       },
-      "i18next": {
-        "latest": "26.4.2",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "i18next-browser-languagedetector": {
-        "latest": "8.2.1",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "i18next-http-backend": {
-        "latest": "4.0.2",
-        "usedBy": [
-          "openhands"
-        ]
-      },
       "iconv-lite": {
         "latest": "0.7.3",
         "usedBy": [
@@ -8292,18 +6336,6 @@
           "gemini-cli",
           "opencode",
           "qwen-code"
-        ]
-      },
-      "ignore-walk": {
-        "latest": "9.0.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "image-size": {
-        "latest": "2.0.4",
-        "usedBy": [
-          "cline"
         ]
       },
       "immer": {
@@ -8358,23 +6390,11 @@
           "gemini-cli"
         ]
       },
-      "is-localhost-ip": {
-        "latest": "3.0.1",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "isbinaryfile": {
         "latest": "6.0.0",
         "usedBy": [
           "cline",
           "gemini-cli"
-        ]
-      },
-      "isbot": {
-        "latest": "5.2.2",
-        "usedBy": [
-          "openhands"
         ]
       },
       "jest": {
@@ -8385,34 +6405,10 @@
           "continue"
         ]
       },
-      "jest-diff": {
-        "latest": "30.5.2",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "jest-environment-jsdom": {
-        "latest": "30.5.2",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "jest-fixed-jsdom": {
         "latest": "0.0.11",
         "usedBy": [
           "codex"
-        ]
-      },
-      "jinja-js": {
-        "latest": "0.1.8",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "jiti": {
-        "latest": "2.7.0",
-        "usedBy": [
-          "cline"
         ]
       },
       "jose": {
@@ -8427,12 +6423,6 @@
           "opencode"
         ]
       },
-      "js-tiktoken": {
-        "latest": "1.0.21",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "js-yaml": {
         "latest": "5.4.2",
         "usedBy": [
@@ -8440,12 +6430,6 @@
           "continue",
           "gemini-cli",
           "goose"
-        ]
-      },
-      "jschardet": {
-        "latest": "4.0.0",
-        "usedBy": [
-          "cline"
         ]
       },
       "jsdom": {
@@ -8465,34 +6449,16 @@
           "qwen-code"
         ]
       },
-      "json-schema": {
-        "latest": "0.4.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "json-schema-to-ts": {
         "latest": "3.1.1",
         "usedBy": [
           "claude-code"
         ]
       },
-      "json-schema-to-typescript": {
-        "latest": "16.0.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "json-stable-stringify": {
         "latest": "1.3.0",
         "usedBy": [
           "gemini-cli"
-        ]
-      },
-      "json5": {
-        "latest": "2.2.3",
-        "usedBy": [
-          "cline"
         ]
       },
       "jsonc-parser": {
@@ -8502,37 +6468,12 @@
           "qwen-code"
         ]
       },
-      "jsonrepair": {
-        "latest": "3.15.0",
-        "usedBy": [
-          "cline",
-          "qwen-code"
-        ]
-      },
-      "jszip": {
-        "latest": "3.10.2",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "jwt-decode": {
-        "latest": "4.0.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "katex": {
         "latest": "0.18.9",
         "usedBy": [
           "goose",
           "opencode",
           "qwen-code"
-        ]
-      },
-      "knip": {
-        "latest": "6.39.0",
-        "usedBy": [
-          "goose"
         ]
       },
       "lang-map": {
@@ -8547,30 +6488,6 @@
           "gemini-cli"
         ]
       },
-      "launchdarkly-node-client-sdk": {
-        "latest": "3.4.3",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "lefthook": {
-        "latest": "2.1.15",
-        "usedBy": [
-          "mcp"
-        ]
-      },
-      "lightningcss-linux-x64-gnu": {
-        "latest": "1.33.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "lightningcss-win32-x64-msvc": {
-        "latest": "1.33.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "lint-staged": {
         "latest": "17.6.0",
         "usedBy": [
@@ -8581,20 +6498,6 @@
           "qwen-code"
         ]
       },
-      "llm-code-highlighter": {
-        "latest": "0.0.15",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "lodash": {
-        "latest": "4.18.1",
-        "usedBy": [
-          "cline",
-          "continue",
-          "goose"
-        ]
-      },
       "lowlight": {
         "latest": "3.3.0",
         "usedBy": [
@@ -8603,44 +6506,10 @@
           "qwen-code"
         ]
       },
-      "lru-cache": {
-        "latest": "11.5.3",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "lucide-react": {
-        "latest": "1.49.0",
-        "usedBy": [
-          "cline",
-          "continue",
-          "goose",
-          "openhands",
-          "qwen-code"
-        ]
-      },
       "luxon": {
         "latest": "3.7.2",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "mac-ca": {
-        "latest": "3.1.3",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "magic-string": {
-        "latest": "1.4.2",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "mammoth": {
-        "latest": "1.13.0",
-        "usedBy": [
-          "cline"
         ]
       },
       "markdown-it": {
@@ -8665,24 +6534,10 @@
           "opencode"
         ]
       },
-      "media-chrome": {
-        "latest": "4.19.3",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "memfs": {
         "latest": "4.80.0",
         "usedBy": [
           "gemini-cli",
-          "qwen-code"
-        ]
-      },
-      "mermaid": {
-        "latest": "12.0.0",
-        "usedBy": [
-          "cline",
-          "continue",
           "qwen-code"
         ]
       },
@@ -8709,19 +6564,6 @@
           "opencode"
         ]
       },
-      "minimist": {
-        "latest": "1.2.8",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "minisearch": {
-        "latest": "7.2.0",
-        "usedBy": [
-          "continue",
-          "goose"
-        ]
-      },
       "mnemonist": {
         "latest": "0.40.5",
         "usedBy": [
@@ -8729,43 +6571,11 @@
           "qwen-code"
         ]
       },
-      "mobilewright": {
-        "latest": "0.0.62",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "mocha": {
-        "latest": "12.0.2",
-        "usedBy": [
-          "cline",
-          "continue"
-        ]
-      },
       "mock-fs": {
         "latest": "5.5.0",
         "usedBy": [
           "gemini-cli",
           "qwen-code"
-        ]
-      },
-      "modal": {
-        "latest": "0.11.0",
-        "usedBy": [
-          "openai-agents"
-        ]
-      },
-      "monaco-editor": {
-        "latest": "0.57.0",
-        "usedBy": [
-          "continue",
-          "openhands"
-        ]
-      },
-      "monaco-vscode-textmate-theme-converter": {
-        "latest": "0.1.7",
-        "usedBy": [
-          "continue"
         ]
       },
       "morphdom": {
@@ -8801,34 +6611,10 @@
           "qwen-code"
         ]
       },
-      "mustache": {
-        "latest": "4.2.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "myers-diff": {
-        "latest": "2.1.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "mysql2": {
         "latest": "3.24.5",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "nanoid": {
-        "latest": "6.0.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "ncp": {
-        "latest": "2.0.0",
-        "usedBy": [
-          "continue"
         ]
       },
       "next": {
@@ -8837,19 +6623,6 @@
           "codex",
           "continue",
           "qwen-code"
-        ]
-      },
-      "next-mdx-remote": {
-        "latest": "6.0.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "next-themes": {
-        "latest": "0.4.6",
-        "usedBy": [
-          "cline",
-          "continue"
         ]
       },
       "nextra": {
@@ -8864,18 +6637,6 @@
           "qwen-code"
         ]
       },
-      "nice-grpc": {
-        "latest": "2.1.17",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "nice-grpc-common": {
-        "latest": "2.0.4",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "nitro": {
         "latest": "3.0.260903-beta",
         "usedBy": [
@@ -8886,12 +6647,6 @@
         "latest": "14.0.17",
         "usedBy": [
           "claude-code",
-          "continue"
-        ]
-      },
-      "node-fetch": {
-        "latest": "3.3.2",
-        "usedBy": [
           "continue"
         ]
       },
@@ -8911,19 +6666,6 @@
         "latest": "4.8.4",
         "usedBy": [
           "qwen-code"
-        ]
-      },
-      "node-html-markdown": {
-        "latest": "2.0.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "node-machine-id": {
-        "latest": "1.1.12",
-        "usedBy": [
-          "cline",
-          "continue"
         ]
       },
       "node-pty": {
@@ -8964,36 +6706,6 @@
           "opencode"
         ]
       },
-      "ollama": {
-        "latest": "0.6.4",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "ollama-ai-provider-v2": {
-        "latest": "4.0.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "onnxruntime-common": {
-        "latest": "1.30.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "onnxruntime-node": {
-        "latest": "1.30.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "onnxruntime-web": {
-        "latest": "1.30.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "open": {
         "latest": "11.0.4",
         "usedBy": [
@@ -9004,12 +6716,6 @@
           "qwen-code"
         ]
       },
-      "open-graph-scraper": {
-        "latest": "6.12.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "openai": {
         "latest": "7.25.0",
         "usedBy": [
@@ -9017,12 +6723,6 @@
           "continue",
           "openai-agents",
           "opencode",
-          "qwen-code"
-        ]
-      },
-      "openapi-typescript": {
-        "latest": "7.13.0",
-        "usedBy": [
           "qwen-code"
         ]
       },
@@ -9043,18 +6743,6 @@
         "usedBy": [
           "cline",
           "opencode"
-        ]
-      },
-      "os-name": {
-        "latest": "7.0.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "ovsx": {
-        "latest": "1.2.0",
-        "usedBy": [
-          "continue"
         ]
       },
       "oxfmt": {
@@ -9089,24 +6777,6 @@
           "qwen-code"
         ]
       },
-      "p-mutex": {
-        "latest": "1.0.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "p-timeout": {
-        "latest": "7.0.2",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "p-wait-for": {
-        "latest": "6.0.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "partial-json": {
         "latest": "0.1.7",
         "usedBy": [
@@ -9120,18 +6790,6 @@
           "qwen-code"
         ]
       },
-      "pdf-parse": {
-        "latest": "2.4.5",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "pg": {
-        "latest": "8.23.1",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "picomatch": {
         "latest": "4.0.7",
         "usedBy": [
@@ -9139,18 +6797,6 @@
           "continue",
           "gemini-cli",
           "qwen-code"
-        ]
-      },
-      "pino": {
-        "latest": "10.3.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "pkg": {
-        "latest": "5.8.1",
-        "usedBy": [
-          "continue"
         ]
       },
       "playwright": {
@@ -9168,68 +6814,10 @@
           "qwen-code"
         ]
       },
-      "plist": {
-        "latest": "5.0.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "png2icons": {
-        "latest": "2.0.1",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "postcss": {
-        "latest": "8.5.28",
-        "usedBy": [
-          "cline",
-          "continue",
-          "goose",
-          "qwen-code"
-        ]
-      },
-      "postcss-import": {
-        "latest": "17.0.0",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "postcss-prefix-selector": {
-        "latest": "2.2.1",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "postcss-selector-parser": {
-        "latest": "7.1.6",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
       "postgres": {
         "latest": "3.4.9",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "posthog-js": {
-        "latest": "1.435.3",
-        "usedBy": [
-          "cline",
-          "openhands"
-        ]
-      },
-      "posthog-node": {
-        "latest": "5.54.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "prebuild-install": {
-        "latest": "7.1.3",
-        "usedBy": [
-          "cline"
         ]
       },
       "prebuildify": {
@@ -9252,28 +6840,10 @@
           "qwen-code"
         ]
       },
-      "prettier-plugin-tailwindcss": {
-        "latest": "0.8.1",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "pretty-bytes": {
-        "latest": "7.2.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "pretty-format": {
         "latest": "30.5.1",
         "usedBy": [
           "qwen-code"
-        ]
-      },
-      "prism-react-renderer": {
-        "latest": "2.4.1",
-        "usedBy": [
-          "goose"
         ]
       },
       "prompts": {
@@ -9288,18 +6858,6 @@
         "usedBy": [
           "gemini-cli",
           "qwen-code"
-        ]
-      },
-      "protobufjs": {
-        "latest": "8.8.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "protoc-gen-ts": {
-        "latest": "0.8.7",
-        "usedBy": [
-          "cline"
         ]
       },
       "publint": {
@@ -9324,13 +6882,6 @@
           "continue"
         ]
       },
-      "puppeteer-chromium-resolver": {
-        "latest": "25.0.0",
-        "usedBy": [
-          "cline",
-          "continue"
-        ]
-      },
       "puppeteer-core": {
         "latest": "25.12.0",
         "usedBy": [
@@ -9349,24 +6900,6 @@
         "usedBy": [
           "codex",
           "continue",
-          "qwen-code"
-        ]
-      },
-      "quick-lru": {
-        "latest": "7.3.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "quickjs-emscripten-core": {
-        "latest": "0.32.0",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "radix-ui": {
-        "latest": "1.6.7",
-        "usedBy": [
           "qwen-code"
         ]
       },
@@ -9404,56 +6937,6 @@
           "qwen-code"
         ]
       },
-      "react-error-boundary": {
-        "latest": "6.1.6",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "react-hook-form": {
-        "latest": "7.89.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "react-hot-toast": {
-        "latest": "2.6.1",
-        "usedBy": [
-          "goose",
-          "openhands"
-        ]
-      },
-      "react-i18next": {
-        "latest": "17.0.15",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "react-icons": {
-        "latest": "5.7.0",
-        "usedBy": [
-          "goose",
-          "openhands"
-        ]
-      },
-      "react-intersection-observer": {
-        "latest": "11.0.1",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "react-intl": {
-        "latest": "12.1.3",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "react-jsx-parser": {
-        "latest": "2.4.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "react-markdown": {
         "latest": "10.1.0",
         "usedBy": [
@@ -9464,100 +6947,6 @@
           "qwen-code"
         ]
       },
-      "react-reconciler": {
-        "latest": "0.34.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "react-redux": {
-        "latest": "9.3.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "react-remark": {
-        "latest": "2.1.0",
-        "usedBy": [
-          "cline",
-          "continue"
-        ]
-      },
-      "react-router": {
-        "latest": "8.4.0",
-        "usedBy": [
-          "goose",
-          "openhands"
-        ]
-      },
-      "react-router-dom": {
-        "latest": "7.18.4",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "react-scripts": {
-        "latest": "5.0.1",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "react-select": {
-        "latest": "5.10.2",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "react-switch": {
-        "latest": "7.1.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "react-syntax-highlighter": {
-        "latest": "16.1.1",
-        "usedBy": [
-          "continue",
-          "goose",
-          "openhands"
-        ]
-      },
-      "react-textarea-autosize": {
-        "latest": "8.5.9",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "react-toastify": {
-        "latest": "11.1.0",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "react-tooltip": {
-        "latest": "6.0.8",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "react-use": {
-        "latest": "17.6.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "react-virtuoso": {
-        "latest": "4.18.16",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "read-last-lines": {
-        "latest": "1.10.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "read-package-up": {
         "latest": "12.0.0",
         "usedBy": [
@@ -9565,119 +6954,11 @@
           "qwen-code"
         ]
       },
-      "recharts": {
-        "latest": "3.10.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "reconnecting-eventsource": {
-        "latest": "1.6.5",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "redux-logger": {
-        "latest": "3.0.6",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "redux-persist": {
-        "latest": "6.0.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "redux-persist-transform-filter": {
-        "latest": "0.0.22",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "redux-thunk": {
-        "latest": "3.1.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "rehype-autolink-headings": {
         "latest": "7.1.0",
         "usedBy": [
           "continue",
           "opencode"
-        ]
-      },
-      "rehype-highlight": {
-        "latest": "7.0.2",
-        "usedBy": [
-          "cline",
-          "continue"
-        ]
-      },
-      "rehype-katex": {
-        "latest": "7.0.1",
-        "usedBy": [
-          "continue",
-          "goose",
-          "qwen-code"
-        ]
-      },
-      "rehype-parse": {
-        "latest": "9.0.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "rehype-prism-plus": {
-        "latest": "2.0.2",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "rehype-raw": {
-        "latest": "7.0.0",
-        "usedBy": [
-          "continue",
-          "openhands"
-        ]
-      },
-      "rehype-remark": {
-        "latest": "10.0.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "rehype-sanitize": {
-        "latest": "6.0.0",
-        "usedBy": [
-          "continue",
-          "openhands"
-        ]
-      },
-      "rehype-slug": {
-        "latest": "6.0.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "rehype-wrap-all": {
-        "latest": "1.1.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "remark-breaks": {
-        "latest": "4.0.0",
-        "usedBy": [
-          "goose",
-          "openhands"
-        ]
-      },
-      "remark-cjk-friendly": {
-        "latest": "2.3.1",
-        "usedBy": [
-          "qwen-code"
         ]
       },
       "remark-gfm": {
@@ -9704,12 +6985,6 @@
           "qwen-code"
         ]
       },
-      "remark-stringify": {
-        "latest": "11.0.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "remeda": {
         "latest": "2.50.0",
         "usedBy": [
@@ -9727,26 +7002,6 @@
         "latest": "4.0.531",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "replicate": {
-        "latest": "1.4.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "reselect": {
-        "latest": "5.3.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "rimraf": {
-        "latest": "6.1.3",
-        "usedBy": [
-          "cline",
-          "continue",
-          "openai-agents"
         ]
       },
       "rolldown": {
@@ -9768,42 +7023,11 @@
           "qwen-code"
         ]
       },
-      "semantic-release": {
-        "latest": "25.0.9",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "semver": {
         "latest": "7.8.5",
         "usedBy": [
           "gemini-cli",
           "opencode",
-          "qwen-code"
-        ]
-      },
-      "serialize-error": {
-        "latest": "13.0.2",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "serialize-javascript": {
-        "latest": "7.1.2",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "seti-file-icons": {
-        "latest": "0.0.8",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "shadcn": {
-        "latest": "4.21.0",
-        "usedBy": [
-          "cline",
           "qwen-code"
         ]
       },
@@ -9832,12 +7056,6 @@
           "qwen-code"
         ]
       },
-      "should": {
-        "latest": "13.2.3",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "signal-exit": {
         "latest": "4.1.0",
         "usedBy": [
@@ -9852,29 +7070,10 @@
           "qwen-code"
         ]
       },
-      "sinon": {
-        "latest": "22.1.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "sirv": {
-        "latest": "3.0.2",
-        "usedBy": [
-          "openhands"
-        ]
-      },
       "sirv-cli": {
         "latest": "3.0.1",
         "usedBy": [
           "codex",
-          "openhands"
-        ]
-      },
-      "socket.io-client": {
-        "latest": "4.8.4",
-        "usedBy": [
-          "continue",
           "openhands"
         ]
       },
@@ -9908,30 +7107,6 @@
           "opencode"
         ]
       },
-      "sonner": {
-        "latest": "2.0.8",
-        "usedBy": [
-          "cline"
-        ]
-      },
-      "split-type": {
-        "latest": "0.3.4",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "sqlite": {
-        "latest": "5.1.1",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "sqlite3": {
-        "latest": "6.0.1",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "sst": {
         "latest": "4.17.1",
         "usedBy": [
@@ -9961,12 +7136,6 @@
         "latest": "10.7.2",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "streamdown": {
-        "latest": "2.7.0",
-        "usedBy": [
-          "cline"
         ]
       },
       "string-width": {
@@ -9999,13 +7168,6 @@
           "opencode"
         ]
       },
-      "styled-components": {
-        "latest": "6.5.3",
-        "usedBy": [
-          "cline",
-          "continue"
-        ]
-      },
       "superstruct": {
         "latest": "2.0.2",
         "usedBy": [
@@ -10026,64 +7188,11 @@
           "opencode"
         ]
       },
-      "svg-builder": {
-        "latest": "3.0.4",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "swagger-ui-express": {
-        "latest": "5.0.1",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "swiper": {
-        "latest": "14.3.0",
-        "usedBy": [
-          "goose"
-        ]
-      },
-      "swr": {
-        "latest": "2.5.1",
-        "usedBy": [
-          "continue",
-          "goose"
-        ]
-      },
-      "system-ca": {
-        "latest": "3.0.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "systeminformation": {
         "latest": "5.33.14",
         "usedBy": [
           "continue",
           "gemini-cli"
-        ]
-      },
-      "table": {
-        "latest": "6.9.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "tailwind-merge": {
-        "latest": "3.7.0",
-        "usedBy": [
-          "cline",
-          "continue",
-          "goose",
-          "openhands",
-          "qwen-code"
-        ]
-      },
-      "tailwind-scrollbar": {
-        "latest": "4.0.2",
-        "usedBy": [
-          "openhands"
         ]
       },
       "tailwindcss": {
@@ -10097,13 +7206,6 @@
           "qwen-code"
         ]
       },
-      "tailwindcss-animate": {
-        "latest": "1.0.7",
-        "usedBy": [
-          "cline",
-          "goose"
-        ]
-      },
       "tar": {
         "latest": "7.5.22",
         "usedBy": [
@@ -10111,12 +7213,6 @@
           "continue",
           "gemini-cli",
           "qwen-code"
-        ]
-      },
-      "tar-fs": {
-        "latest": "3.1.3",
-        "usedBy": [
-          "cline"
         ]
       },
       "telegram-markdown-formatter": {
@@ -10131,28 +7227,10 @@
           "gemini-cli"
         ]
       },
-      "tippy.js": {
-        "latest": "6.3.7",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "tokenlens": {
-        "latest": "1.3.1",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "toolbeam-docs-theme": {
         "latest": "0.4.8",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "tree-kill": {
-        "latest": "1.2.2",
-        "usedBy": [
-          "cline"
         ]
       },
       "tree-sitter-bash": {
@@ -10166,13 +7244,6 @@
         "latest": "0.26.4",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "tree-sitter-wasms": {
-        "latest": "0.1.13",
-        "usedBy": [
-          "continue",
-          "qwen-code"
         ]
       },
       "ts-jest": {
@@ -10213,22 +7284,10 @@
           "continue"
         ]
       },
-      "ts-proto": {
-        "latest": "2.12.4",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "ts-prune": {
         "latest": "0.10.3",
         "usedBy": [
           "gemini-cli"
-        ]
-      },
-      "tsc-multi": {
-        "latest": "1.1.0",
-        "usedBy": [
-          "openai-agents"
         ]
       },
       "tsconfig-paths": {
@@ -10263,12 +7322,6 @@
           "qwen-code"
         ]
       },
-      "tuistory": {
-        "latest": "0.11.0",
-        "usedBy": [
-          "cline"
-        ]
-      },
       "turbo": {
         "latest": "2.11.5",
         "usedBy": [
@@ -10292,18 +7345,6 @@
           "goose",
           "opencode",
           "qwen-code"
-        ]
-      },
-      "typedoc-plugin-markdown": {
-        "latest": "4.13.1",
-        "usedBy": [
-          "mcp"
-        ]
-      },
-      "typedoc-vitepress-theme": {
-        "latest": "1.1.4",
-        "usedBy": [
-          "mcp"
         ]
       },
       "typescript": {
@@ -10356,45 +7397,11 @@
           "qwen-code"
         ]
       },
-      "undici-types": {
-        "latest": "8.11.2",
-        "usedBy": [
-          "continue",
-          "openai-agents"
-        ]
-      },
-      "uniffi-bindgen-react-native": {
-        "latest": "0.31.0-6",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
       "unified": {
         "latest": "11.0.5",
         "usedBy": [
           "cline",
           "qwen-code"
-        ]
-      },
-      "unist-util-visit": {
-        "latest": "5.1.0",
-        "usedBy": [
-          "cline",
-          "continue",
-          "goose",
-          "openhands"
-        ]
-      },
-      "untildify": {
-        "latest": "6.0.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "use-stick-to-bottom": {
-        "latest": "1.1.6",
-        "usedBy": [
-          "cline"
         ]
       },
       "uuid": {
@@ -10408,28 +7415,10 @@
           "qwen-code"
         ]
       },
-      "uuidv4": {
-        "latest": "6.2.13",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "valibot": {
         "latest": "1.5.0",
         "usedBy": [
           "claude-code"
-        ]
-      },
-      "vaul": {
-        "latest": "1.1.2",
-        "usedBy": [
-          "qwen-code"
-        ]
-      },
-      "vectordb": {
-        "latest": "0.21.2",
-        "usedBy": [
-          "continue"
         ]
       },
       "venice-ai-sdk-provider": {
@@ -10442,12 +7431,6 @@
         "latest": "61.1.0",
         "usedBy": [
           "codex"
-        ]
-      },
-      "verdaccio": {
-        "latest": "6.10.4",
-        "usedBy": [
-          "openai-agents"
         ]
       },
       "vite": {
@@ -10475,18 +7458,6 @@
           "opencode"
         ]
       },
-      "vite-plugin-svgr": {
-        "latest": "5.2.0",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "vitepress": {
-        "latest": "1.6.4",
-        "usedBy": [
-          "mcp"
-        ]
-      },
       "vitest": {
         "latest": "5.0.3",
         "usedBy": [
@@ -10501,34 +7472,16 @@
           "qwen-code"
         ]
       },
-      "vscode-extension-tester": {
-        "latest": "8.27.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "vscode-jsonrpc": {
         "latest": "9.0.3",
         "usedBy": [
           "opencode"
         ]
       },
-      "vscode-languageclient": {
-        "latest": "10.1.2",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "vscode-languageserver-types": {
         "latest": "3.18.4",
         "usedBy": [
           "opencode"
-        ]
-      },
-      "vscode-uri": {
-        "latest": "3.2.0",
-        "usedBy": [
-          "cline"
         ]
       },
       "web-tree-sitter": {
@@ -10572,36 +7525,12 @@
           "opencode"
         ]
       },
-      "win-ca": {
-        "latest": "3.5.1",
-        "usedBy": [
-          "continue"
-        ]
-      },
-      "wink-nlp-utils": {
-        "latest": "2.1.0",
-        "usedBy": [
-          "continue"
-        ]
-      },
       "winston": {
         "latest": "3.19.0",
         "usedBy": [
           "continue",
           "gemini-cli",
           "openhands"
-        ]
-      },
-      "winston-daily-rotate-file": {
-        "latest": "5.0.0",
-        "usedBy": [
-          "openhands"
-        ]
-      },
-      "workerpool": {
-        "latest": "10.0.3",
-        "usedBy": [
-          "continue"
         ]
       },
       "wrangler": {
@@ -10646,12 +7575,6 @@
           "qwen-code"
         ]
       },
-      "yaml-loader": {
-        "latest": "0.9.0",
-        "usedBy": [
-          "goose"
-        ]
-      },
       "yargs": {
         "latest": "18.2.0",
         "usedBy": [
@@ -10659,12 +7582,6 @@
           "gemini-cli",
           "opencode",
           "qwen-code"
-        ]
-      },
-      "yarn": {
-        "latest": "1.22.22",
-        "usedBy": [
-          "continue"
         ]
       },
       "yauzl": {
@@ -10701,12 +7618,6 @@
           "continue",
           "gemini-cli",
           "qwen-code"
-        ]
-      },
-      "zustand": {
-        "latest": "5.0.15",
-        "usedBy": [
-          "openhands"
         ]
       }
     },
@@ -12605,12 +9516,1996 @@
       "error": "not found in registry"
     },
     {
+      "package": "npm:@teddyzhu/clipboard-darwin-x64",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@teddyzhu%2fclipboard-darwin-x64/latest"
+    },
+    {
+      "package": "npm:@teddyzhu/clipboard-win32-arm64-msvc",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@teddyzhu%2fclipboard-win32-arm64-msvc/latest"
+    },
+    {
+      "package": "npm:@modelcontextprotocol/client",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@modelcontextprotocol%2fclient/latest"
+    },
+    {
+      "package": "npm:@teddyzhu/clipboard-win32-x64-msvc",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@teddyzhu%2fclipboard-win32-x64-msvc/latest"
+    },
+    {
+      "package": "npm:@jitl/quickjs-singlefile-mjs-release-sync",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@jitl%2fquickjs-singlefile-mjs-release-sync/latest"
+    },
+    {
+      "package": "npm:@modelcontextprotocol/core",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@modelcontextprotocol%2fcore/latest"
+    },
+    {
+      "package": "npm:@opentelemetry/instrumentation-undici",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@opentelemetry%2finstrumentation-undici/latest"
+    },
+    {
+      "package": "npm:acorn-walk",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/acorn-walk/latest"
+    },
+    {
+      "package": "npm:chardet",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/chardet/latest"
+    },
+    {
+      "package": "npm:@teddyzhu/clipboard-linux-x64-gnu",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@teddyzhu%2fclipboard-linux-x64-gnu/latest"
+    },
+    {
+      "package": "npm:async-mutex",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/async-mutex/latest"
+    },
+    {
+      "package": "npm:fast-uri",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/fast-uri/latest"
+    },
+    {
+      "package": "npm:jsonrepair",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/jsonrepair/latest"
+    },
+    {
+      "package": "npm:quickjs-emscripten-core",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/quickjs-emscripten-core/latest"
+    },
+    {
+      "package": "npm:tree-sitter-wasms",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/tree-sitter-wasms/latest"
+    },
+    {
+      "package": "npm:uniffi-bindgen-react-native",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/uniffi-bindgen-react-native/latest"
+    },
+    {
+      "package": "npm:@ubjs/core",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@ubjs%2fcore/latest"
+    },
+    {
+      "package": "npm:@tauri-apps/cli",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tauri-apps%2fcli/latest"
+    },
+    {
+      "package": "npm:commander",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/commander/latest"
+    },
+    {
+      "package": "npm:fast-xml-parser",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/fast-xml-parser/latest"
+    },
+    {
+      "package": "npm:mobilewright",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/mobilewright/latest"
+    },
+    {
+      "package": "npm:@eslint/eslintrc",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@eslint%2feslintrc/latest"
+    },
+    {
+      "package": "npm:@electron/asar",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron%2fasar/latest"
+    },
+    {
+      "package": "npm:@eslint/js",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@eslint%2fjs/latest"
+    },
+    {
+      "package": "npm:@typescript-eslint/utils",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@typescript-eslint%2futils/latest"
+    },
+    {
+      "package": "npm:@stylistic/eslint-plugin",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@stylistic%2feslint-plugin/latest"
+    },
+    {
+      "package": "npm:@types/commander",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fcommander/latest"
+    },
+    {
+      "package": "npm:c8",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/c8/latest"
+    },
+    {
+      "package": "npm:eslint-plugin",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/eslint-plugin/latest"
+    },
+    {
+      "package": "npm:eslint-plugin-notice",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/eslint-plugin-notice/latest"
+    },
+    {
+      "package": "npm:@node-rs/jieba",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@node-rs%2fjieba/latest"
+    },
+    {
+      "package": "npm:@node-rs/jieba-wasm32-wasi",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@node-rs%2fjieba-wasm32-wasi/latest"
+    },
+    {
+      "package": "npm:lucide-react",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/lucide-react/latest"
+    },
+    {
+      "package": "npm:dts-bundle-generator",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/dts-bundle-generator/latest"
+    },
+    {
+      "package": "npm:@codemirror/merge",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@codemirror%2fmerge/latest"
+    },
+    {
+      "package": "npm:@codemirror/state",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@codemirror%2fstate/latest"
+    },
+    {
+      "package": "npm:@codemirror/language",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@codemirror%2flanguage/latest"
+    },
+    {
+      "package": "npm:@datafe-open/markdown-chart-echarts",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@datafe-open%2fmarkdown-chart-echarts/latest"
+    },
+    {
+      "package": "npm:@codemirror/view",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@codemirror%2fview/latest"
+    },
+    {
+      "package": "npm:@datafe-open/markdown-chart-react",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@datafe-open%2fmarkdown-chart-react/latest"
+    },
+    {
+      "package": "npm:@datafe-open/markdown-chart",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@datafe-open%2fmarkdown-chart/latest"
+    },
+    {
+      "package": "npm:@codemirror/commands",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@codemirror%2fcommands/latest"
+    },
+    {
+      "package": "npm:@tanstack/react-table",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tanstack%2freact-table/latest"
+    },
+    {
+      "package": "npm:@modelcontextprotocol/ext-apps",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@modelcontextprotocol%2fext-apps/latest"
+    },
+    {
+      "package": "npm:@codemirror/autocomplete",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@codemirror%2fautocomplete/latest"
+    },
+    {
+      "package": "npm:@tanstack/react-virtual",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tanstack%2freact-virtual/latest"
+    },
+    {
+      "package": "npm:@xterm/addon-fit",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@xterm%2faddon-fit/latest"
+    },
+    {
+      "package": "npm:class-variance-authority",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/class-variance-authority/latest"
+    },
+    {
       "package": "go:github.com/charmbracelet/openai-go",
       "error": "not found in registry"
     },
     {
+      "package": "npm:clsx",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/clsx/latest"
+    },
+    {
+      "package": "npm:codemirror",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/codemirror/latest"
+    },
+    {
+      "package": "npm:echarts",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/echarts/latest"
+    },
+    {
+      "package": "npm:radix-ui",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/radix-ui/latest"
+    },
+    {
+      "package": "npm:vaul",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/vaul/latest"
+    },
+    {
+      "package": "npm:mermaid",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/mermaid/latest"
+    },
+    {
+      "package": "npm:remark-cjk-friendly",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/remark-cjk-friendly/latest"
+    },
+    {
+      "package": "npm:tailwind-merge",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/tailwind-merge/latest"
+    },
+    {
+      "package": "npm:postcss",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/postcss/latest"
+    },
+    {
+      "package": "npm:openapi-typescript",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/openapi-typescript/latest"
+    },
+    {
+      "package": "npm:shadcn",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/shadcn/latest"
+    },
+    {
+      "package": "npm:postcss-selector-parser",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/postcss-selector-parser/latest"
+    },
+    {
+      "package": "npm:rehype-katex",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/rehype-katex/latest"
+    },
+    {
+      "package": "npm:autoprefixer",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/autoprefixer/latest"
+    },
+    {
+      "package": "npm:@vitejs/plugin-react",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@vitejs%2fplugin-react/latest"
+    },
+    {
+      "package": "npm:@docusaurus/preset-classic",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@docusaurus%2fpreset-classic/latest"
+    },
+    {
+      "package": "npm:@mdx-js/react",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@mdx-js%2freact/latest"
+    },
+    {
+      "package": "npm:framer-motion",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/framer-motion/latest"
+    },
+    {
+      "package": "npm:@docusaurus/core",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@docusaurus%2fcore/latest"
+    },
+    {
+      "package": "npm:react-hot-toast",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-hot-toast/latest"
+    },
+    {
+      "package": "npm:postcss-import",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/postcss-import/latest"
+    },
+    {
+      "package": "npm:@docusaurus/module-type-aliases",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@docusaurus%2fmodule-type-aliases/latest"
+    },
+    {
+      "package": "npm:@docusaurus/plugin-client-redirects",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@docusaurus%2fplugin-client-redirects/latest"
+    },
+    {
+      "package": "npm:@docusaurus/types",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@docusaurus%2ftypes/latest"
+    },
+    {
+      "package": "npm:yaml-loader",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/yaml-loader/latest"
+    },
+    {
+      "package": "npm:@docusaurus/tsconfig",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@docusaurus%2ftsconfig/latest"
+    },
+    {
+      "package": "npm:globby",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/globby/latest"
+    },
+    {
+      "package": "npm:discraft",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/discraft/latest"
+    },
+    {
+      "package": "npm:prism-react-renderer",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/prism-react-renderer/latest"
+    },
+    {
+      "package": "npm:swiper",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/swiper/latest"
+    },
+    {
+      "package": "npm:consola",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/consola/latest"
+    },
+    {
+      "package": "npm:discord.js",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/discord.js/latest"
+    },
+    {
+      "package": "npm:dedent",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/dedent/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-avatar",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-avatar/latest"
+    },
+    {
+      "package": "npm:minisearch",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/minisearch/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-icons",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-icons/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-popover",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-popover/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-portal",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-portal/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-collapsible",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-collapsible/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-accordion",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-accordion/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-dialog",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-dialog/latest"
+    },
+    {
+      "package": "npm:@mcp-ui/client",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@mcp-ui%2fclient/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-radio-group",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-radio-group/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-select",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-select/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-dropdown-menu",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-dropdown-menu/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-scroll-area",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-scroll-area/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-slot",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-slot/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-switch",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-switch/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-tooltip",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-tooltip/latest"
+    },
+    {
+      "package": "npm:date-fns",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/date-fns/latest"
+    },
+    {
+      "package": "npm:lodash",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/lodash/latest"
+    },
+    {
+      "package": "npm:@tanstack/react-form",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tanstack%2freact-form/latest"
+    },
+    {
+      "package": "npm:compare-versions",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/compare-versions/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-tabs",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-tabs/latest"
+    },
+    {
+      "package": "npm:electron-squirrel-startup",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/electron-squirrel-startup/latest"
+    },
+    {
+      "package": "npm:cronstrue",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/cronstrue/latest"
+    },
+    {
+      "package": "npm:react-router",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-router/latest"
+    },
+    {
+      "package": "npm:react-intl",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-intl/latest"
+    },
+    {
+      "package": "npm:react-syntax-highlighter",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-syntax-highlighter/latest"
+    },
+    {
+      "package": "npm:react-icons",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-icons/latest"
+    },
+    {
+      "package": "npm:react-select",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-select/latest"
+    },
+    {
+      "package": "npm:react-toastify",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-toastify/latest"
+    },
+    {
+      "package": "npm:remark-breaks",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/remark-breaks/latest"
+    },
+    {
+      "package": "npm:split-type",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/split-type/latest"
+    },
+    {
+      "package": "npm:swr",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/swr/latest"
+    },
+    {
+      "package": "npm:tailwindcss-animate",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/tailwindcss-animate/latest"
+    },
+    {
+      "package": "npm:unist-util-visit",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/unist-util-visit/latest"
+    },
+    {
+      "package": "npm:@electron-forge/plugin-auto-unpack-natives",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron-forge%2fplugin-auto-unpack-natives/latest"
+    },
+    {
+      "package": "npm:@electron-forge/maker-deb",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron-forge%2fmaker-deb/latest"
+    },
+    {
+      "package": "npm:@electron-forge/maker-flatpak",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron-forge%2fmaker-flatpak/latest"
+    },
+    {
+      "package": "npm:@electron-forge/maker-zip",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron-forge%2fmaker-zip/latest"
+    },
+    {
+      "package": "npm:@electron-forge/maker-rpm",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron-forge%2fmaker-rpm/latest"
+    },
+    {
+      "package": "npm:@electron-forge/cli",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron-forge%2fcli/latest"
+    },
+    {
+      "package": "npm:@electron-forge/plugin-vite",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron-forge%2fplugin-vite/latest"
+    },
+    {
+      "package": "npm:@electron-forge/plugin-fuses",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron-forge%2fplugin-fuses/latest"
+    },
+    {
+      "package": "npm:@electron-forge/maker-squirrel",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron-forge%2fmaker-squirrel/latest"
+    },
+    {
+      "package": "npm:@electron/fuses",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron%2ffuses/latest"
+    },
+    {
+      "package": "npm:@formatjs/cli",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@formatjs%2fcli/latest"
+    },
+    {
+      "package": "npm:@formatjs/icu-messageformat-parser",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@formatjs%2ficu-messageformat-parser/latest"
+    },
+    {
+      "package": "npm:electron-devtools-installer",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/electron-devtools-installer/latest"
+    },
+    {
+      "package": "npm:@types/lodash",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2flodash/latest"
+    },
+    {
+      "package": "npm:@testing-library/user-event",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@testing-library%2fuser-event/latest"
+    },
+    {
+      "package": "npm:@tailwindcss/typography",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tailwindcss%2ftypography/latest"
+    },
+    {
+      "package": "npm:@types/react-syntax-highlighter",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2freact-syntax-highlighter/latest"
+    },
+    {
+      "package": "npm:@tailwindcss/line-clamp",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tailwindcss%2fline-clamp/latest"
+    },
+    {
+      "package": "npm:@vitest/ui",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@vitest%2fui/latest"
+    },
+    {
+      "package": "npm:@testing-library/jest-dom",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@testing-library%2fjest-dom/latest"
+    },
+    {
+      "package": "npm:knip",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/knip/latest"
+    },
+    {
+      "package": "npm:@changesets/cli",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@changesets%2fcli/latest"
+    },
+    {
+      "package": "npm:@types/electron-squirrel-startup",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2felectron-squirrel-startup/latest"
+    },
+    {
+      "package": "npm:@chat-adapter/discord",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@chat-adapter%2fdiscord/latest"
+    },
+    {
+      "package": "npm:@chat-adapter/gchat",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@chat-adapter%2fgchat/latest"
+    },
+    {
+      "package": "npm:@chat-adapter/linear",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@chat-adapter%2flinear/latest"
+    },
+    {
+      "package": "npm:@chat-adapter/slack",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@chat-adapter%2fslack/latest"
+    },
+    {
+      "package": "npm:@chat-adapter/telegram",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@chat-adapter%2ftelegram/latest"
+    },
+    {
+      "package": "npm:@chat-adapter/whatsapp",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@chat-adapter%2fwhatsapp/latest"
+    },
+    {
+      "package": "npm:@gramio/format",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@gramio%2fformat/latest"
+    },
+    {
+      "package": "npm:posthog-node",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/posthog-node/latest"
+    },
+    {
+      "package": "npm:@opentui-ui/dialog",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@opentui-ui%2fdialog/latest"
+    },
+    {
+      "package": "npm:pino",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/pino/latest"
+    },
+    {
+      "package": "npm:chat",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/chat/latest"
+    },
+    {
+      "package": "npm:@microsoft/tui-test",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@microsoft%2ftui-test/latest"
+    },
+    {
+      "package": "npm:@base-ui/react",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@base-ui%2freact/latest"
+    },
+    {
+      "package": "npm:react-reconciler",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-reconciler/latest"
+    },
+    {
+      "package": "npm:nanoid",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/nanoid/latest"
+    },
+    {
+      "package": "npm:tuistory",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/tuistory/latest"
+    },
+    {
+      "package": "npm:@fontsource-variable/inter",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@fontsource-variable%2finter/latest"
+    },
+    {
+      "package": "npm:@fontsource-variable/geist-mono",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@fontsource-variable%2fgeist-mono/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-use-controllable-state",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-use-controllable-state/latest"
+    },
+    {
+      "package": "npm:@shikijs/langs",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@shikijs%2flangs/latest"
+    },
+    {
+      "package": "npm:@rive-app/react-webgl2",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@rive-app%2freact-webgl2/latest"
+    },
+    {
+      "package": "npm:@shikijs/themes",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@shikijs%2fthemes/latest"
+    },
+    {
+      "package": "npm:cmdk",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/cmdk/latest"
+    },
+    {
+      "package": "npm:ansi-to-react",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/ansi-to-react/latest"
+    },
+    {
+      "package": "npm:@streamdown/cjk",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@streamdown%2fcjk/latest"
+    },
+    {
+      "package": "npm:next-themes",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/next-themes/latest"
+    },
+    {
+      "package": "npm:embla-carousel-react",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/embla-carousel-react/latest"
+    },
+    {
+      "package": "npm:@xyflow/react",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@xyflow%2freact/latest"
+    },
+    {
+      "package": "npm:react-jsx-parser",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-jsx-parser/latest"
+    },
+    {
+      "package": "npm:media-chrome",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/media-chrome/latest"
+    },
+    {
+      "package": "npm:recharts",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/recharts/latest"
+    },
+    {
+      "package": "npm:sonner",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/sonner/latest"
+    },
+    {
+      "package": "npm:streamdown",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/streamdown/latest"
+    },
+    {
+      "package": "npm:use-stick-to-bottom",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/use-stick-to-bottom/latest"
+    },
+    {
+      "package": "npm:tokenlens",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/tokenlens/latest"
+    },
+    {
+      "package": "npm:@tailwindcss/postcss",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tailwindcss%2fpostcss/latest"
+    },
+    {
+      "package": "npm:@vitejs/plugin-react-swc",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@vitejs%2fplugin-react-swc/latest"
+    },
+    {
+      "package": "npm:node-machine-id",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/node-machine-id/latest"
+    },
+    {
+      "package": "npm:@biomejs/biome",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@biomejs%2fbiome/latest"
+    },
+    {
+      "package": "npm:eslint-plugin-react-refresh",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/eslint-plugin-react-refresh/latest"
+    },
+    {
+      "package": "npm:@bufbuild/buf",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@bufbuild%2fbuf/latest"
+    },
+    {
+      "package": "npm:@types/get-folder-size",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fget-folder-size/latest"
+    },
+    {
+      "package": "npm:@types/chai",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fchai/latest"
+    },
+    {
+      "package": "npm:@types/better-sqlite3",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fbetter-sqlite3/latest"
+    },
+    {
+      "package": "npm:@types/clone-deep",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fclone-deep/latest"
+    },
+    {
+      "package": "npm:@types/pdf-parse",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fpdf-parse/latest"
+    },
+    {
+      "package": "npm:@types/should",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fshould/latest"
+    },
+    {
+      "package": "npm:@types/sinon",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fsinon/latest"
+    },
+    {
+      "package": "npm:chai",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/chai/latest"
+    },
+    {
+      "package": "npm:minimist",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/minimist/latest"
+    },
+    {
+      "package": "npm:grpc-tools",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/grpc-tools/latest"
+    },
+    {
+      "package": "npm:mocha",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/mocha/latest"
+    },
+    {
+      "package": "npm:prebuild-install",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/prebuild-install/latest"
+    },
+    {
+      "package": "npm:protoc-gen-ts",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/protoc-gen-ts/latest"
+    },
+    {
+      "package": "npm:@grpc/proto-loader",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@grpc%2fproto-loader/latest"
+    },
+    {
+      "package": "npm:tree-kill",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/tree-kill/latest"
+    },
+    {
+      "package": "npm:sinon",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/sinon/latest"
+    },
+    {
+      "package": "npm:rimraf",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/rimraf/latest"
+    },
+    {
+      "package": "npm:ts-proto",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/ts-proto/latest"
+    },
+    {
+      "package": "npm:should",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/should/latest"
+    },
+    {
+      "package": "npm:@grpc/reflection",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@grpc%2freflection/latest"
+    },
+    {
+      "package": "npm:@opentelemetry/exporter-logs-otlp-proto",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@opentelemetry%2fexporter-logs-otlp-proto/latest"
+    },
+    {
+      "package": "npm:@opentelemetry/exporter-metrics-otlp-proto",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@opentelemetry%2fexporter-metrics-otlp-proto/latest"
+    },
+    {
+      "package": "npm:@opentelemetry/exporter-trace-otlp-proto",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@opentelemetry%2fexporter-trace-otlp-proto/latest"
+    },
+    {
+      "package": "npm:@streamparser/json",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@streamparser%2fjson/latest"
+    },
+    {
+      "package": "npm:@vscode/codicons",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@vscode%2fcodicons/latest"
+    },
+    {
+      "package": "npm:better-sqlite3",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/better-sqlite3/latest"
+    },
+    {
+      "package": "npm:cheerio",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/cheerio/latest"
+    },
+    {
+      "package": "npm:chrome-launcher",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/chrome-launcher/latest"
+    },
+    {
+      "package": "npm:clone-deep",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/clone-deep/latest"
+    },
+    {
+      "package": "npm:exceljs",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/exceljs/latest"
+    },
+    {
+      "package": "npm:default-shell",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/default-shell/latest"
+    },
+    {
+      "package": "npm:image-size",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/image-size/latest"
+    },
+    {
+      "package": "npm:get-folder-size",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/get-folder-size/latest"
+    },
+    {
+      "package": "npm:grpc-health-check",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/grpc-health-check/latest"
+    },
+    {
+      "package": "npm:jwt-decode",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/jwt-decode/latest"
+    },
+    {
+      "package": "npm:json5",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/json5/latest"
+    },
+    {
+      "package": "npm:jschardet",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/jschardet/latest"
+    },
+    {
+      "package": "npm:mammoth",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/mammoth/latest"
+    },
+    {
+      "package": "npm:nice-grpc",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/nice-grpc/latest"
+    },
+    {
+      "package": "npm:nice-grpc-common",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/nice-grpc-common/latest"
+    },
+    {
+      "package": "npm:open-graph-scraper",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/open-graph-scraper/latest"
+    },
+    {
+      "package": "npm:p-mutex",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/p-mutex/latest"
+    },
+    {
+      "package": "npm:os-name",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/os-name/latest"
+    },
+    {
+      "package": "npm:p-timeout",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/p-timeout/latest"
+    },
+    {
+      "package": "npm:puppeteer-chromium-resolver",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/puppeteer-chromium-resolver/latest"
+    },
+    {
+      "package": "npm:p-wait-for",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/p-wait-for/latest"
+    },
+    {
+      "package": "npm:pdf-parse",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/pdf-parse/latest"
+    },
+    {
+      "package": "npm:serialize-error",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/serialize-error/latest"
+    },
+    {
+      "package": "npm:reconnecting-eventsource",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/reconnecting-eventsource/latest"
+    },
+    {
+      "package": "npm:vscode-uri",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/vscode-uri/latest"
+    },
+    {
+      "package": "npm:protobufjs",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/protobufjs/latest"
+    },
+    {
+      "package": "npm:tar-fs",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/tar-fs/latest"
+    },
+    {
+      "package": "npm:jest-diff",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/jest-diff/latest"
+    },
+    {
+      "package": "npm:@floating-ui/react",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@floating-ui%2freact/latest"
+    },
+    {
+      "package": "npm:@heroui/react",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@heroui%2freact/latest"
+    },
+    {
+      "package": "npm:@heroui/theme",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@heroui%2ftheme/latest"
+    },
+    {
+      "package": "npm:@paper-design/shaders-react",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@paper-design%2fshaders-react/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-label",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-label/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-hover-card",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-hover-card/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-progress",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-progress/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-separator",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-separator/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-slider",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-slider/latest"
+    },
+    {
+      "package": "npm:fuse.js",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/fuse.js/latest"
+    },
+    {
+      "package": "npm:@vscode/webview-ui-toolkit",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@vscode%2fwebview-ui-toolkit/latest"
+    },
+    {
+      "package": "npm:firebase",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/firebase/latest"
+    },
+    {
+      "package": "npm:debounce",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/debounce/latest"
+    },
+    {
+      "package": "npm:magic-string",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/magic-string/latest"
+    },
+    {
+      "package": "npm:posthog-js",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/posthog-js/latest"
+    },
+    {
+      "package": "npm:pretty-bytes",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/pretty-bytes/latest"
+    },
+    {
+      "package": "npm:react-remark",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-remark/latest"
+    },
+    {
+      "package": "npm:react-textarea-autosize",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-textarea-autosize/latest"
+    },
+    {
+      "package": "npm:react-use",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-use/latest"
+    },
+    {
+      "package": "npm:react-virtuoso",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-virtuoso/latest"
+    },
+    {
+      "package": "npm:rehype-highlight",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/rehype-highlight/latest"
+    },
+    {
+      "package": "npm:rehype-parse",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/rehype-parse/latest"
+    },
+    {
+      "package": "npm:rehype-remark",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/rehype-remark/latest"
+    },
+    {
+      "package": "npm:remark-stringify",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/remark-stringify/latest"
+    },
+    {
+      "package": "npm:@storybook/react-vite",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@storybook%2freact-vite/latest"
+    },
+    {
+      "package": "npm:styled-components",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/styled-components/latest"
+    },
+    {
+      "package": "npm:@types/dompurify",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fdompurify/latest"
+    },
+    {
+      "package": "npm:@types/unist",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2funist/latest"
+    },
+    {
+      "package": "npm:@types/vscode-webview",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fvscode-webview/latest"
+    },
+    {
+      "package": "npm:@rollup/rollup-win32-x64-msvc",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@rollup%2frollup-win32-x64-msvc/latest"
+    },
+    {
+      "package": "npm:@rollup/rollup-linux-x64-gnu",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@rollup%2frollup-linux-x64-gnu/latest"
+    },
+    {
+      "package": "npm:@rollup/rollup-linux-arm64-gnu",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@rollup%2frollup-linux-arm64-gnu/latest"
+    },
+    {
+      "package": "npm:@swc/core-linux-x64-gnu",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@swc%2fcore-linux-x64-gnu/latest"
+    },
+    {
+      "package": "npm:@tailwindcss/oxide-linux-x64-gnu",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tailwindcss%2foxide-linux-x64-gnu/latest"
+    },
+    {
+      "package": "npm:lightningcss-linux-x64-gnu",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/lightningcss-linux-x64-gnu/latest"
+    },
+    {
+      "package": "npm:lightningcss-win32-x64-msvc",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/lightningcss-win32-x64-msvc/latest"
+    },
+    {
+      "package": "npm:serialize-javascript",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/serialize-javascript/latest"
+    },
+    {
+      "package": "npm:@sap-cloud-sdk/connectivity",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@sap-cloud-sdk%2fconnectivity/latest"
+    },
+    {
+      "package": "npm:@sap-cloud-sdk/http-client",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@sap-cloud-sdk%2fhttp-client/latest"
+    },
+    {
+      "package": "npm:@sap-cloud-sdk/openapi",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@sap-cloud-sdk%2fopenapi/latest"
+    },
+    {
+      "package": "npm:@sap-cloud-sdk/util",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@sap-cloud-sdk%2futil/latest"
+    },
+    {
+      "package": "npm:jiti",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/jiti/latest"
+    },
+    {
+      "package": "npm:@jerome-benoit/sap-ai-provider",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@jerome-benoit%2fsap-ai-provider/latest"
+    },
+    {
+      "package": "npm:@sap-cloud-sdk/resilience",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@sap-cloud-sdk%2fresilience/latest"
+    },
+    {
+      "package": "npm:@ai-sdk/otel",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@ai-sdk%2fotel/latest"
+    },
+    {
+      "package": "npm:@langfuse/otel",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@langfuse%2fotel/latest"
+    },
+    {
+      "package": "npm:@langfuse/core",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@langfuse%2fcore/latest"
+    },
+    {
+      "package": "npm:@langfuse/tracing",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@langfuse%2ftracing/latest"
+    },
+    {
+      "package": "npm:@langfuse/vercel-ai-sdk",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@langfuse%2fvercel-ai-sdk/latest"
+    },
+    {
+      "package": "npm:ai-sdk-provider-opencode-sdk",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/ai-sdk-provider-opencode-sdk/latest"
+    },
+    {
+      "package": "npm:dify-ai-provider",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/dify-ai-provider/latest"
+    },
+    {
+      "package": "npm:ollama-ai-provider-v2",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/ollama-ai-provider-v2/latest"
+    },
+    {
+      "package": "npm:ai-sdk-provider-claude-code",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/ai-sdk-provider-claude-code/latest"
+    },
+    {
+      "package": "npm:ai-sdk-provider-codex-cli",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/ai-sdk-provider-codex-cli/latest"
+    },
+    {
+      "package": "npm:@types/follow-redirects",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2ffollow-redirects/latest"
+    },
+    {
+      "package": "npm:@vercel/ncc",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@vercel%2fncc/latest"
+    },
+    {
+      "package": "npm:pkg",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/pkg/latest"
+    },
+    {
+      "package": "npm:adm-zip",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/adm-zip/latest"
+    },
+    {
+      "package": "npm:follow-redirects",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/follow-redirects/latest"
+    },
+    {
+      "package": "npm:mac-ca",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/mac-ca/latest"
+    },
+    {
+      "package": "npm:system-ca",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/system-ca/latest"
+    },
+    {
+      "package": "npm:ncp",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/ncp/latest"
+    },
+    {
+      "package": "npm:node-fetch",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/node-fetch/latest"
+    },
+    {
+      "package": "npm:vectordb",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/vectordb/latest"
+    },
+    {
+      "package": "npm:win-ca",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/win-ca/latest"
+    },
+    {
+      "package": "npm:@google/generative-ai",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@google%2fgenerative-ai/latest"
+    },
+    {
+      "package": "npm:@shikijs/colorized-brackets",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@shikijs%2fcolorized-brackets/latest"
+    },
+    {
+      "package": "npm:@types/jquery",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fjquery/latest"
+    },
+    {
+      "package": "npm:@types/json-schema",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fjson-schema/latest"
+    },
+    {
+      "package": "npm:@types/mozilla-readability",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fmozilla-readability/latest"
+    },
+    {
+      "package": "npm:@types/mustache",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fmustache/latest"
+    },
+    {
+      "package": "npm:@types/node-fetch",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fnode-fetch/latest"
+    },
+    {
+      "package": "npm:@types/pg",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fpg/latest"
+    },
+    {
+      "package": "npm:@types/plist",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fplist/latest"
+    },
+    {
+      "package": "npm:@types/request",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2frequest/latest"
+    },
+    {
+      "package": "npm:@types/win-ca",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fwin-ca/latest"
+    },
+    {
+      "package": "npm:onnxruntime-common",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/onnxruntime-common/latest"
+    },
+    {
+      "package": "npm:myers-diff",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/myers-diff/latest"
+    },
+    {
+      "package": "npm:onnxruntime-web",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/onnxruntime-web/latest"
+    },
+    {
+      "package": "npm:jest-environment-jsdom",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/jest-environment-jsdom/latest"
+    },
+    {
+      "package": "npm:@aws-sdk/client-sagemaker-runtime",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@aws-sdk%2fclient-sagemaker-runtime/latest"
+    },
+    {
+      "package": "npm:@mozilla/readability",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@mozilla%2freadability/latest"
+    },
+    {
+      "package": "npm:@xenova/transformers",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@xenova%2ftransformers/latest"
+    },
+    {
+      "package": "npm:adf-to-md",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/adf-to-md/latest"
+    },
+    {
+      "package": "npm:dbinfoz",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/dbinfoz/latest"
+    },
+    {
+      "package": "npm:filtrex",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/filtrex/latest"
+    },
+    {
+      "package": "npm:handlebars",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/handlebars/latest"
+    },
+    {
+      "package": "npm:is-localhost-ip",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/is-localhost-ip/latest"
+    },
+    {
+      "package": "npm:jinja-js",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/jinja-js/latest"
+    },
+    {
+      "package": "npm:js-tiktoken",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/js-tiktoken/latest"
+    },
+    {
+      "package": "npm:llm-code-highlighter",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/llm-code-highlighter/latest"
+    },
+    {
+      "package": "npm:lru-cache",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/lru-cache/latest"
+    },
+    {
+      "package": "npm:ollama",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/ollama/latest"
+    },
+    {
+      "package": "npm:node-html-markdown",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/node-html-markdown/latest"
+    },
+    {
+      "package": "npm:launchdarkly-node-client-sdk",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/launchdarkly-node-client-sdk/latest"
+    },
+    {
+      "package": "npm:onnxruntime-node",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/onnxruntime-node/latest"
+    },
+    {
+      "package": "npm:plist",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/plist/latest"
+    },
+    {
+      "package": "npm:pg",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/pg/latest"
+    },
+    {
+      "package": "npm:quick-lru",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/quick-lru/latest"
+    },
+    {
+      "package": "npm:replicate",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/replicate/latest"
+    },
+    {
+      "package": "npm:socket.io-client",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/socket.io-client/latest"
+    },
+    {
+      "package": "npm:sqlite",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/sqlite/latest"
+    },
+    {
+      "package": "npm:sqlite3",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/sqlite3/latest"
+    },
+    {
+      "package": "npm:untildify",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/untildify/latest"
+    },
+    {
+      "package": "npm:wink-nlp-utils",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/wink-nlp-utils/latest"
+    },
+    {
+      "package": "npm:@orama/orama",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@orama%2forama/latest"
+    },
+    {
+      "package": "npm:workerpool",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/workerpool/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-visually-hidden",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-visually-hidden/latest"
+    },
+    {
+      "package": "npm:next-mdx-remote",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/next-mdx-remote/latest"
+    },
+    {
+      "package": "npm:geist",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/geist/latest"
+    },
+    {
+      "package": "npm:rehype-raw",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/rehype-raw/latest"
+    },
+    {
+      "package": "npm:rehype-prism-plus",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/rehype-prism-plus/latest"
+    },
+    {
+      "package": "npm:rehype-sanitize",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/rehype-sanitize/latest"
+    },
+    {
+      "package": "npm:rehype-slug",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/rehype-slug/latest"
+    },
+    {
+      "package": "npm:find-up",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/find-up/latest"
+    },
+    {
+      "package": "npm:@opentelemetry/instrumentation-fs",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@opentelemetry%2finstrumentation-fs/latest"
+    },
+    {
+      "package": "npm:@semantic-release/changelog",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@semantic-release%2fchangelog/latest"
+    },
+    {
+      "package": "npm:@semantic-release/git",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@semantic-release%2fgit/latest"
+    },
+    {
+      "package": "npm:@semantic-release/github",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@semantic-release%2fgithub/latest"
+    },
+    {
+      "package": "npm:@semantic-release/npm",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@semantic-release%2fnpm/latest"
+    },
+    {
+      "package": "npm:@types/date-fns",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fdate-fns/latest"
+    },
+    {
+      "package": "npm:@types/ignore-walk",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fignore-walk/latest"
+    },
+    {
+      "package": "npm:@types/glob",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fglob/latest"
+    },
+    {
+      "package": "npm:@types/ink-testing-library",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fink-testing-library/latest"
+    },
+    {
+      "package": "npm:@types/jszip",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fjszip/latest"
+    },
+    {
+      "package": "npm:@workos-inc/node",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@workos-inc%2fnode/latest"
+    },
+    {
+      "package": "npm:@types/nock",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fnock/latest"
+    },
+    {
+      "package": "npm:conventional-changelog-conventionalcommits",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/conventional-changelog-conventionalcommits/latest"
+    },
+    {
+      "package": "npm:eslint-import-resolver-typescript",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/eslint-import-resolver-typescript/latest"
+    },
+    {
+      "package": "npm:gpt-tokenizer",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/gpt-tokenizer/latest"
+    },
+    {
+      "package": "npm:gradient-string",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/gradient-string/latest"
+    },
+    {
+      "package": "npm:happy-dom",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/happy-dom/latest"
+    },
+    {
+      "package": "npm:ignore-walk",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/ignore-walk/latest"
+    },
+    {
+      "package": "npm:jszip",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/jszip/latest"
+    },
+    {
+      "package": "npm:prettier-plugin-tailwindcss",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/prettier-plugin-tailwindcss/latest"
+    },
+    {
+      "package": "npm:semantic-release",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/semantic-release/latest"
+    },
+    {
+      "package": "npm:@img/sharp-darwin-arm64",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@img%2fsharp-darwin-arm64/latest"
+    },
+    {
+      "package": "npm:@img/sharp-darwin-x64",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@img%2fsharp-darwin-x64/latest"
+    },
+    {
+      "package": "npm:@img/sharp-linux-arm",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@img%2fsharp-linux-arm/latest"
+    },
+    {
+      "package": "npm:@img/sharp-linux-arm64",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@img%2fsharp-linux-arm64/latest"
+    },
+    {
+      "package": "npm:@img/sharp-win32-x64",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@img%2fsharp-win32-x64/latest"
+    },
+    {
+      "package": "npm:@img/sharp-linux-x64",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@img%2fsharp-linux-x64/latest"
+    },
+    {
+      "package": "npm:@nestjs/common",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@nestjs%2fcommon/latest"
+    },
+    {
+      "package": "npm:@openapitools/openapi-generator-cli",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@openapitools%2fopenapi-generator-cli/latest"
+    },
+    {
+      "package": "npm:cargo-cp-artifact",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/cargo-cp-artifact/latest"
+    },
+    {
+      "package": "npm:esbuild-visualizer",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/esbuild-visualizer/latest"
+    },
+    {
+      "package": "npm:json-schema-to-typescript",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/json-schema-to-typescript/latest"
+    },
+    {
+      "package": "npm:ovsx",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/ovsx/latest"
+    },
+    {
+      "package": "npm:vscode-extension-tester",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/vscode-extension-tester/latest"
+    },
+    {
+      "package": "npm:@electron/rebuild",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron%2frebuild/latest"
+    },
+    {
+      "package": "npm:@reduxjs/toolkit",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@reduxjs%2ftoolkit/latest"
+    },
+    {
+      "package": "npm:@vscode/ripgrep",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@vscode%2fripgrep/latest"
+    },
+    {
+      "package": "npm:downshift",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/downshift/latest"
+    },
+    {
+      "package": "npm:fkill",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/fkill/latest"
+    },
+    {
+      "package": "npm:highlightable",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/highlightable/latest"
+    },
+    {
+      "package": "npm:http-proxy",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/http-proxy/latest"
+    },
+    {
+      "package": "npm:http-proxy-middleware",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/http-proxy-middleware/latest"
+    },
+    {
+      "package": "npm:monaco-editor",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/monaco-editor/latest"
+    },
+    {
+      "package": "npm:monaco-vscode-textmate-theme-converter",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/monaco-vscode-textmate-theme-converter/latest"
+    },
+    {
+      "package": "npm:react-redux",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-redux/latest"
+    },
+    {
+      "package": "npm:read-last-lines",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/read-last-lines/latest"
+    },
+    {
+      "package": "npm:svg-builder",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/svg-builder/latest"
+    },
+    {
+      "package": "npm:uuidv4",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/uuidv4/latest"
+    },
+    {
+      "package": "npm:vscode-languageclient",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/vscode-languageclient/latest"
+    },
+    {
+      "package": "npm:yarn",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/yarn/latest"
+    },
+    {
+      "package": "npm:undici-types",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/undici-types/latest"
+    },
+    {
+      "package": "npm:@headlessui/react",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@headlessui%2freact/latest"
+    },
+    {
+      "package": "npm:@heroicons/react",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@heroicons%2freact/latest"
+    },
+    {
+      "package": "npm:@panzoom/panzoom",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@panzoom%2fpanzoom/latest"
+    },
+    {
+      "package": "npm:@tiptap/core",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fcore/latest"
+    },
+    {
+      "package": "npm:@tiptap/extension-dropcursor",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fextension-dropcursor/latest"
+    },
+    {
+      "package": "npm:@tiptap/extension-document",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fextension-document/latest"
+    },
+    {
+      "package": "npm:@tiptap/extension-history",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fextension-history/latest"
+    },
+    {
+      "package": "npm:@tiptap/extension-image",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fextension-image/latest"
+    },
+    {
+      "package": "npm:@tiptap/extension-mention",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fextension-mention/latest"
+    },
+    {
+      "package": "npm:@tiptap/extension-paragraph",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fextension-paragraph/latest"
+    },
+    {
+      "package": "npm:@tiptap/extension-placeholder",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fextension-placeholder/latest"
+    },
+    {
+      "package": "npm:@tiptap/extension-text",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fextension-text/latest"
+    },
+    {
+      "package": "npm:@tiptap/pm",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fpm/latest"
+    },
+    {
+      "package": "npm:@tiptap/react",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2freact/latest"
+    },
+    {
+      "package": "npm:@tiptap/starter-kit",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fstarter-kit/latest"
+    },
+    {
+      "package": "npm:@tiptap/suggestion",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fsuggestion/latest"
+    },
+    {
+      "package": "npm:anser",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/anser/latest"
+    },
+    {
+      "package": "npm:escape-carriage",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/escape-carriage/latest"
+    },
+    {
+      "package": "npm:mustache",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/mustache/latest"
+    },
+    {
+      "package": "npm:react-error-boundary",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-error-boundary/latest"
+    },
+    {
+      "package": "npm:react-hook-form",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-hook-form/latest"
+    },
+    {
+      "package": "npm:react-intersection-observer",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-intersection-observer/latest"
+    },
+    {
+      "package": "npm:react-switch",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-switch/latest"
+    },
+    {
+      "package": "npm:react-tooltip",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-tooltip/latest"
+    },
+    {
+      "package": "npm:react-router-dom",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-router-dom/latest"
+    },
+    {
+      "package": "npm:redux-logger",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/redux-logger/latest"
+    },
+    {
+      "package": "npm:redux-persist-transform-filter",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/redux-persist-transform-filter/latest"
+    },
+    {
+      "package": "npm:redux-persist",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/redux-persist/latest"
+    },
+    {
+      "package": "npm:redux-thunk",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/redux-thunk/latest"
+    },
+    {
+      "package": "npm:rehype-wrap-all",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/rehype-wrap-all/latest"
+    },
+    {
+      "package": "npm:reselect",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/reselect/latest"
+    },
+    {
+      "package": "npm:seti-file-icons",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/seti-file-icons/latest"
+    },
+    {
+      "package": "npm:table",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/table/latest"
+    },
+    {
+      "package": "npm:tippy.js",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/tippy.js/latest"
+    },
+    {
+      "package": "npm:@swc/cli",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@swc%2fcli/latest"
+    },
+    {
+      "package": "npm:@types/react-router-dom",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2freact-router-dom/latest"
+    },
+    {
+      "package": "npm:@types/redux-logger",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fredux-logger/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-alert-dialog",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-alert-dialog/latest"
+    },
+    {
+      "package": "npm:@radix-ui/react-checkbox",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-checkbox/latest"
+    },
+    {
+      "package": "npm:react-scripts",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-scripts/latest"
+    },
+    {
+      "package": "npm:eslint-plugin-no-barrel-files",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/eslint-plugin-no-barrel-files/latest"
+    },
+    {
+      "package": "npm:@types/styled-components",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fstyled-components/latest"
+    },
+    {
+      "package": "npm:concurrently",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/concurrently/latest"
+    },
+    {
+      "package": "npm:@ai-sdk/deepseek",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@ai-sdk%2fdeepseek/latest"
+    },
+    {
+      "package": "npm:swagger-ui-express",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/swagger-ui-express/latest"
+    },
+    {
+      "package": "npm:json-schema",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/json-schema/latest"
+    },
+    {
+      "package": "npm:@semantic-release/commit-analyzer",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@semantic-release%2fcommit-analyzer/latest"
+    },
+    {
+      "package": "npm:@semantic-release/release-notes-generator",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@semantic-release%2frelease-notes-generator/latest"
+    },
+    {
+      "package": "npm:@microlink/react-json-view",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@microlink%2freact-json-view/latest"
+    },
+    {
+      "package": "npm:@monaco-editor/react",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@monaco-editor%2freact/latest"
+    },
+    {
+      "package": "npm:@openhands/extensions",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@openhands%2fextensions/latest"
+    },
+    {
+      "package": "npm:@openhands/typescript-client",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@openhands%2ftypescript-client/latest"
+    },
+    {
+      "package": "npm:@react-router/node",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@react-router%2fnode/latest"
+    },
+    {
+      "package": "npm:@react-router/serve",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@react-router%2fserve/latest"
+    },
+    {
+      "package": "npm:httpxy",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/httpxy/latest"
+    },
+    {
+      "package": "npm:@uidotdev/usehooks",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@uidotdev%2fusehooks/latest"
+    },
+    {
+      "package": "npm:@tanstack/react-query",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tanstack%2freact-query/latest"
+    },
+    {
+      "package": "npm:i18next",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/i18next/latest"
+    },
+    {
+      "package": "npm:i18next-browser-languagedetector",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/i18next-browser-languagedetector/latest"
+    },
+    {
+      "package": "npm:i18next-http-backend",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/i18next-http-backend/latest"
+    },
+    {
+      "package": "npm:isbot",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/isbot/latest"
+    },
+    {
+      "package": "npm:react-i18next",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/react-i18next/latest"
+    },
+    {
+      "package": "npm:sirv",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/sirv/latest"
+    },
+    {
+      "package": "npm:tailwind-scrollbar",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/tailwind-scrollbar/latest"
+    },
+    {
+      "package": "npm:winston-daily-rotate-file",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/winston-daily-rotate-file/latest"
+    },
+    {
+      "package": "npm:zustand",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/zustand/latest"
+    },
+    {
+      "package": "npm:@mswjs/socket.io-binding",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@mswjs%2fsocket.io-binding/latest"
+    },
+    {
+      "package": "npm:@shadcn/lint",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@shadcn%2flint/latest"
+    },
+    {
+      "package": "npm:@stryker-mutator/vitest-runner",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@stryker-mutator%2fvitest-runner/latest"
+    },
+    {
+      "package": "npm:@stryker-mutator/core",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@stryker-mutator%2fcore/latest"
+    },
+    {
+      "package": "npm:@types/mdast",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fmdast/latest"
+    },
+    {
+      "package": "npm:@react-router/dev",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@react-router%2fdev/latest"
+    },
+    {
+      "package": "npm:@tanstack/eslint-plugin-query",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@tanstack%2feslint-plugin-query/latest"
+    },
+    {
+      "package": "npm:@vercel/react-router",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@vercel%2freact-router/latest"
+    },
+    {
+      "package": "npm:eslint-plugin-i18next",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/eslint-plugin-i18next/latest"
+    },
+    {
       "package": "pypi:mcp-example-stories",
       "error": "not found in registry"
+    },
+    {
+      "package": "npm:eslint-plugin-import-x",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/eslint-plugin-import-x/latest"
+    },
+    {
+      "package": "npm:eslint-plugin-jsx-a11y",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/eslint-plugin-jsx-a11y/latest"
+    },
+    {
+      "package": "npm:png2icons",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/png2icons/latest"
+    },
+    {
+      "package": "npm:postcss-prefix-selector",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/postcss-prefix-selector/latest"
+    },
+    {
+      "package": "npm:vite-plugin-svgr",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/vite-plugin-svgr/latest"
+    },
+    {
+      "package": "npm:eslint-plugin-simple-import-sort",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/eslint-plugin-simple-import-sort/latest"
+    },
+    {
+      "package": "npm:eslint-plugin-unicorn",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/eslint-plugin-unicorn/latest"
+    },
+    {
+      "package": "npm:@changesets/changelog-github",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@changesets%2fchangelog-github/latest"
+    },
+    {
+      "package": "npm:typedoc-plugin-markdown",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/typedoc-plugin-markdown/latest"
+    },
+    {
+      "package": "npm:vitepress",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/vitepress/latest"
+    },
+    {
+      "package": "npm:lefthook",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/lefthook/latest"
+    },
+    {
+      "package": "npm:typedoc-vitepress-theme",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/typedoc-vitepress-theme/latest"
+    },
+    {
+      "package": "npm:verdaccio",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/verdaccio/latest"
+    },
+    {
+      "package": "npm:tsc-multi",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/tsc-multi/latest"
+    },
+    {
+      "package": "npm:debug",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/debug/latest"
+    },
+    {
+      "package": "npm:@types/debug",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fdebug/latest"
+    },
+    {
+      "package": "npm:@blaxel/core",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@blaxel%2fcore/latest"
+    },
+    {
+      "package": "npm:@daytonaio/sdk",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@daytonaio%2fsdk/latest"
+    },
+    {
+      "package": "npm:@e2b/code-interpreter",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@e2b%2fcode-interpreter/latest"
+    },
+    {
+      "package": "npm:@runloop/api-client",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@runloop%2fapi-client/latest"
+    },
+    {
+      "package": "npm:@vercel/sandbox",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/@vercel%2fsandbox/latest"
+    },
+    {
+      "package": "npm:e2b",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/e2b/latest"
+    },
+    {
+      "package": "npm:modal",
+      "error": "429 Too Many Requests for https://registry.npmjs.org/modal/latest"
     }
   ]
 }
