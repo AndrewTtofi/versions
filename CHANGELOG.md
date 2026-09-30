@@ -11,7 +11,7 @@
 - **Lockfiles:** the Action refreshes npm, pnpm, yarn, bun, uv, poetry, Cargo and Go
   lockfiles next to updated manifests, with install scripts disabled.
 - Updates are classified as patch, minor or major. The Action outputs the largest as `level`.
-- The generated workflow and the data feed both run once a day.
+- The generated workflow and the data feed both run once a day (feed at 05:17 UTC).
 - Fixed the CodeQL findings: npm path escaping, markdown escaping, a regex ReDoS, and file races.
 
 ## 0.2.0 - 2026-09-30

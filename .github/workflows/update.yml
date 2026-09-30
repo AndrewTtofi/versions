@@ -1,11 +1,11 @@
-# Publishes the live feed to the `data` branch every 4 hours. `main` is
+# Publishes the live feed to the `data` branch once a day. `main` is
 # protected and never written by automation; `data` only ever holds
 # latest.json and VERSIONS.md.
 name: update-snapshot
 
 on:
   schedule:
-    - cron: '17 */4 * * *' # every 4 hours
+    - cron: '17 5 * * *' # daily at 05:17 UTC
   workflow_dispatch:
   push:
     branches: [main]
