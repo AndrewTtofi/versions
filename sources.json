@@ -1,0 +1,122 @@
+{
+  "$comment": "Projects whose dependency stacks are tracked. Add yours with a pull request - see CONTRIBUTING.md.",
+  "tools": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "homepage": "https://github.com/anthropics/claude-code",
+      "install": "npm install -g @anthropic-ai/claude-code",
+      "packages": { "npm": ["@anthropic-ai/claude-code", "@anthropic-ai/claude-agent-sdk", "@anthropic-ai/sdk"], "pypi": ["claude-agent-sdk", "anthropic"] },
+      "packageDeps": { "npm": ["@anthropic-ai/claude-agent-sdk", "@anthropic-ai/sdk"] },
+      "repos": [
+        { "repo": "anthropics/claude-agent-sdk-python" },
+        { "repo": "anthropics/anthropic-sdk-typescript" },
+        { "repo": "anthropics/anthropic-sdk-python" }
+      ]
+    },
+    {
+      "id": "codex",
+      "name": "OpenAI Codex CLI",
+      "homepage": "https://github.com/openai/codex",
+      "install": "npm install -g @openai/codex",
+      "packages": { "npm": ["@openai/codex", "@openai/codex-sdk", "openai"], "pypi": ["openai"] },
+      "repos": [{ "repo": "openai/codex" }, { "repo": "openai/openai-node" }]
+    },
+    {
+      "id": "gemini-cli",
+      "name": "Gemini CLI",
+      "homepage": "https://github.com/google-gemini/gemini-cli",
+      "install": "npm install -g @google/gemini-cli",
+      "packages": { "npm": ["@google/gemini-cli", "@google/genai"] },
+      "repos": [{ "repo": "google-gemini/gemini-cli" }]
+    },
+    {
+      "id": "github-copilot-cli",
+      "name": "GitHub Copilot CLI",
+      "homepage": "https://github.com/github/copilot-cli",
+      "install": "npm install -g @github/copilot",
+      "packages": { "npm": ["@github/copilot"] },
+      "packageDeps": { "npm": ["@github/copilot"] }
+    },
+    {
+      "id": "opencode",
+      "name": "opencode",
+      "homepage": "https://github.com/anomalyco/opencode",
+      "install": "npm install -g opencode-ai",
+      "packages": { "npm": ["opencode-ai"] },
+      "repos": [{ "repo": "anomalyco/opencode" }]
+    },
+    {
+      "id": "qwen-code",
+      "name": "Qwen Code",
+      "homepage": "https://github.com/QwenLM/qwen-code",
+      "install": "npm install -g @qwen-code/qwen-code",
+      "packages": { "npm": ["@qwen-code/qwen-code"] },
+      "repos": [{ "repo": "QwenLM/qwen-code" }]
+    },
+    {
+      "id": "crush",
+      "name": "Crush",
+      "homepage": "https://github.com/charmbracelet/crush",
+      "install": "npm install -g @charmland/crush",
+      "packages": { "npm": ["@charmland/crush"] },
+      "repos": [{ "repo": "charmbracelet/crush" }]
+    },
+    {
+      "id": "goose",
+      "name": "goose",
+      "homepage": "https://github.com/aaif-goose/goose",
+      "install": "curl -fsSL https://github.com/aaif-goose/goose/releases/download/stable/download_cli.sh | bash",
+      "releases": "aaif-goose/goose",
+      "repos": [{ "repo": "aaif-goose/goose" }]
+    },
+    {
+      "id": "aider",
+      "name": "Aider",
+      "homepage": "https://github.com/Aider-AI/aider",
+      "install": "python -m pip install aider-install && aider-install",
+      "packages": { "pypi": ["aider-chat"] },
+      "repos": [{ "repo": "Aider-AI/aider" }]
+    },
+    {
+      "id": "cline",
+      "name": "Cline",
+      "homepage": "https://github.com/cline/cline",
+      "install": "npm install -g cline",
+      "packages": { "npm": ["cline"] },
+      "repos": [{ "repo": "cline/cline" }]
+    },
+    {
+      "id": "continue",
+      "name": "Continue",
+      "homepage": "https://github.com/continuedev/continue",
+      "install": "npm install -g @continuedev/cli",
+      "packages": { "npm": ["@continuedev/cli"] },
+      "repos": [{ "repo": "continuedev/continue" }]
+    },
+    {
+      "id": "openhands",
+      "name": "OpenHands",
+      "homepage": "https://github.com/OpenHands/OpenHands",
+      "install": "uv tool install openhands-ai",
+      "packages": { "pypi": ["openhands-ai"] },
+      "repos": [{ "repo": "OpenHands/OpenHands" }]
+    },
+    {
+      "id": "mcp",
+      "name": "Model Context Protocol SDKs",
+      "homepage": "https://github.com/modelcontextprotocol",
+      "install": "npm install @modelcontextprotocol/sdk",
+      "packages": { "npm": ["@modelcontextprotocol/sdk"], "pypi": ["mcp"] },
+      "repos": [{ "repo": "modelcontextprotocol/typescript-sdk" }, { "repo": "modelcontextprotocol/python-sdk" }]
+    },
+    {
+      "id": "openai-agents",
+      "name": "OpenAI Agents SDK",
+      "homepage": "https://github.com/openai/openai-agents-js",
+      "install": "npm install @openai/agents",
+      "packages": { "npm": ["@openai/agents"], "pypi": ["openai-agents"] },
+      "repos": [{ "repo": "openai/openai-agents-js" }, { "repo": "openai/openai-agents-python" }]
+    }
+  ]
+}

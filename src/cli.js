@@ -1,0 +1,258 @@
+import { existsSync } from 'node:fs';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { dirname, join, resolve as resolvePath } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { parseArgs } from 'node:util';
+import { analyze, applyUpdates, summarize } from './engine.js';
+import { analysisToJSON, briefAnalysis, c, formatAnalysis, parsePackageRef } from './report.js';
+import { createResolver } from './registries.js';
+import { loadSnapshot, snapshotResolver, trackedSet } from './snapshot.js';
+import { VERSION } from './version.js';
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+const CONFIG_FILE = 'agent-versions.json';
+
+const HELP = `agent-versions ${VERSION} - keep dependencies on the latest releases, for humans and AI agents
+
+Usage: agent-versions <command> [options]
+
+Commands:
+  check [dir]            Report dependencies with newer releases (default command)
+  update [dir]           Rewrite manifests to the latest releases (keeps ^, ~, >= etc.)
+  latest <pkg...>        Latest version of packages: zod npm:zod pypi:requests cargo:serde go:<module>
+  tools                  Latest versions of AI coding tools (Claude Code, Codex, Gemini CLI, ...)
+  stack <tool>           Dependencies an AI tool uses, with latest versions
+  init [dir]             Set up a project: config, scheduled update PRs, agent instructions
+  mcp                    Run the MCP server over stdio (add --http [--port N] for remote connectors)
+
+Options:
+  --no-major             Hold back breaking (major) upgrades
+  --tracked [tool]       Only touch dependencies that tracked AI tools also use
+  --snapshot             Use the published snapshot instead of querying registries live
+  --exclude <a,b>        Package names/globs to leave untouched
+  --peer                 Include peerDependencies
+  --indirect             Include indirect Go requirements
+  --no-recursive         Only look at manifests in the top-level directory
+  --dry-run              (update) Show changes without writing
+  --brief                Compact output for agent context and hooks
+  --fail                 (check) Exit with status 1 when something is outdated
+  --json                 Machine-readable output
+  -v, --verbose          Also list skipped dependencies
+  -h, --help / --version
+
+Supported manifests: package.json, pyproject.toml, requirements*.txt, Cargo.toml, go.mod
+Config: ${CONFIG_FILE} in the project root, e.g. { "noMajor": true, "exclude": ["react*"] }
+`;
+
+const OPTIONS = {
+  'no-major': { type: 'boolean' },
+  tracked: { type: 'boolean' },
+  snapshot: { type: 'boolean' },
+  exclude: { type: 'string', multiple: true },
+  peer: { type: 'boolean' },
+  indirect: { type: 'boolean' },
+  'no-recursive': { type: 'boolean' },
+  'dry-run': { type: 'boolean' },
+  brief: { type: 'boolean' },
+  fail: { type: 'boolean' },
+  json: { type: 'boolean' },
+  verbose: { type: 'boolean', short: 'v' },
+  help: { type: 'boolean', short: 'h' },
+  version: { type: 'boolean' },
+  http: { type: 'boolean' },
+  port: { type: 'string' },
+  tool: { type: 'string' },
+  'no-workflow': { type: 'boolean' },
+  'no-agents': { type: 'boolean' },
+  mcp: { type: 'boolean' },
+  force: { type: 'boolean' },
+};
+
+async function loadConfig(dir) {
+  const path = join(dir, CONFIG_FILE);
+  if (!existsSync(path)) return {};
+  try {
+    return JSON.parse(await readFile(path, 'utf8'));
+  } catch (err) {
+    throw new Error(`Could not parse ${path}: ${err.message}`);
+  }
+}
+
+async function buildOptions(dir, values) {
+  const config = await loadConfig(dir);
+  const split = (list) => (list ?? []).flatMap((s) => s.split(',')).map((s) => s.trim()).filter(Boolean);
+  const opts = {
+    recursive: !(values['no-recursive'] ?? config.recursive === false),
+    noMajor: values['no-major'] ?? config.noMajor ?? false,
+    includePeer: values.peer ?? config.includePeer ?? false,
+    includeIndirect: values.indirect ?? config.includeIndirect ?? false,
+    exclude: [...(config.exclude ?? []), ...split(values.exclude)],
+    include: config.include ?? [],
+  };
+  const useSnapshot = values.snapshot ?? config.source === 'snapshot';
+  const tracked = values.tracked || values.tool ? values.tool ?? true : config.tracked;
+  if (useSnapshot || tracked) {
+    const snap = await loadSnapshot();
+    if (useSnapshot) opts.resolve = snapshotResolver(snap);
+    if (tracked) opts.tracked = trackedSet(snap, typeof tracked === 'string' ? tracked : undefined);
+  }
+  return opts;
+}
+
+async function cmdCheck(dir, values, { update = false } = {}) {
+  const analysis = await analyze(dir, await buildOptions(dir, values));
+  let written = 0;
+  if (update && !values['dry-run']) written = await applyUpdates(analysis);
+
+  if (values.json) {
+    console.log(JSON.stringify({ ...analysisToJSON(analysis), ...(update ? { written } : {}) }, null, 2));
+  } else if (values.brief) {
+    console.log(briefAnalysis(analysis));
+  } else {
+    console.log(formatAnalysis(analysis, { verbose: values.verbose }));
+    if (update) {
+      console.log(
+        values['dry-run']
+          ? c.dim('\nDry run: nothing was written.')
+          : written
+            ? c.green(`\nUpdated ${written} version(s). Run your package manager's install to refresh lockfiles.`)
+            : '\nNothing to update.',
+      );
+    } else if (summarize(analysis).outdated) {
+      console.log(c.dim('\nRun `agent-versions update` to apply.'));
+    }
+  }
+  if (!update && values.fail && summarize(analysis).outdated) process.exitCode = 1;
+}
+
+async function cmdLatest(refs, values) {
+  if (!refs.length) throw new Error('Usage: agent-versions latest <pkg...>');
+  const resolve = createResolver();
+  const results = await Promise.all(
+    refs.map(async (ref) => {
+      const [eco, name] = parsePackageRef(ref);
+      try {
+        return { ecosystem: eco, name, latest: await resolve(eco, name) };
+      } catch (err) {
+        return { ecosystem: eco, name, latest: null, error: err.message };
+      }
+    }),
+  );
+  if (values.json) return console.log(JSON.stringify(results, null, 2));
+  for (const r of results) {
+    console.log(`${r.ecosystem}:${r.name} ${r.latest ? c.green(r.latest) : c.red(r.error ?? 'not found')}`);
+  }
+  if (results.some((r) => !r.latest)) process.exitCode = 1;
+}
+
+async function cmdTools(values) {
+  const snap = await loadSnapshot();
+  const resolve = values.snapshot ? snapshotResolver(snap) : createResolver();
+  const rows = [];
+  for (const [id, tool] of Object.entries(snap.tools)) {
+    const packages = {};
+    for (const [eco, entries] of Object.entries(tool.packages ?? {})) {
+      for (const [name, v] of Object.entries(entries)) packages[`${eco}:${name}`] = (await resolve(eco, name).catch(() => null)) ?? v;
+    }
+    rows.push({ id, name: tool.name, packages, release: tool.release, install: tool.install });
+  }
+  if (values.json) return console.log(JSON.stringify(rows, null, 2));
+  for (const r of rows) {
+    console.log(c.bold(r.name) + c.dim(` (${r.id})`));
+    for (const [p, v] of Object.entries(r.packages)) console.log(`  ${p} ${c.green(v ?? '?')}`);
+    if (r.release) console.log(`  release ${c.green(r.release)}`);
+    console.log(c.dim(`  $ ${r.install}`));
+  }
+}
+
+async function cmdStack(tool, values) {
+  const snap = await loadSnapshot();
+  if (!tool || !snap.tools[tool]) {
+    throw new Error(`${tool ? `Unknown tool "${tool}". ` : ''}Known tools: ${Object.keys(snap.tools).join(', ')}`);
+  }
+  const out = {};
+  for (const [eco, pkgs] of Object.entries(snap.packages)) {
+    for (const [name, p] of Object.entries(pkgs)) if (p.usedBy.includes(tool)) (out[eco] ??= {})[name] = p.latest;
+  }
+  if (values.json) return console.log(JSON.stringify(out, null, 2));
+  console.log(c.dim(`Snapshot ${snap.generatedAt}`));
+  for (const [eco, pkgs] of Object.entries(out)) {
+    console.log('\n' + c.bold(`${eco} (${Object.keys(pkgs).length})`));
+    for (const [name, v] of Object.entries(pkgs)) console.log(`  ${name} ${c.green(v)}`);
+  }
+}
+
+async function writeIfAbsent(path, content, force, log) {
+  if (existsSync(path) && !force) return log(`  kept     ${path} (exists; --force to overwrite)`);
+  await mkdir(dirname(path), { recursive: true });
+  await writeFile(path, content);
+  log(`  wrote    ${path}`);
+}
+
+async function upsertBlock(path, block, log) {
+  const existing = existsSync(path) ? await readFile(path, 'utf8') : '';
+  const re = /<!-- agent-versions:start -->[\s\S]*?<!-- agent-versions:end -->\n?/;
+  const next = re.test(existing) ? existing.replace(re, block) : `${existing}${existing && !existing.endsWith('\n\n') ? (existing.endsWith('\n') ? '\n' : '\n\n') : ''}${block}`;
+  if (next === existing) return log(`  kept     ${path} (up to date)`);
+  await writeFile(path, next);
+  log(`  ${existing ? 'updated ' : 'wrote   '} ${path}`);
+}
+
+async function cmdInit(dir, values) {
+  const log = (m) => console.log(m);
+  console.log(c.bold(`Setting up agent-versions in ${dir}`));
+  await writeIfAbsent(join(dir, CONFIG_FILE), JSON.stringify({ noMajor: !!values['no-major'], exclude: [] }, null, 2) + '\n', values.force, log);
+
+  if (!values['no-workflow']) {
+    const args = values['no-major'] ? '--no-major' : "''";
+    const workflow = (await readFile(join(ROOT, 'templates', 'workflow.yml'), 'utf8')).replace('__ARGS__', args);
+    await writeIfAbsent(join(dir, '.github', 'workflows', 'agent-versions.yml'), workflow, values.force, log);
+  }
+  if (!values['no-agents']) {
+    const block = await readFile(join(ROOT, 'templates', 'agents-snippet.md'), 'utf8');
+    await upsertBlock(join(dir, 'AGENTS.md'), block, log);
+    if (existsSync(join(dir, 'CLAUDE.md'))) await upsertBlock(join(dir, 'CLAUDE.md'), block, log);
+    if (existsSync(join(dir, 'GEMINI.md'))) await upsertBlock(join(dir, 'GEMINI.md'), block, log);
+  }
+  if (values.mcp) {
+    const path = join(dir, '.mcp.json');
+    const cfg = existsSync(path) ? JSON.parse(await readFile(path, 'utf8')) : {};
+    cfg.mcpServers ??= {};
+    cfg.mcpServers['agent-versions'] = { command: 'npx', args: ['-y', 'github:AndrewTtofi/versions', 'mcp'] };
+    await writeFile(path, JSON.stringify(cfg, null, 2) + '\n');
+    log(`  updated  ${path}`);
+  }
+  console.log(`\nNext: ${c.bold('agent-versions check')} to see what is outdated, ${c.bold('agent-versions update')} to apply.`);
+}
+
+export async function main(argv = process.argv.slice(2)) {
+  const { values, positionals } = parseArgs({ args: argv, options: OPTIONS, allowPositionals: true, strict: true });
+  if (values.version) return console.log(VERSION);
+  const [command = 'check', ...rest] = positionals;
+  if (values.help || command === 'help') return console.log(HELP);
+  const dir = () => resolvePath(rest[0] ?? '.');
+
+  switch (command) {
+    case 'check':
+      return cmdCheck(dir(), values);
+    case 'update':
+      return cmdCheck(dir(), values, { update: true });
+    case 'latest':
+      return cmdLatest(rest, values);
+    case 'tools':
+      return cmdTools(values);
+    case 'stack':
+      return cmdStack(rest[0], values);
+    case 'init':
+      return cmdInit(dir(), values);
+    case 'mcp': {
+      const { serveHttp, serveStdio } = await import('./mcp.js');
+      if (values.http) return serveHttp({ port: Number(values.port ?? process.env.PORT ?? 3000) });
+      return serveStdio();
+    }
+    default:
+      // `agent-versions ./some/dir` is shorthand for `check ./some/dir`.
+      if (existsSync(command)) return cmdCheck(resolvePath(command), values);
+      throw new Error(`Unknown command "${command}". Run agent-versions --help.`);
+  }
+}

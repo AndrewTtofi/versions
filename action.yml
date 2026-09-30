@@ -1,0 +1,42 @@
+name: agent-versions
+description: Update project dependencies to the latest releases (npm, PyPI, Cargo, Go). Pair with a PR action for Dependabot-style updates.
+author: AndrewTtofi
+branding:
+  icon: arrow-up-circle
+  color: green
+inputs:
+  directory:
+    description: Project directory to update
+    default: '.'
+  args:
+    description: Extra CLI flags, e.g. "--no-major --exclude react*"
+    default: ''
+  mode:
+    description: '"update" rewrites manifests; "check" only reports (fails when outdated)'
+    default: update
+outputs:
+  report:
+    description: Markdown summary of the changes
+    value: ${{ steps.run.outputs.report }}
+  outdated:
+    description: Number of outdated dependencies found
+    value: ${{ steps.run.outputs.outdated }}
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v7
+      with:
+        node-version: 24
+    - id: run
+      shell: bash
+      working-directory: ${{ inputs.directory }}
+      env:
+        MODE: ${{ inputs.mode }}
+        ARGS: ${{ inputs.args }}
+        CLI: ${{ github.action_path }}/bin/agent-versions.js
+      run: |
+        FLAGS=""; [ "$MODE" = "check" ] && FLAGS="--fail"
+        # shellcheck disable=SC2086
+        node "$CLI" "$MODE" . --json $FLAGS $ARGS > "$RUNNER_TEMP/agent-versions.json" || status=$?
+        node "${{ github.action_path }}/scripts/action-report.js" "$RUNNER_TEMP/agent-versions.json" >> "$GITHUB_OUTPUT"
+        if [ "$MODE" = "check" ] && [ "${status:-0}" != "0" ]; then exit "$status"; fi

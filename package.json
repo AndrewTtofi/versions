@@ -1,0 +1,53 @@
+{
+  "name": "agent-versions",
+  "version": "0.1.0",
+  "description": "Dependabot for AI coding: always-fresh versions of every package Claude Code, Codex, Gemini CLI and friends use - as a CLI, MCP server/connector, Claude Code plugin and GitHub Action.",
+  "type": "module",
+  "bin": {
+    "agent-versions": "bin/agent-versions.js"
+  },
+  "exports": {
+    ".": "./src/index.js",
+    "./mcp": "./src/mcp.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "templates",
+    "data/latest.json",
+    "sources.json"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "collect": "node scripts/collect.js",
+    "check": "node bin/agent-versions.js check",
+    "mcp": "node bin/agent-versions.js mcp",
+    "mcp:http": "node bin/agent-versions.js mcp --http"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "dependencies",
+    "versions",
+    "dependabot",
+    "renovate",
+    "mcp",
+    "claude-code",
+    "codex",
+    "gemini-cli",
+    "ai-agents",
+    "npm",
+    "pypi",
+    "cargo",
+    "go"
+  ],
+  "author": "AndrewTtofi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrewTtofi/versions.git"
+  },
+  "homepage": "https://github.com/AndrewTtofi/versions#readme",
+  "bugs": "https://github.com/AndrewTtofi/versions/issues"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "agent-versions",
+  "owner": { "name": "AndrewTtofi" },
+  "metadata": { "description": "Always-latest dependency versions for AI coding agents." },
+  "plugins": [
+    {
+      "name": "agent-versions",
+      "source": "./",
+      "description": "Live latest-version lookups, outdated-dependency checks at session start, and one-command upgrades.",
+      "category": "development"
+    }
+  ]
+}

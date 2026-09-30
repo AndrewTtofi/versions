@@ -1,0 +1,40 @@
+# Keeps data/latest.json and VERSIONS.md current. Anyone reading the snapshot
+# (CLI --snapshot/--tracked, MCP tools, the plugin) gets these values.
+name: update-snapshot
+
+on:
+  schedule:
+    - cron: '17 */4 * * *' # every 4 hours
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [sources.json, src/**, scripts/collect.js]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-snapshot
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - run: node scripts/collect.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- data VERSIONS.md; then echo "No changes"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data VERSIONS.md
+          git commit -m "chore(data): refresh latest versions"
+          git pull --rebase
+          git push
