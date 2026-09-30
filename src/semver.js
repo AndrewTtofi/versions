@@ -3,14 +3,19 @@
 
 const VERSION_RE = /^v?(\d+(?:\.\d+)*)(.*)$/i;
 
+const MAX_VERSION_LENGTH = 256; // real versions are short; this also bounds regex work
+
 export function parseVersion(input) {
   if (input == null) return null;
-  const m = String(input).trim().match(VERSION_RE);
+  const text = String(input).trim();
+  if (text.length > MAX_VERSION_LENGTH) return null;
+  const m = text.match(VERSION_RE);
   if (!m) return null;
   const parts = m[1].split('.').map(Number);
   let rest = m[2];
   // Build metadata ("+incompatible", "+build.5") never affects precedence.
-  rest = rest.replace(/\+.*$/, '');
+  const plus = rest.indexOf('+');
+  if (plus !== -1) rest = rest.slice(0, plus);
   // PEP 440 post releases sort after the release; treat them as releases.
   if (/^[.-]?post\d*$/i.test(rest)) rest = '';
   const pre = rest.replace(/^[-.]/, '');

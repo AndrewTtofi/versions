@@ -45,13 +45,16 @@ export async function fetchJSON(url, opts) {
   return text == null ? null : JSON.parse(text);
 }
 
+/** Registry path for a (validated) npm name: "@scope/pkg" -> "@scope%2fpkg". */
+const npmPath = (name) => name.replaceAll('/', '%2f');
+
 export async function latestNpm(name) {
-  const data = await fetchJSON(`${NPM_REGISTRY}/${name.replace('/', '%2f')}/latest`);
+  const data = await fetchJSON(`${NPM_REGISTRY}/${npmPath(name)}/latest`);
   return data?.version ?? null;
 }
 
 export async function npmManifest(name) {
-  return fetchJSON(`${NPM_REGISTRY}/${name.replace('/', '%2f')}/latest`);
+  return fetchJSON(`${NPM_REGISTRY}/${npmPath(name)}/latest`);
 }
 
 export function normalizePypiName(name) {
@@ -102,7 +105,7 @@ export async function latestGithubRelease(repo) {
 // --- Release dates (for the minimum-release-age safeguard) -------------
 
 async function publishedNpm(name, version) {
-  const doc = await fetchJSON(`${NPM_REGISTRY}/${name.replace('/', '%2f')}`);
+  const doc = await fetchJSON(`${NPM_REGISTRY}/${npmPath(name)}`);
   return doc?.time?.[version] ?? null;
 }
 

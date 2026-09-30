@@ -79,9 +79,15 @@ const OPTIONS = {
 
 async function loadConfig(dir) {
   const path = join(dir, CONFIG_FILE);
-  if (!existsSync(path)) return {};
+  let raw;
   try {
-    return JSON.parse(await readFile(path, 'utf8'));
+    raw = await readFile(path, 'utf8');
+  } catch (err) {
+    if (err.code === 'ENOENT') return {};
+    throw err;
+  }
+  try {
+    return JSON.parse(raw);
   } catch (err) {
     throw new Error(`Could not parse ${path}: ${err.message}`);
   }
@@ -194,9 +200,14 @@ async function cmdStack(tool, values) {
 }
 
 async function writeIfAbsent(path, content, force, log) {
-  if (existsSync(path) && !force) return log(`  kept     ${path} (exists; --force to overwrite)`);
   await mkdir(dirname(path), { recursive: true });
-  await writeFile(path, content);
+  try {
+    // 'wx' fails atomically if the file exists, so there's no check-then-write race.
+    await writeFile(path, content, { flag: force ? 'w' : 'wx' });
+  } catch (err) {
+    if (err.code === 'EEXIST') return log(`  kept     ${path} (exists; --force to overwrite)`);
+    throw err;
+  }
   log(`  wrote    ${path}`);
 }
 

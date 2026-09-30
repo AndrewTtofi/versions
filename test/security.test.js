@@ -116,3 +116,19 @@ test('remote mode never exposes filesystem tools', async () => {
   const res = await handle({ jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'check_project', arguments: {} } });
   assert.equal(res.error.code, -32602);
 });
+
+test('pathological version strings are rejected quickly (no ReDoS)', async () => {
+  const { parseVersion, compareVersions } = await import('../src/semver.js');
+  const started = Date.now();
+  assert.equal(parseVersion('9' + '.9'.repeat(50_000) + 'x'), null);
+  assert.equal(parseVersion('1' + '+'.repeat(100_000)), null);
+  compareVersions('1.0.0-' + 'a1'.repeat(100), '1.0.0-' + 'a1'.repeat(100) + 'b');
+  assert.ok(Date.now() - started < 200, 'bounded work');
+});
+
+test('markdown output escapes table and HTML metacharacters', async () => {
+  const { renderMarkdown } = await import('../src/render.js');
+  const md = renderMarkdown({ generatedAt: 'now', tools: {}, packages: { npm: { 'a|b\\c<script>': { latest: '1.0.0', usedBy: ['x', 'y'] } } } });
+  assert.ok(md.includes('a\\|b\\\\c\\<script\\>'));
+  assert.ok(!md.includes('<script>'));
+});
