@@ -1,0 +1,16 @@
+name: Track a tool or companion
+description: Ask for an AI coding tool, SDK or companion to be tracked or supported by init
+labels: [sources]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Tool name and homepage
+    validations:
+      required: true
+  - type: textarea
+    id: where
+    attributes:
+      label: Where are its packages, public repos, and rules/MCP config files?
+    validations:
+      required: true

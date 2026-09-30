@@ -6,12 +6,33 @@
       "name": "Claude Code",
       "homepage": "https://github.com/anthropics/claude-code",
       "install": "npm install -g @anthropic-ai/claude-code",
-      "packages": { "npm": ["@anthropic-ai/claude-code", "@anthropic-ai/claude-agent-sdk", "@anthropic-ai/sdk"], "pypi": ["claude-agent-sdk", "anthropic"] },
-      "packageDeps": { "npm": ["@anthropic-ai/claude-agent-sdk", "@anthropic-ai/sdk"] },
+      "packages": {
+        "npm": [
+          "@anthropic-ai/claude-code",
+          "@anthropic-ai/claude-agent-sdk",
+          "@anthropic-ai/sdk"
+        ],
+        "pypi": [
+          "claude-agent-sdk",
+          "anthropic"
+        ]
+      },
+      "packageDeps": {
+        "npm": [
+          "@anthropic-ai/claude-agent-sdk",
+          "@anthropic-ai/sdk"
+        ]
+      },
       "repos": [
-        { "repo": "anthropics/claude-agent-sdk-python" },
-        { "repo": "anthropics/anthropic-sdk-typescript" },
-        { "repo": "anthropics/anthropic-sdk-python" }
+        {
+          "repo": "anthropics/claude-agent-sdk-python"
+        },
+        {
+          "repo": "anthropics/anthropic-sdk-typescript"
+        },
+        {
+          "repo": "anthropics/anthropic-sdk-python"
+        }
       ]
     },
     {
@@ -19,48 +40,105 @@
       "name": "OpenAI Codex CLI",
       "homepage": "https://github.com/openai/codex",
       "install": "npm install -g @openai/codex",
-      "packages": { "npm": ["@openai/codex", "@openai/codex-sdk", "openai"], "pypi": ["openai"] },
-      "repos": [{ "repo": "openai/codex" }, { "repo": "openai/openai-node" }]
+      "packages": {
+        "npm": [
+          "@openai/codex",
+          "@openai/codex-sdk",
+          "openai"
+        ],
+        "pypi": [
+          "openai"
+        ]
+      },
+      "repos": [
+        {
+          "repo": "openai/codex"
+        },
+        {
+          "repo": "openai/openai-node"
+        }
+      ]
     },
     {
       "id": "gemini-cli",
       "name": "Gemini CLI",
       "homepage": "https://github.com/google-gemini/gemini-cli",
       "install": "npm install -g @google/gemini-cli",
-      "packages": { "npm": ["@google/gemini-cli", "@google/genai"] },
-      "repos": [{ "repo": "google-gemini/gemini-cli" }]
+      "packages": {
+        "npm": [
+          "@google/gemini-cli",
+          "@google/genai"
+        ]
+      },
+      "repos": [
+        {
+          "repo": "google-gemini/gemini-cli"
+        }
+      ]
     },
     {
       "id": "github-copilot-cli",
       "name": "GitHub Copilot CLI",
       "homepage": "https://github.com/github/copilot-cli",
       "install": "npm install -g @github/copilot",
-      "packages": { "npm": ["@github/copilot"] },
-      "packageDeps": { "npm": ["@github/copilot"] }
+      "packages": {
+        "npm": [
+          "@github/copilot"
+        ]
+      },
+      "packageDeps": {
+        "npm": [
+          "@github/copilot"
+        ]
+      }
     },
     {
       "id": "opencode",
       "name": "opencode",
       "homepage": "https://github.com/anomalyco/opencode",
       "install": "npm install -g opencode-ai",
-      "packages": { "npm": ["opencode-ai"] },
-      "repos": [{ "repo": "anomalyco/opencode" }]
+      "packages": {
+        "npm": [
+          "opencode-ai"
+        ]
+      },
+      "repos": [
+        {
+          "repo": "anomalyco/opencode"
+        }
+      ]
     },
     {
       "id": "qwen-code",
       "name": "Qwen Code",
       "homepage": "https://github.com/QwenLM/qwen-code",
       "install": "npm install -g @qwen-code/qwen-code",
-      "packages": { "npm": ["@qwen-code/qwen-code"] },
-      "repos": [{ "repo": "QwenLM/qwen-code" }]
+      "packages": {
+        "npm": [
+          "@qwen-code/qwen-code"
+        ]
+      },
+      "repos": [
+        {
+          "repo": "QwenLM/qwen-code"
+        }
+      ]
     },
     {
       "id": "crush",
       "name": "Crush",
       "homepage": "https://github.com/charmbracelet/crush",
       "install": "npm install -g @charmland/crush",
-      "packages": { "npm": ["@charmland/crush"] },
-      "repos": [{ "repo": "charmbracelet/crush" }]
+      "packages": {
+        "npm": [
+          "@charmland/crush"
+        ]
+      },
+      "repos": [
+        {
+          "repo": "charmbracelet/crush"
+        }
+      ]
     },
     {
       "id": "goose",
@@ -68,55 +146,349 @@
       "homepage": "https://github.com/aaif-goose/goose",
       "install": "curl -fsSL https://github.com/aaif-goose/goose/releases/download/stable/download_cli.sh | bash",
       "releases": "aaif-goose/goose",
-      "repos": [{ "repo": "aaif-goose/goose" }]
+      "repos": [
+        {
+          "repo": "aaif-goose/goose"
+        }
+      ]
     },
     {
       "id": "aider",
       "name": "Aider",
       "homepage": "https://github.com/Aider-AI/aider",
       "install": "python -m pip install aider-install && aider-install",
-      "packages": { "pypi": ["aider-chat"] },
-      "repos": [{ "repo": "Aider-AI/aider" }]
+      "packages": {
+        "pypi": [
+          "aider-chat"
+        ]
+      },
+      "repos": [
+        {
+          "repo": "Aider-AI/aider"
+        }
+      ]
     },
     {
       "id": "cline",
       "name": "Cline",
       "homepage": "https://github.com/cline/cline",
       "install": "npm install -g cline",
-      "packages": { "npm": ["cline"] },
-      "repos": [{ "repo": "cline/cline" }]
+      "packages": {
+        "npm": [
+          "cline"
+        ]
+      },
+      "repos": [
+        {
+          "repo": "cline/cline"
+        }
+      ]
     },
     {
       "id": "continue",
       "name": "Continue",
       "homepage": "https://github.com/continuedev/continue",
       "install": "npm install -g @continuedev/cli",
-      "packages": { "npm": ["@continuedev/cli"] },
-      "repos": [{ "repo": "continuedev/continue" }]
+      "packages": {
+        "npm": [
+          "@continuedev/cli"
+        ]
+      },
+      "repos": [
+        {
+          "repo": "continuedev/continue"
+        }
+      ]
     },
     {
       "id": "openhands",
       "name": "OpenHands",
       "homepage": "https://github.com/OpenHands/OpenHands",
       "install": "uv tool install openhands-ai",
-      "packages": { "pypi": ["openhands-ai"] },
-      "repos": [{ "repo": "OpenHands/OpenHands" }]
+      "packages": {
+        "pypi": [
+          "openhands-ai"
+        ]
+      },
+      "repos": [
+        {
+          "repo": "OpenHands/OpenHands"
+        }
+      ]
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "homepage": "https://cursor.com",
+      "install": "curl https://cursor.com/install -fsS | bash",
+      "versionUrl": {
+        "url": "https://api2.cursor.sh/updates/api/update/linux-x64/cursor/0.0.0/stable",
+        "field": "version"
+      }
+    },
+    {
+      "id": "github-copilot",
+      "name": "GitHub Copilot Chat (VS Code)",
+      "homepage": "https://github.com/microsoft/vscode-copilot-chat",
+      "install": "code --install-extension GitHub.copilot-chat",
+      "releases": "microsoft/vscode-copilot-chat",
+      "repos": [
+        {
+          "repo": "microsoft/vscode-copilot-chat"
+        }
+      ]
+    },
+    {
+      "id": "kilo-code",
+      "name": "Kilo Code",
+      "homepage": "https://github.com/Kilo-Org/kilocode",
+      "install": "npm install -g @kilocode/cli",
+      "packages": {
+        "npm": [
+          "@kilocode/cli"
+        ]
+      },
+      "repos": [
+        {
+          "repo": "Kilo-Org/kilocode"
+        }
+      ]
+    },
+    {
+      "id": "amp",
+      "name": "Amp",
+      "homepage": "https://ampcode.com",
+      "install": "npm install -g @sourcegraph/amp",
+      "packages": {
+        "npm": [
+          "@sourcegraph/amp"
+        ]
+      },
+      "packageDeps": {
+        "npm": [
+          "@sourcegraph/amp"
+        ]
+      }
+    },
+    {
+      "id": "auggie",
+      "name": "Augment (Auggie CLI)",
+      "homepage": "https://github.com/augmentcode/auggie",
+      "install": "npm install -g @augmentcode/auggie",
+      "packages": {
+        "npm": [
+          "@augmentcode/auggie"
+        ]
+      },
+      "packageDeps": {
+        "npm": [
+          "@augmentcode/auggie"
+        ]
+      }
+    },
+    {
+      "id": "factory-droid",
+      "name": "Factory Droid",
+      "homepage": "https://github.com/Factory-AI/factory",
+      "install": "npm install -g droid",
+      "packages": {
+        "npm": [
+          "droid"
+        ]
+      },
+      "packageDeps": {
+        "npm": [
+          "droid"
+        ]
+      }
+    },
+    {
+      "id": "junie",
+      "name": "JetBrains Junie",
+      "homepage": "https://github.com/JetBrains/junie",
+      "install": "npm install -g @jetbrains/junie-cli",
+      "packages": {
+        "npm": [
+          "@jetbrains/junie-cli"
+        ]
+      },
+      "packageDeps": {
+        "npm": [
+          "@jetbrains/junie-cli"
+        ]
+      }
+    },
+    {
+      "id": "codebuddy",
+      "name": "CodeBuddy Code",
+      "homepage": "https://www.codebuddy.ai",
+      "install": "npm install -g @tencent-ai/codebuddy-code",
+      "packages": {
+        "npm": [
+          "@tencent-ai/codebuddy-code"
+        ]
+      },
+      "packageDeps": {
+        "npm": [
+          "@tencent-ai/codebuddy-code"
+        ]
+      }
+    },
+    {
+      "id": "letta-code",
+      "name": "Letta Code",
+      "homepage": "https://github.com/letta-ai/letta-code",
+      "install": "npm install -g @letta-ai/letta-code",
+      "packages": {
+        "npm": [
+          "@letta-ai/letta-code"
+        ]
+      },
+      "repos": [
+        {
+          "repo": "letta-ai/letta-code"
+        }
+      ]
+    },
+    {
+      "id": "mistral-vibe",
+      "name": "Mistral Vibe",
+      "homepage": "https://github.com/mistralai/mistral-vibe",
+      "install": "uv tool install mistral-vibe",
+      "packages": {
+        "pypi": [
+          "mistral-vibe"
+        ]
+      },
+      "repos": [
+        {
+          "repo": "mistralai/mistral-vibe"
+        }
+      ]
+    },
+    {
+      "id": "grok-cli",
+      "name": "Grok CLI",
+      "homepage": "https://github.com/superagent-ai/grok-cli",
+      "install": "npm install -g @vibe-kit/grok-cli",
+      "packages": {
+        "npm": [
+          "@vibe-kit/grok-cli"
+        ]
+      },
+      "repos": [
+        {
+          "repo": "superagent-ai/grok-cli"
+        }
+      ]
+    },
+    {
+      "id": "zed",
+      "name": "Zed",
+      "homepage": "https://github.com/zed-industries/zed",
+      "install": "curl -f https://zed.dev/install.sh | sh",
+      "releases": "zed-industries/zed",
+      "packages": {
+        "npm": [
+          "@zed-industries/claude-code-acp"
+        ]
+      },
+      "repos": [
+        {
+          "repo": "zed-industries/zed"
+        }
+      ]
+    },
+    {
+      "id": "gptme",
+      "name": "gptme",
+      "homepage": "https://github.com/gptme/gptme",
+      "install": "pipx install gptme",
+      "packages": {
+        "pypi": [
+          "gptme"
+        ]
+      },
+      "repos": [
+        {
+          "repo": "gptme/gptme"
+        }
+      ]
+    },
+    {
+      "id": "swe-agent",
+      "name": "SWE-agent",
+      "homepage": "https://github.com/SWE-agent/SWE-agent",
+      "install": "pip install git+https://github.com/SWE-agent/SWE-agent",
+      "releases": "SWE-agent/SWE-agent",
+      "repos": [
+        {
+          "repo": "SWE-agent/SWE-agent"
+        }
+      ]
     },
     {
       "id": "mcp",
       "name": "Model Context Protocol SDKs",
       "homepage": "https://github.com/modelcontextprotocol",
       "install": "npm install @modelcontextprotocol/sdk",
-      "packages": { "npm": ["@modelcontextprotocol/sdk"], "pypi": ["mcp"] },
-      "repos": [{ "repo": "modelcontextprotocol/typescript-sdk" }, { "repo": "modelcontextprotocol/python-sdk" }]
+      "packages": {
+        "npm": [
+          "@modelcontextprotocol/sdk"
+        ],
+        "pypi": [
+          "mcp"
+        ]
+      },
+      "repos": [
+        {
+          "repo": "modelcontextprotocol/typescript-sdk"
+        },
+        {
+          "repo": "modelcontextprotocol/python-sdk"
+        }
+      ]
     },
     {
       "id": "openai-agents",
       "name": "OpenAI Agents SDK",
       "homepage": "https://github.com/openai/openai-agents-js",
       "install": "npm install @openai/agents",
-      "packages": { "npm": ["@openai/agents"], "pypi": ["openai-agents"] },
-      "repos": [{ "repo": "openai/openai-agents-js" }, { "repo": "openai/openai-agents-python" }]
+      "packages": {
+        "npm": [
+          "@openai/agents"
+        ],
+        "pypi": [
+          "openai-agents"
+        ]
+      },
+      "repos": [
+        {
+          "repo": "openai/openai-agents-js"
+        },
+        {
+          "repo": "openai/openai-agents-python"
+        }
+      ]
+    },
+    {
+      "id": "acp",
+      "name": "Agent Client Protocol SDKs",
+      "homepage": "https://github.com/agentclientprotocol/agent-client-protocol",
+      "install": "npm install @agentclientprotocol/sdk",
+      "packages": {
+        "npm": [
+          "@agentclientprotocol/sdk"
+        ]
+      },
+      "repos": [
+        {
+          "repo": "agentclientprotocol/agent-client-protocol"
+        },
+        {
+          "repo": "agentclientprotocol/typescript-sdk"
+        }
+      ]
     }
   ]
 }

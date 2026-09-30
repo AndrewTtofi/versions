@@ -24,19 +24,23 @@ outputs:
 runs:
   using: composite
   steps:
-    - uses: actions/setup-node@v7
+    - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
       with:
         node-version: 24
     - id: run
       shell: bash
       working-directory: ${{ inputs.directory }}
+      # Inputs go through env vars, never ${{ }} inside the script (no injection).
       env:
         MODE: ${{ inputs.mode }}
         ARGS: ${{ inputs.args }}
-        CLI: ${{ github.action_path }}/bin/agent-versions.js
+        ACTION_PATH: ${{ github.action_path }}
       run: |
+        set -f  # ARGS is split into words but never glob-expanded
+        case "$MODE" in update|check) ;; *) echo "mode must be update or check"; exit 2 ;; esac
         FLAGS=""; [ "$MODE" = "check" ] && FLAGS="--fail"
         # shellcheck disable=SC2086
-        node "$CLI" "$MODE" . --json $FLAGS $ARGS > "$RUNNER_TEMP/agent-versions.json" || status=$?
-        node "${{ github.action_path }}/scripts/action-report.js" "$RUNNER_TEMP/agent-versions.json" >> "$GITHUB_OUTPUT"
+        node "$ACTION_PATH/bin/agent-versions.js" "$MODE" . --json $FLAGS $ARGS > "$RUNNER_TEMP/agent-versions.json" || status=$?
+        node "$ACTION_PATH/scripts/action-report.js" "$RUNNER_TEMP/agent-versions.json" >> "$GITHUB_OUTPUT"
+        if [ "${status:-0}" = "2" ]; then exit 2; fi
         if [ "$MODE" = "check" ] && [ "${status:-0}" != "0" ]; then exit "$status"; fi

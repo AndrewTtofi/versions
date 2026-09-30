@@ -11,7 +11,8 @@ It ships in several forms, so it fits wherever you work:
 | Use it as | What you get |
 |---|---|
 | **Claude Code plugin** | An MCP server, a skill that makes the agent look versions up before writing them, and a session-start summary of what's outdated in your project |
-| **MCP server / connector** | `latest_versions`, `check_manifest`, `check_project`, `update_project`, `ai_tool_versions`, `tool_stack`. Works in Claude Code, Codex, Gemini CLI, Cursor, claude.ai and any MCP client |
+| **MCP server / connector** | `latest_versions`, `check_manifest`, `check_project`, `update_project`, `ai_tool_versions`, `tool_stack`. Works in Claude Code, Codex, Gemini CLI, Cursor, Windsurf, Copilot, Cline, Kiro, Zed, claude.ai and any MCP client |
+| **Rules for every companion** | `init` writes the native rules file for 17 coding companions, so each agent looks versions up instead of guessing |
 | **CLI** | `check`, `update`, `latest`, `tools`, `stack`, `init` |
 | **GitHub Action** | Scheduled pull requests that bump dependencies to the latest releases |
 | **Data feed** | [`data/latest.json`](data/latest.json) and [`VERSIONS.md`](VERSIONS.md), refreshed every 4 hours |
@@ -55,18 +56,37 @@ Run `init` once in a project:
 npx -y github:AndrewTtofi/versions init --no-major --mcp
 ```
 
-It writes:
+It works out which coding companions the project uses and writes:
 
 - **`.github/workflows/agent-versions.yml`**: every Monday it runs
   `update` and opens (or refreshes) one PR with a table of what changed, just like
   Dependabot. Enable *Settings → Actions → General → Allow GitHub Actions to
   create and approve pull requests*.
-- **`AGENTS.md`** (and `CLAUDE.md` / `GEMINI.md` if they exist): a short rule that
-  tells any coding agent to look versions up instead of guessing, and how to upgrade.
-  Codex, Claude Code, Gemini CLI, Cursor and others read these files.
+- **`AGENTS.md`** plus **each companion's own rules file**: a short rule telling the agent to
+  look versions up instead of guessing, and how to upgrade (table below).
+- **MCP configs** (with `--mcp`): connects the MCP server for everyone who opens the
+  project, in every companion that supports project-level MCP. Existing files are merged,
+  and files with comments are never overwritten; you get the snippet to paste instead.
 - **`agent-versions.json`**: project config (see [Configuration](#configuration)).
-- **`.mcp.json`** (with `--mcp`): connects the MCP server for everyone who opens the
-  project in Claude Code.
+
+Companions are detected from their config files. Use `--for cursor,windsurf`
+to choose, `--for all` for every companion, or `--for list` to see them.
+
+| Companion | Rules file | MCP config (`--mcp`) |
+|---|---|---|
+| Codex, Amp, Factory, Copilot CLI, opencode, Junie, … | `AGENTS.md` (always) | Codex: `.codex/config.toml`, opencode: `opencode.json` |
+| Claude Code | `CLAUDE.md` | `.mcp.json` |
+| Gemini CLI | `GEMINI.md` | `.gemini/settings.json` |
+| Cursor | `.cursor/rules/agent-versions.mdc` | `.cursor/mcp.json` |
+| Windsurf | `.windsurf/rules/agent-versions.md` | global only |
+| GitHub Copilot (VS Code) | `.github/instructions/agent-versions.instructions.md` | `.vscode/mcp.json` |
+| Cline | `.clinerules/agent-versions.md` | global only |
+| Kilo Code / Roo Code | `.kilocode/rules/…` / `.roo/rules/…` | `.kilocode/mcp.json` / `.roo/mcp.json` |
+| Continue | `.continue/rules/agent-versions.md` | `.continue/mcpServers/agent-versions.yaml` |
+| JetBrains Junie | `.junie/guidelines.md` | — |
+| Kiro / Amazon Q | `.kiro/steering/…` / `.amazonq/rules/…` | `.kiro/settings/mcp.json` / `.amazonq/mcp.json` |
+| Zed | `.rules` (if present, else `AGENTS.md`) | `.zed/settings.json` |
+| Aider | adds `read: [AGENTS.md]` to `.aider.conf.yml` | — |
 
 ## Claude Code plugin
 
@@ -129,8 +149,13 @@ The same server speaks MCP Streamable HTTP. Remote mode leaves out the two
 filesystem tools; the agent uses `check_manifest` instead.
 
 ```bash
-npx -y github:AndrewTtofi/versions mcp --http --port 3000   # POST http://host:3000/mcp
+npx -y github:AndrewTtofi/versions mcp --http --port 3000                 # 127.0.0.1 only
+npx -y github:AndrewTtofi/versions mcp --http --host 0.0.0.0 --port 3000  # behind your reverse proxy
 ```
+
+The connector enforces a per-client rate limit (`AGENT_VERSIONS_RATE_LIMIT`, default 120/min),
+body and batch size caps, and an Origin allow-list (`AGENT_VERSIONS_ALLOWED_ORIGINS`).
+Browsers are rejected unless their origin is listed. See [SECURITY.md](SECURITY.md).
 
 Or deploy the repository as-is to a serverless host. `api/mcp.js` is a ready-made
 function entry point (on Vercel: `vercel deploy`, endpoint `https://<app>/api/mcp`).
@@ -141,7 +166,7 @@ the URL. The endpoint is read-only and stateless, and it needs no secrets.
 
 ```yaml
 - uses: actions/checkout@v7
-- uses: AndrewTtofi/versions@main
+- uses: AndrewTtofi/versions@v0.2.0   # pin a release or commit SHA
   id: versions
   with:
     args: --no-major --exclude "eslint*"   # any CLI flags
@@ -210,9 +235,12 @@ The CLI and MCP tools query registries **live** by default, so they are never
 more out of date than the registries themselves. The snapshot powers `tools`,
 `stack`, `--tracked` and `--snapshot`, and serves as an offline fallback.
 
-Tracked today: Claude Code & Claude Agent SDK, OpenAI Codex, Gemini CLI, GitHub
-Copilot CLI, opencode, Qwen Code, Crush, goose, Aider, Cline, Continue, OpenHands,
-the MCP SDKs, and the OpenAI Agents SDK. That comes to about 1,900 packages across four ecosystems.
+Tracked today (29): Claude Code & Claude Agent SDK, OpenAI Codex, Gemini CLI,
+GitHub Copilot CLI, GitHub Copilot Chat, Cursor, opencode, Qwen Code, Crush, goose,
+Aider, Cline, Continue, OpenHands, Kilo Code, Amp, Augment (Auggie), Factory Droid,
+JetBrains Junie, CodeBuddy, Letta Code, Mistral Vibe, Grok CLI, Zed, gptme, SWE-agent,
+and the MCP, OpenAI Agents and Agent Client Protocol SDKs. Closed-source tools are tracked
+through their published packages or update feeds.
 To add a tool, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Programmatic use
@@ -223,6 +251,23 @@ import { analyze, applyUpdates, createResolver } from 'agent-versions';
 const analysis = await analyze('.', { noMajor: true });
 await applyUpdates(analysis);
 ```
+
+## Security
+
+agent-versions is a supply-chain component, so it's built defensively:
+
+- It never writes a version that fails strict validation.
+- It never builds a registry URL from an unvalidated name.
+- Local MCP tools can't leave the project directory.
+- The public connector is read-only and rate-limited.
+- The repository runs SHA-pinned, least-privilege workflows behind a protected `main`.
+
+Details and reporting are in [SECURITY.md](SECURITY.md).
+
+## Contributing
+
+PRs are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). If you're working with an AI agent,
+it should read [CLAUDE.md](CLAUDE.md). Please follow the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## License
 

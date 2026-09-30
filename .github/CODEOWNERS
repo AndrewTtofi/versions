@@ -1,0 +1,13 @@
+# Every change needs review from a maintainer. Security-sensitive paths are
+# listed explicitly so the rule survives if the default is ever relaxed.
+*                   @AndrewTtofi
+/.github/           @AndrewTtofi
+/action.yml         @AndrewTtofi
+/hooks/             @AndrewTtofi
+/.claude-plugin/    @AndrewTtofi
+/.mcp.json          @AndrewTtofi
+/sources.json       @AndrewTtofi
+/src/validate.js    @AndrewTtofi
+/src/mcp.js         @AndrewTtofi
+/src/registries.js  @AndrewTtofi
+/templates/         @AndrewTtofi

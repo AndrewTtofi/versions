@@ -1,0 +1,30 @@
+name: Bug report
+description: Something parses, resolves or updates incorrectly
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "**Security issue?** Don't file it here. Use [private reporting](https://github.com/AndrewTtofi/versions/security/advisories/new) instead."
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction
+      description: Command and a minimal manifest snippet (remove anything private).
+      render: shell
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: agent-versions version / commit
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where
+      options: [CLI, MCP server (local), MCP connector (remote), Claude Code plugin, GitHub Action, Data feed]

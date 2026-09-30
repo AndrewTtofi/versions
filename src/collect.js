@@ -12,6 +12,7 @@ import {
   npmManifest,
   pool,
 } from './registries.js';
+import { isValidPackageName } from './validate.js';
 
 export const MANIFEST_RE = /(^|\/)(package\.json|pyproject\.toml|Cargo\.toml|go\.mod|requirements[^/]*\.(txt|in))$/;
 export const DEFAULT_EXCLUDE_RE =
@@ -59,6 +60,9 @@ export function ownPackageNames(filename, text) {
   }
   return names;
 }
+
+// Release tags and update-API values are third-party strings; keep them inert.
+const safeLabel = (v) => (typeof v === 'string' && /^[\w.+/-]{1,64}$/.test(v) ? v : null);
 
 function keyFor(ecosystem, name) {
   return `${ecosystem}:${ecosystem === 'pypi' ? normalizePypiName(name) : name}`;
@@ -119,6 +123,7 @@ export async function collect(sources, { log = () => {}, resolve = createResolve
   const tools = {};
 
   const add = (toolId, dep) => {
+    if (!isValidPackageName(dep.ecosystem, dep.name)) return;
     const key = keyFor(dep.ecosystem, dep.name);
     if (!packages.has(key)) packages.set(key, { ecosystem: dep.ecosystem, name: dep.name, usedBy: new Set() });
     packages.get(key).usedBy.add(toolId);
@@ -139,9 +144,17 @@ export async function collect(sources, { log = () => {}, resolve = createResolve
         }
       }
     }
+    if (tool.versionUrl) {
+      try {
+        const data = await fetchJSON(tool.versionUrl.url);
+        entry.release = safeLabel(tool.versionUrl.field.split('.').reduce((o, k) => o?.[k], data));
+      } catch (err) {
+        errors.push({ tool: tool.id, versionUrl: tool.versionUrl.url, error: err.message });
+      }
+    }
     if (tool.releases) {
       try {
-        entry.release = await latestGithubRelease(tool.releases);
+        entry.release = safeLabel(await latestGithubRelease(tool.releases));
       } catch (err) {
         errors.push({ tool: tool.id, releases: tool.releases, error: err.message });
       }

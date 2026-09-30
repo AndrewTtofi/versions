@@ -3,6 +3,7 @@ import { relative } from 'node:path';
 import { applyEdits, findManifests, parseManifest, readManifest } from './manifests/index.js';
 import { createResolver, normalizePypiName, pool } from './registries.js';
 import { bumpVersionText, isMajorBump } from './semver.js';
+import { isSafeVersion } from './validate.js';
 
 function globToRegExp(glob) {
   const escaped = glob.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*');
@@ -40,6 +41,7 @@ export async function analyze(target, opts = {}) {
 export async function analyzeManifestText(filename, text, opts = {}) {
   const parsed = parseManifest(filename, text);
   if (!parsed) throw new Error(`Unsupported manifest: ${filename}. Expected package.json, pyproject.toml, requirements*.txt, Cargo.toml or go.mod.`);
+  if (opts.maxDeps && parsed.deps.length > opts.maxDeps) throw new Error(`Manifest has more than ${opts.maxDeps} dependencies`);
   const file = { path: filename, relPath: filename, ecosystem: parsed.ecosystem, text, deps: parsed.deps };
   await resolveFiles([file], opts);
   const edits = file.deps.filter((d) => d.status === 'outdated').map((d) => ({ start: d.start, end: d.end, text: d.next }));
@@ -104,6 +106,11 @@ async function resolveFiles(files, opts) {
       if (!found.version) {
         dep.status = 'error';
         dep.reason = 'not found in registry';
+        continue;
+      }
+      if (!isSafeVersion(found.version)) {
+        dep.status = 'error';
+        dep.reason = 'resolver returned an invalid version';
         continue;
       }
       dep.latest = found.version;

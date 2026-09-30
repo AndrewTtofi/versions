@@ -3,6 +3,7 @@
 // does not exist. Network failures are retried, then thrown.
 
 import { maxVersion } from './semver.js';
+import { isSafeVersion, isValidPackageName } from './validate.js';
 
 export const USER_AGENT = 'agent-versions (+https://github.com/AndrewTtofi/versions)';
 
@@ -94,16 +95,22 @@ export async function latestGithubRelease(repo) {
 
 const LOOKUPS = { npm: latestNpm, pypi: latestPypi, cargo: latestCrate, go: latestGo };
 
+/** Validated lookup: rejects malformed names and anything that isn't a plain version. */
+export async function lookupLatest(ecosystem, name) {
+  const lookup = LOOKUPS[ecosystem];
+  if (!lookup) throw new Error(`Unknown ecosystem: ${ecosystem}`);
+  if (!isValidPackageName(ecosystem, name)) throw new Error(`Invalid ${ecosystem} package name`);
+  const version = await lookup(name);
+  if (version != null && !isSafeVersion(version)) throw new Error(`Registry returned an invalid version for ${name}`);
+  return version;
+}
+
 /** A memoising resolver: resolve('npm', 'zod') -> '4.1.5'. */
 export function createResolver() {
   const cache = new Map();
   return function resolve(ecosystem, name) {
     const key = `${ecosystem}:${name}`;
-    if (!cache.has(key)) {
-      const lookup = LOOKUPS[ecosystem];
-      if (!lookup) throw new Error(`Unknown ecosystem: ${ecosystem}`);
-      cache.set(key, lookup(name));
-    }
+    if (!cache.has(key)) cache.set(key, lookupLatest(ecosystem, name));
     return cache.get(key);
   };
 }

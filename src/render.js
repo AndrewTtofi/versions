@@ -3,9 +3,10 @@
 const ECOSYSTEM_LABELS = { npm: 'npm', pypi: 'PyPI', cargo: 'crates.io', go: 'Go modules' };
 
 function toolVersion(tool) {
+  if (tool.release) return `\`${tool.release}\``;
   const primary = Object.values(tool.packages ?? {}).flatMap((p) => Object.entries(p))[0];
   if (primary) return `\`${primary[1] ?? '?'}\``;
-  return tool.release ? `\`${tool.release}\`` : '—';
+  return '—';
 }
 
 const esc = (s) => String(s).replace(/\|/g, '\\|');
@@ -52,7 +53,7 @@ export function renderMarkdown(snapshot) {
 
   if (snapshot.errors?.length) {
     out.push(`<details><summary>${snapshot.errors.length} lookup problems during the last run</summary>`, '');
-    for (const e of snapshot.errors) out.push(`- ${esc(e.tool ?? '')} ${esc(e.package ?? e.repo ?? e.releases ?? '')}: ${esc(e.error)}`);
+    for (const e of snapshot.errors) out.push(`- ${esc(e.tool ?? '')} ${esc(e.package ?? e.repo ?? e.releases ?? e.versionUrl ?? '')}: ${esc(e.error)}`);
     out.push('', '</details>', '');
   }
   return out.join('\n');

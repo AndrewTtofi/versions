@@ -19,7 +19,10 @@ test('init writes config, workflow and an idempotent AGENTS.md block', async () 
   assert.match(agents, /^# Project rules\n\nBe nice\.\n\n<!-- agent-versions:start -->/);
   assert.equal(agents.match(/agent-versions:start/g).length, 1);
   assert.match(await readFile(join(dir, 'CLAUDE.md'), 'utf8'), /agent-versions:start/);
-  assert.match(await readFile(join(dir, '.github/workflows/agent-versions.yml'), 'utf8'), /args: --no-major/);
+  const wf = await readFile(join(dir, '.github/workflows/agent-versions.yml'), 'utf8');
+  assert.match(wf, /args: --no-major/);
+  assert.match(wf, /uses: AndrewTtofi\/versions@v\d+\.\d+\.\d+\n/);
+  for (const [, ref] of wf.matchAll(/uses: (?!AndrewTtofi)\S+@(\S+)/g)) assert.match(ref, /^[0-9a-f]{40}$/, 'third-party actions are SHA-pinned');
   assert.deepEqual(JSON.parse(await readFile(join(dir, 'agent-versions.json'), 'utf8')), { noMajor: true, exclude: [] });
   assert.ok(JSON.parse(await readFile(join(dir, '.mcp.json'), 'utf8')).mcpServers['agent-versions']);
 });

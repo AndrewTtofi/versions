@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { analyze, applyUpdates, summarize } from './engine.js';
 import { analysisToJSON, briefAnalysis, c, formatAnalysis, parsePackageRef } from './report.js';
+import { COMPANIONS, selectCompanions, setupCompanions } from './companions.js';
 import { createResolver } from './registries.js';
 import { loadSnapshot, snapshotResolver, trackedSet } from './snapshot.js';
 import { VERSION } from './version.js';
@@ -22,8 +23,9 @@ Commands:
   latest <pkg...>        Latest version of packages: zod npm:zod pypi:requests cargo:serde go:<module>
   tools                  Latest versions of AI coding tools (Claude Code, Codex, Gemini CLI, ...)
   stack <tool>           Dependencies an AI tool uses, with latest versions
-  init [dir]             Set up a project: config, scheduled update PRs, agent instructions
-  mcp                    Run the MCP server over stdio (add --http [--port N] for remote connectors)
+  init [dir]             Set up a project: config, scheduled update PRs, rules for every coding
+                         companion found (--for cursor,windsurf|all|list, --mcp for MCP configs)
+  mcp                    Run the MCP server over stdio (--http [--port N] [--host H] for connectors)
 
 Options:
   --no-major             Hold back breaking (major) upgrades
@@ -65,6 +67,8 @@ const OPTIONS = {
   'no-workflow': { type: 'boolean' },
   'no-agents': { type: 'boolean' },
   mcp: { type: 'boolean' },
+  for: { type: 'string' },
+  host: { type: 'string' },
   force: { type: 'boolean' },
 };
 
@@ -189,38 +193,25 @@ async function writeIfAbsent(path, content, force, log) {
   log(`  wrote    ${path}`);
 }
 
-async function upsertBlock(path, block, log) {
-  const existing = existsSync(path) ? await readFile(path, 'utf8') : '';
-  const re = /<!-- agent-versions:start -->[\s\S]*?<!-- agent-versions:end -->\n?/;
-  const next = re.test(existing) ? existing.replace(re, block) : `${existing}${existing && !existing.endsWith('\n\n') ? (existing.endsWith('\n') ? '\n' : '\n\n') : ''}${block}`;
-  if (next === existing) return log(`  kept     ${path} (up to date)`);
-  await writeFile(path, next);
-  log(`  ${existing ? 'updated ' : 'wrote   '} ${path}`);
-}
-
 async function cmdInit(dir, values) {
   const log = (m) => console.log(m);
+  if (values.for === 'list') {
+    for (const comp of COMPANIONS) console.log(`${comp.id.padEnd(12)} ${comp.name}${comp.detect ? c.dim(`  (detected by ${comp.detect.join(', ')})`) : ''}`);
+    return;
+  }
+  const companions = selectCompanions(dir, values.for);
   console.log(c.bold(`Setting up agent-versions in ${dir}`));
+  console.log(c.dim(`Companions: ${companions.map((x) => x.id).join(', ')}${values.for ? '' : ' (auto-detected; use --for <ids|all>)'}`));
   await writeIfAbsent(join(dir, CONFIG_FILE), JSON.stringify({ noMajor: !!values['no-major'], exclude: [] }, null, 2) + '\n', values.force, log);
 
   if (!values['no-workflow']) {
     const args = values['no-major'] ? '--no-major' : "''";
-    const workflow = (await readFile(join(ROOT, 'templates', 'workflow.yml'), 'utf8')).replace('__ARGS__', args);
+    const workflow = (await readFile(join(ROOT, 'templates', 'workflow.yml'), 'utf8')).replace('__ARGS__', args).replace('__REF__', `v${VERSION}`);
     await writeIfAbsent(join(dir, '.github', 'workflows', 'agent-versions.yml'), workflow, values.force, log);
   }
   if (!values['no-agents']) {
     const block = await readFile(join(ROOT, 'templates', 'agents-snippet.md'), 'utf8');
-    await upsertBlock(join(dir, 'AGENTS.md'), block, log);
-    if (existsSync(join(dir, 'CLAUDE.md'))) await upsertBlock(join(dir, 'CLAUDE.md'), block, log);
-    if (existsSync(join(dir, 'GEMINI.md'))) await upsertBlock(join(dir, 'GEMINI.md'), block, log);
-  }
-  if (values.mcp) {
-    const path = join(dir, '.mcp.json');
-    const cfg = existsSync(path) ? JSON.parse(await readFile(path, 'utf8')) : {};
-    cfg.mcpServers ??= {};
-    cfg.mcpServers['agent-versions'] = { command: 'npx', args: ['-y', 'github:AndrewTtofi/versions', 'mcp'] };
-    await writeFile(path, JSON.stringify(cfg, null, 2) + '\n');
-    log(`  updated  ${path}`);
+    for (const line of await setupCompanions(dir, companions, { block, mcp: !!values.mcp })) log(line);
   }
   console.log(`\nNext: ${c.bold('agent-versions check')} to see what is outdated, ${c.bold('agent-versions update')} to apply.`);
 }
@@ -247,7 +238,7 @@ export async function main(argv = process.argv.slice(2)) {
       return cmdInit(dir(), values);
     case 'mcp': {
       const { serveHttp, serveStdio } = await import('./mcp.js');
-      if (values.http) return serveHttp({ port: Number(values.port ?? process.env.PORT ?? 3000) });
+      if (values.http) return serveHttp({ port: Number(values.port ?? process.env.PORT ?? 3000), host: values.host ?? process.env.HOST ?? '127.0.0.1' });
       return serveStdio();
     }
     default:
