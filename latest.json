@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-30T17:03:45.604Z",
+  "generatedAt": "2026-09-30T17:11:01.760Z",
   "tools": {
     "claude-code": {
       "name": "Claude Code",
@@ -234,7 +234,7 @@
           "@letta-ai/letta-code": "0.34.0"
         }
       },
-      "manifests": 2
+      "manifests": 3
     },
     "mistral-vibe": {
       "name": "Mistral Vibe",
@@ -5847,7 +5847,22 @@
           "mcp"
         ]
       },
+      "@changesets/cli": {
+        "latest": "3.0.3",
+        "usedBy": [
+          "goose",
+          "kilo-code",
+          "mcp",
+          "openai-agents"
+        ]
+      },
       "@chat-adapter/discord": {
+        "latest": "4.41.1",
+        "usedBy": [
+          "cline"
+        ]
+      },
+      "@chat-adapter/gchat": {
         "latest": "4.41.1",
         "usedBy": [
           "cline"
@@ -5859,7 +5874,19 @@
           "cline"
         ]
       },
+      "@chat-adapter/slack": {
+        "latest": "4.41.1",
+        "usedBy": [
+          "cline"
+        ]
+      },
       "@chat-adapter/telegram": {
+        "latest": "4.41.1",
+        "usedBy": [
+          "cline"
+        ]
+      },
+      "@chat-adapter/whatsapp": {
         "latest": "4.41.1",
         "usedBy": [
           "cline"
@@ -6232,6 +6259,13 @@
           "cline"
         ]
       },
+      "@fontsource-variable/inter": {
+        "latest": "5.3.0",
+        "usedBy": [
+          "cline",
+          "gptme"
+        ]
+      },
       "@fontsource/ibm-plex-mono": {
         "latest": "5.3.0",
         "usedBy": [
@@ -6350,6 +6384,12 @@
         "latest": "4.3.1",
         "usedBy": [
           "gptme"
+        ]
+      },
+      "@gramio/format": {
+        "latest": "0.12.1",
+        "usedBy": [
+          "cline"
         ]
       },
       "@grpc/grpc-js": {
@@ -6703,6 +6743,12 @@
         "latest": "1.0.10",
         "usedBy": [
           "github-copilot"
+        ]
+      },
+      "@microsoft/tui-test": {
+        "latest": "0.0.4",
+        "usedBy": [
+          "cline"
         ]
       },
       "@modelcontextprotocol/client": {
@@ -7087,6 +7133,12 @@
           "gemini-cli",
           "github-copilot",
           "qwen-code"
+        ]
+      },
+      "@opentui-ui/dialog": {
+        "latest": "0.1.3",
+        "usedBy": [
+          "cline"
         ]
       },
       "@opentui/core": {
@@ -7486,6 +7538,12 @@
         "usedBy": [
           "kilo-code",
           "opencode"
+        ]
+      },
+      "@rive-app/react-webgl2": {
+        "latest": "4.35.0",
+        "usedBy": [
+          "cline"
         ]
       },
       "@rollup/plugin-commonjs": {
@@ -7929,6 +7987,12 @@
           "cline"
         ]
       },
+      "@streamdown/cjk": {
+        "latest": "1.0.4",
+        "usedBy": [
+          "cline"
+        ]
+      },
       "@streamparser/json": {
         "latest": "0.0.26",
         "usedBy": [
@@ -8002,6 +8066,15 @@
         "usedBy": [
           "cline",
           "kilo-code"
+        ]
+      },
+      "@tailwindcss/typography": {
+        "latest": "0.5.20",
+        "usedBy": [
+          "continue",
+          "goose",
+          "gptme",
+          "openhands"
         ]
       },
       "@tailwindcss/vite": {
@@ -8133,6 +8206,16 @@
           "continue",
           "openhands",
           "qwen-code"
+        ]
+      },
+      "@testing-library/jest-dom": {
+        "latest": "7.0.1",
+        "usedBy": [
+          "cline",
+          "continue",
+          "goose",
+          "gptme",
+          "openhands"
         ]
       },
       "@testing-library/react": {
@@ -8381,6 +8464,12 @@
           "qwen-code"
         ]
       },
+      "@types/electron-squirrel-startup": {
+        "latest": "1.0.2",
+        "usedBy": [
+          "goose"
+        ]
+      },
       "@types/eslint": {
         "latest": "9.6.1",
         "usedBy": [
@@ -8515,6 +8604,14 @@
           "opencode"
         ]
       },
+      "@types/lodash": {
+        "latest": "4.17.25",
+        "usedBy": [
+          "cline",
+          "continue",
+          "goose"
+        ]
+      },
       "@types/luxon": {
         "latest": "3.7.6",
         "usedBy": [
@@ -8613,6 +8710,7 @@
           "gptme",
           "grok-cli",
           "kilo-code",
+          "letta-code",
           "mcp",
           "openai-agents",
           "opencode",
@@ -9060,6 +9158,13 @@
           "github-copilot"
         ]
       },
+      "@vitest/ui": {
+        "latest": "5.0.3",
+        "usedBy": [
+          "continue",
+          "goose"
+        ]
+      },
       "@vscode/codicons": {
         "latest": "0.0.46-24",
         "usedBy": [
@@ -9241,6 +9346,13 @@
           "kilo-code",
           "openhands",
           "qwen-code"
+        ]
+      },
+      "@xyflow/react": {
+        "latest": "12.12.0",
+        "usedBy": [
+          "cline",
+          "kilo-code"
         ]
       },
       "@zip.js/zip.js": {
@@ -9528,6 +9640,12 @@
           "opencode"
         ]
       },
+      "chat": {
+        "latest": "4.41.1",
+        "usedBy": [
+          "cline"
+        ]
+      },
       "cheerio": {
         "latest": "1.2.0",
         "usedBy": [
@@ -9616,6 +9734,14 @@
           "gptme",
           "openhands",
           "qwen-code"
+        ]
+      },
+      "cmdk": {
+        "latest": "1.1.1",
+        "usedBy": [
+          "cline",
+          "continue",
+          "gptme"
         ]
       },
       "codemirror": {
@@ -9943,6 +10069,7 @@
         "usedBy": [
           "github-copilot",
           "goose",
+          "letta-code",
           "opencode",
           "openhands",
           "qwen-code"
@@ -9951,6 +10078,7 @@
       "electron-builder": {
         "latest": "26.15.3",
         "usedBy": [
+          "letta-code",
           "opencode",
           "openhands",
           "qwen-code"
@@ -9960,6 +10088,12 @@
         "latest": "5.1.0",
         "usedBy": [
           "opencode"
+        ]
+      },
+      "electron-devtools-installer": {
+        "latest": "4.0.0",
+        "usedBy": [
+          "goose"
         ]
       },
       "electron-log": {
@@ -9985,6 +10119,7 @@
         "latest": "6.8.9",
         "usedBy": [
           "goose",
+          "letta-code",
           "opencode"
         ]
       },
@@ -11364,6 +11499,12 @@
           "opencode"
         ]
       },
+      "nanoid": {
+        "latest": "6.0.1",
+        "usedBy": [
+          "cline"
+        ]
+      },
       "ncp": {
         "latest": "2.0.0",
         "usedBy": [
@@ -11712,6 +11853,12 @@
           "qwen-code"
         ]
       },
+      "pino": {
+        "latest": "10.3.1",
+        "usedBy": [
+          "cline"
+        ]
+      },
       "pkg": {
         "latest": "5.8.1",
         "usedBy": [
@@ -11788,6 +11935,13 @@
           "cline",
           "kilo-code",
           "openhands"
+        ]
+      },
+      "posthog-node": {
+        "latest": "5.54.1",
+        "usedBy": [
+          "cline",
+          "kilo-code"
         ]
       },
       "prebuild-install": {
@@ -12059,6 +12213,12 @@
           "goose",
           "openhands",
           "qwen-code"
+        ]
+      },
+      "react-reconciler": {
+        "latest": "0.34.0",
+        "usedBy": [
+          "cline"
         ]
       },
       "react-redux": {
@@ -12949,6 +13109,12 @@
           "goose",
           "openai-agents",
           "qwen-code"
+        ]
+      },
+      "tuistory": {
+        "latest": "0.11.0",
+        "usedBy": [
+          "cline"
         ]
       },
       "turbo": {
@@ -16196,162 +16362,6 @@
     {
       "package": "go:github.com/charmbracelet/openai-go",
       "error": "not found in registry"
-    },
-    {
-      "package": "npm:@types/react-syntax-highlighter",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2freact-syntax-highlighter/latest",
-      "kept": "15.5.13"
-    },
-    {
-      "package": "npm:@tailwindcss/typography",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@tailwindcss%2ftypography/latest"
-    },
-    {
-      "package": "npm:@types/lodash",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2flodash/latest"
-    },
-    {
-      "package": "npm:@testing-library/jest-dom",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@testing-library%2fjest-dom/latest"
-    },
-    {
-      "package": "npm:@testing-library/user-event",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@testing-library%2fuser-event/latest",
-      "kept": "14.6.7"
-    },
-    {
-      "package": "npm:@types/electron-squirrel-startup",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2felectron-squirrel-startup/latest"
-    },
-    {
-      "package": "npm:@changesets/cli",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@changesets%2fcli/latest"
-    },
-    {
-      "package": "npm:electron-devtools-installer",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/electron-devtools-installer/latest"
-    },
-    {
-      "package": "npm:@vitest/ui",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@vitest%2fui/latest"
-    },
-    {
-      "package": "npm:knip",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/knip/latest",
-      "kept": "6.39.0"
-    },
-    {
-      "package": "npm:@chat-adapter/gchat",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@chat-adapter%2fgchat/latest"
-    },
-    {
-      "package": "npm:@chat-adapter/discord",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@chat-adapter%2fdiscord/latest",
-      "kept": "4.41.1"
-    },
-    {
-      "package": "npm:@chat-adapter/slack",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@chat-adapter%2fslack/latest"
-    },
-    {
-      "package": "npm:@chat-adapter/telegram",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@chat-adapter%2ftelegram/latest",
-      "kept": "4.41.1"
-    },
-    {
-      "package": "npm:@chat-adapter/linear",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@chat-adapter%2flinear/latest",
-      "kept": "4.41.1"
-    },
-    {
-      "package": "npm:@chat-adapter/whatsapp",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@chat-adapter%2fwhatsapp/latest"
-    },
-    {
-      "package": "npm:@gramio/format",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@gramio%2fformat/latest"
-    },
-    {
-      "package": "npm:@opentui-ui/dialog",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@opentui-ui%2fdialog/latest"
-    },
-    {
-      "package": "npm:pino",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/pino/latest"
-    },
-    {
-      "package": "npm:chat",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/chat/latest"
-    },
-    {
-      "package": "npm:react-reconciler",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/react-reconciler/latest"
-    },
-    {
-      "package": "npm:posthog-node",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/posthog-node/latest"
-    },
-    {
-      "package": "npm:nanoid",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/nanoid/latest"
-    },
-    {
-      "package": "npm:@microsoft/tui-test",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@microsoft%2ftui-test/latest"
-    },
-    {
-      "package": "npm:tuistory",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/tuistory/latest"
-    },
-    {
-      "package": "npm:@fontsource-variable/geist-mono",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@fontsource-variable%2fgeist-mono/latest",
-      "kept": "5.3.0"
-    },
-    {
-      "package": "npm:@base-ui/react",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@base-ui%2freact/latest",
-      "kept": "1.8.0"
-    },
-    {
-      "package": "npm:@fontsource-variable/inter",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@fontsource-variable%2finter/latest"
-    },
-    {
-      "package": "npm:@radix-ui/react-use-controllable-state",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-use-controllable-state/latest",
-      "kept": "1.2.6"
-    },
-    {
-      "package": "npm:@rive-app/react-webgl2",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@rive-app%2freact-webgl2/latest"
-    },
-    {
-      "package": "npm:@streamdown/cjk",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@streamdown%2fcjk/latest"
-    },
-    {
-      "package": "npm:@shikijs/langs",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@shikijs%2flangs/latest",
-      "kept": "4.4.3"
-    },
-    {
-      "package": "npm:@shikijs/themes",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@shikijs%2fthemes/latest",
-      "kept": "4.4.3"
-    },
-    {
-      "package": "npm:@xyflow/react",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@xyflow%2freact/latest"
-    },
-    {
-      "package": "npm:ansi-to-react",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/ansi-to-react/latest",
-      "kept": "6.2.6"
-    },
-    {
-      "package": "npm:cmdk",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/cmdk/latest"
     },
     {
       "package": "npm:@agentclientprotocol/sdk-server",
