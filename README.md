@@ -15,7 +15,7 @@ It ships in several forms, so it fits wherever you work:
 | **Rules for every companion** | `init` writes the native rules file for 17 coding companions, so each agent looks versions up instead of guessing |
 | **CLI** | `check`, `update`, `latest`, `tools`, `stack`, `init` |
 | **GitHub Action** | Scheduled pull requests that bump dependencies to the latest releases |
-| **Data feed** | [`latest.json`](https://raw.githubusercontent.com/AndrewTtofi/versions/data/latest.json) and [`VERSIONS.md`](https://github.com/AndrewTtofi/versions/blob/data/VERSIONS.md) on the `data` branch, refreshed every 4 hours |
+| **Data feed** | [`latest.json`](https://raw.githubusercontent.com/AndrewTtofi/versions/data/latest.json) and [`VERSIONS.md`](https://github.com/AndrewTtofi/versions/blob/data/VERSIONS.md) on the `data` branch, refreshed daily |
 
 Supports `package.json` (including overrides and pnpm/bun catalogs),
 `pyproject.toml` (PEP 621, dependency groups, uv, Poetry), `requirements*.txt`,
@@ -254,7 +254,7 @@ Environment: `AGENT_VERSIONS_NPM_REGISTRY`, `AGENT_VERSIONS_PYPI`,
 
 ## How the feed stays fresh
 
-[`.github/workflows/update-snapshot`](.github/workflows/update.yml) runs every 4 hours.
+[`.github/workflows/update-snapshot`](.github/workflows/update.yml) runs once a day (05:17 UTC), and on demand via "Run workflow".
 For every tool in [`sources.json`](sources.json) it:
 
 1. resolves the tool's own latest versions (npm, PyPI, GitHub releases),
