@@ -10,16 +10,17 @@ import { renderMarkdown } from '../src/render.js';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const sources = JSON.parse(await readFile(join(root, 'sources.json'), 'utf8'));
 
-const started = Date.now();
-const snapshot = await collect(sources, { log: (m) => console.log(m) });
-
-// Only bump the timestamp when something actually changed, so scheduled
-// runs don't produce empty commits.
 const outFile = join(root, 'data', 'latest.json');
 let previous = null;
 try {
   previous = JSON.parse(await readFile(outFile, 'utf8'));
 } catch {}
+
+const started = Date.now();
+const snapshot = await collect(sources, { log: (m) => console.log(m), previous });
+
+// Only bump the timestamp when something actually changed, so scheduled
+// runs don't produce empty commits.
 const strip = ({ generatedAt, errors, ...rest }) => JSON.stringify(rest);
 const changed = !previous || strip(previous) !== strip(snapshot);
 const generatedAt = changed ? new Date().toISOString() : previous.generatedAt;

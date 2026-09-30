@@ -117,7 +117,7 @@ async function npmPackageDependencies(name) {
  * @param {{ tools: object[] }} sources contents of sources.json
  * @param {{ log?: (msg: string) => void, resolve?: Function }} opts
  */
-export async function collect(sources, { log = () => {}, resolve = createResolver() } = {}) {
+export async function collect(sources, { log = () => {}, resolve = createResolver(), previous = null, concurrency = 6 } = {}) {
   const errors = [];
   const packages = new Map(); // key -> { ecosystem, name, usedBy: Set }
   const tools = {};
@@ -181,12 +181,16 @@ export async function collect(sources, { log = () => {}, resolve = createResolve
 
   log(`Resolving latest versions for ${packages.size} packages...`);
   const list = [...packages.values()];
-  await pool(list, 16, async (pkg) => {
+  await pool(list, concurrency, async (pkg) => {
     try {
       pkg.latest = await resolve(pkg.ecosystem, pkg.name);
       if (!pkg.latest) errors.push({ package: `${pkg.ecosystem}:${pkg.name}`, error: 'not found in registry' });
     } catch (err) {
-      errors.push({ package: `${pkg.ecosystem}:${pkg.name}`, error: err.message });
+      // Transient failure (rate limit, outage): keep the last published value
+      // rather than dropping the package from the feed.
+      const known = previous?.packages?.[pkg.ecosystem]?.[pkg.name]?.latest;
+      if (known) pkg.latest = known;
+      errors.push({ package: `${pkg.ecosystem}:${pkg.name}`, error: err.message, ...(known ? { kept: known } : {}) });
     }
   });
 
