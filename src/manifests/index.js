@@ -4,8 +4,9 @@ import * as npm from './npm.js';
 import * as pypi from './pypi.js';
 import * as cargo from './cargo.js';
 import * as gomod from './gomod.js';
+import * as docker from './docker.js';
 
-export const PARSERS = [npm, pypi, cargo, gomod];
+export const PARSERS = [npm, pypi, cargo, gomod, docker];
 
 export function parserFor(filename) {
   return PARSERS.find((p) => p.matches(basename(filename))) ?? null;

@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- **Container images:** `check`, `update`, the MCP tools and the Action now read `FROM` and
+  `COPY --from=` in Dockerfiles/Containerfiles and `image:` in Compose files. Tags move only
+  to a newer tag of the same shape (`node:20-alpine` -> `node:24-alpine`). Lookups use the
+  OCI registry API on an allow-list of public registries (Docker Hub, GHCR, Quay, MCR, GCR,
+  ECR Public, GitLab). `latest docker:node:20-alpine` works too.
 - **pyproject.toml:** PEP 735 `{ include-group = "..." }` entries are no longer read as
   packages, and dependencies that `[tool.uv.sources]` points at a workspace, path, git or
   url (or a private index) are skipped instead of looked up on PyPI.

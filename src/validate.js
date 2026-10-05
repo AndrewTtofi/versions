@@ -12,11 +12,36 @@ const NAME_RULES = {
   cargo: { re: /^[A-Za-z][A-Za-z0-9_-]*$/, max: 64 },
   // Go module paths: host with a dot, then path elements.
   go: { re: /^[a-z0-9-]+(?:\.[a-z0-9-]+)+(?:\/[A-Za-z0-9._~+-]+)*$/, max: 300 },
+  // Container images: [registry/]path[:tag], OCI distribution-spec names. No ports, no digests.
+  docker: {
+    re: /^(?:[a-z0-9-]+(?:\.[a-z0-9-]+)+\/)?[a-z0-9]+(?:(?:[._]|__|-+)[a-z0-9]+)*(?:\/[a-z0-9]+(?:(?:[._]|__|-+)[a-z0-9]+)*)*(?::[A-Za-z0-9_][A-Za-z0-9_.-]{0,127})?$/,
+    max: 300,
+  },
 };
+
+// Image registries we will contact. Anything else (private registries, internal
+// hosts) is never fetched, so a Dockerfile can't point the remote connector at
+// an arbitrary URL.
+export const DOCKER_REGISTRIES = new Set([
+  'docker.io',
+  'ghcr.io',
+  'quay.io',
+  'mcr.microsoft.com',
+  'gcr.io',
+  'us.gcr.io',
+  'eu.gcr.io',
+  'asia.gcr.io',
+  'public.ecr.aws',
+  'registry.gitlab.com',
+]);
 
 export function isValidPackageName(ecosystem, name) {
   const rule = NAME_RULES[ecosystem];
   if (!rule || typeof name !== 'string' || name.length > rule.max || !rule.re.test(name)) return false;
+  if (ecosystem === 'docker') {
+    const first = name.split('/')[0];
+    if (name.includes('/') && first.includes('.') && !DOCKER_REGISTRIES.has(first)) return false;
+  }
   // No "." / ".." path elements - they would walk the registry URL.
   return !name.split('/').some((part) => part === '.' || part === '..');
 }

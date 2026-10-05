@@ -23,6 +23,8 @@ export const LATEST = {
   'go:github.com/spf13/cobra': 'v1.10.1',
   'go:golang.org/x/sync': 'v0.17.0',
   'go:github.com/pkg/errors': 'v0.9.1',
+  'docker:docker.io/library/node:x-alpine': '24-alpine',
+  'docker:docker.io/library/python:x.x-slim': '3.14-slim',
 };
 
 export const fakeResolve = async (eco, name) => LATEST[`${eco}:${name}`] ?? null;

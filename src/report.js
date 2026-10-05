@@ -1,13 +1,13 @@
 import { summarize } from './engine.js';
 
-const ALIASES = { pip: 'pypi', py: 'pypi', python: 'pypi', crates: 'cargo', rust: 'cargo', crate: 'cargo', golang: 'go', node: 'npm', js: 'npm' };
+const ALIASES = { pip: 'pypi', py: 'pypi', python: 'pypi', crates: 'cargo', rust: 'cargo', crate: 'cargo', golang: 'go', node: 'npm', js: 'npm', image: 'docker', oci: 'docker' };
 
-/** "npm:zod", "pypi:requests", "cargo:serde", "go:github.com/x/y" or bare "zod". */
+/** "npm:zod", "pypi:requests", "cargo:serde", "go:github.com/x/y", "docker:node:20-alpine" or bare "zod". */
 export function parsePackageRef(ref) {
   const m = ref.match(/^([a-z]+):(.+)$/i);
   if (m) {
     const eco = ALIASES[m[1].toLowerCase()] ?? m[1].toLowerCase();
-    if (['npm', 'pypi', 'cargo', 'go'].includes(eco)) return [eco, m[2]];
+    if (['npm', 'pypi', 'cargo', 'go', 'docker'].includes(eco)) return [eco, m[2]];
   }
   if (/^[a-z0-9-]+\.[a-z]{2,}\/.+/i.test(ref)) return ['go', ref];
   return ['npm', ref];

@@ -19,7 +19,8 @@ It ships in several forms, so it fits wherever you work:
 
 Supports `package.json` (including overrides and pnpm/bun catalogs),
 `pyproject.toml` (PEP 621, dependency groups, uv, Poetry), `requirements*.txt`,
-`Cargo.toml` (including workspaces) and `go.mod`. Zero dependencies. Node 20+.
+`Cargo.toml` (including workspaces), `go.mod`, and container images in
+`Dockerfile`/`Containerfile` and Compose files. Zero dependencies. Node 20+.
 
 ---
 
@@ -34,7 +35,7 @@ npx -y github:AndrewTtofi/versions update --no-major
 npm install   # or pnpm/uv/cargo/go - lockfiles are yours to refresh
 
 # Latest version of anything
-npx -y github:AndrewTtofi/versions latest next pypi:fastapi cargo:tokio go:github.com/spf13/cobra
+npx -y github:AndrewTtofi/versions latest next pypi:fastapi cargo:tokio go:github.com/spf13/cobra docker:node:22-alpine
 
 # Latest Claude Code / Codex / Gemini CLI / ... and how to install them
 npx -y github:AndrewTtofi/versions tools
@@ -47,6 +48,15 @@ npx -y github:AndrewTtofi/versions init --no-major --mcp
 `~`, `>=`, `==`, `~=`), your precision (`tokio = "1"` stays at one component
 until 2.0 exists), and all formatting and comments. It never downgrades. It
 skips `workspace:`, `file:`, git, path and complex ranges, and tells you why.
+
+Container images are read from `FROM` and `COPY --from=` lines and Compose
+`image:` entries. A tag only moves to a newer tag of the same shape:
+`node:20-alpine` becomes `node:24-alpine`, never `24.9.0` or `24-bookworm`, and
+`python:3.12-slim` stays at two components. Digest-pinned, `latest`, untagged
+and `${VAR}` images are skipped. Only public registries are contacted (Docker Hub,
+GHCR, Quay, MCR, GCR, ECR Public, GitLab); images from anywhere else are
+reported as `private registry`. Tag push dates change on every rebuild, so
+`--min-age` can't hold back image updates.
 
 ## Keep every project current
 

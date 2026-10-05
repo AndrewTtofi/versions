@@ -119,3 +119,18 @@ test('collect skips dependencies a tool lists in ignore', async (t) => {
   assert.deepEqual(Object.keys(snap.packages.npm), ['zod']);
   assert.deepEqual(snap.errors, []);
 });
+
+test('Dockerfile images move to the newest tag of the same variant', async () => {
+  const dockerfile = 'FROM node:20-alpine AS build\nRUN npm ci\nFROM python:3.14-slim\n';
+  const dir = await makeProject({ Dockerfile: dockerfile });
+  const analysis = await analyze(dir, { resolve: fakeResolve, noMajor: false });
+  const [node, python] = analysis.files[0].deps;
+  assert.equal(node.status, 'outdated');
+  assert.equal(node.level, 'major');
+  assert.equal(python.status, 'current');
+  await applyUpdates(analysis);
+  assert.equal(await readFile(join(dir, 'Dockerfile'), 'utf8'), dockerfile.replace('node:20-alpine', 'node:24-alpine'));
+
+  const held = await analyze(dir, { resolve: fakeResolve, noMajor: true });
+  assert.equal(held.files[0].deps[0].status, 'current');
+});

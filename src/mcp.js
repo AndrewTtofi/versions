@@ -30,7 +30,7 @@ const TOOLS = [
     name: 'latest_versions',
     title: 'Latest package versions',
     description:
-      'Get the latest published version of packages, live from npm, PyPI, crates.io and the Go module proxy. Use this before writing any version number. Refs look like "zod", "npm:zod", "pypi:requests", "cargo:serde", "go:github.com/spf13/cobra".',
+      'Get the latest published version of packages, live from npm, PyPI, crates.io, the Go module proxy and public container registries. Use this before writing any version number. Refs look like "zod", "npm:zod", "pypi:requests", "cargo:serde", "go:github.com/spf13/cobra", "docker:node:20-alpine" (an image tag finds the newest tag of the same variant).',
     inputSchema: {
       type: 'object',
       properties: { packages: { type: 'array', items: { type: 'string' }, minItems: 1, maxItems: 100 } },
@@ -68,7 +68,7 @@ const TOOLS = [
     name: 'check_manifest',
     title: 'Check a manifest',
     description:
-      'Check the contents of a package.json, pyproject.toml, requirements*.txt, Cargo.toml or go.mod against the latest releases. Returns what is outdated and the full updated file content (formatting preserved).',
+      'Check the contents of a package.json, pyproject.toml, requirements*.txt, Cargo.toml, go.mod, Dockerfile or compose.yaml against the latest releases. Returns what is outdated and the full updated file content (formatting preserved).',
     inputSchema: {
       type: 'object',
       properties: {

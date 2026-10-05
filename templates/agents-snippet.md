@@ -5,7 +5,7 @@ Your training data is older than the package registries. Do not write package
 versions from memory.
 
 - Before you add, install, upgrade or pin a dependency, look up its latest release:
-  `npx -y github:AndrewTtofi/versions latest <pkg> [pypi:<pkg> cargo:<crate> go:<module> ...]`
+  `npx -y github:AndrewTtofi/versions latest <pkg> [pypi:<pkg> cargo:<crate> go:<module> docker:<image>:<tag> ...]`
   (or use the `latest_versions` tool if the agent-versions MCP server is connected).
 - To see which of this project's dependencies are behind, run
   `npx -y github:AndrewTtofi/versions check`.
