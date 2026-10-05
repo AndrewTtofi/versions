@@ -1,6 +1,6 @@
 ---
 name: latest-versions
-description: Use whenever you add, install, upgrade, pin or write the version of any npm, PyPI, Cargo or Go dependency, scaffold a new project, write install commands or Dockerfiles, or when the user asks to update, bump or check dependencies or asks for the latest version of a package or AI tool (Claude Code, Codex, Gemini CLI, MCP SDK, ...). Your remembered versions are stale; this looks them up live.
+description: Use whenever you add, install, upgrade, pin or write the version of any npm, PyPI, Cargo or Go dependency or container image, scaffold a new project, write install commands or Dockerfiles, or when the user asks to update, bump or check dependencies or asks for the latest version of a package or AI tool (Claude Code, Codex, Gemini CLI, MCP SDK, ...). Your remembered versions are stale; this looks them up live.
 ---
 
 # Latest versions
@@ -13,7 +13,8 @@ version number you remember as wrong until you have checked it.
 1. Look up the current release before you write it anywhere (manifest, install
    command, Dockerfile, docs):
    - MCP tool `latest_versions` with refs such as `zod`, `pypi:fastapi`,
-     `cargo:tokio`, `go:github.com/spf13/cobra`, or
+     `cargo:tokio`, `go:github.com/spf13/cobra`, `docker:node:22-alpine` (finds the newest
+     tag of that variant), or
    - `node "${CLAUDE_PLUGIN_ROOT}/bin/agent-versions.js" latest zod pypi:fastapi`
 2. Write that version, using the project's range style. Look at the other entries:
    `^1.2.3` in package.json, `>=1.2.3` or `==1.2.3` in Python, `"1.2"` in Cargo.

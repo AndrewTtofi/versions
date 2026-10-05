@@ -20,7 +20,7 @@ Usage: agent-versions <command> [options]
 Commands:
   check [dir]            Report dependencies with newer releases (default command)
   update [dir]           Rewrite manifests to the latest releases (keeps ^, ~, >= etc.)
-  latest <pkg...>        Latest version of packages: zod npm:zod pypi:requests cargo:serde go:<module>
+  latest <pkg...>        Latest version of packages: zod npm:zod pypi:requests cargo:serde go:<module> docker:node:20-alpine
   tools                  Latest versions of AI coding tools (Claude Code, Codex, Gemini CLI, ...)
   stack <tool>           Dependencies an AI tool uses, with latest versions
   init [dir]             Set up a project: config, daily update PRs with safe auto-merge, rules

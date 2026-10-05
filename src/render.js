@@ -1,6 +1,6 @@
 // Human-readable VERSIONS.md generated from the snapshot.
 
-const ECOSYSTEM_LABELS = { npm: 'npm', pypi: 'PyPI', cargo: 'crates.io', go: 'Go modules' };
+const ECOSYSTEM_LABELS = { npm: 'npm', pypi: 'PyPI', cargo: 'crates.io', go: 'Go modules', docker: 'Container images' };
 
 function toolVersion(tool) {
   if (tool.release) return `\`${tool.release}\``;

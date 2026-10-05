@@ -40,7 +40,7 @@ export async function analyze(target, opts = {}) {
 /** Check a manifest given as text (no filesystem access needed). */
 export async function analyzeManifestText(filename, text, opts = {}) {
   const parsed = parseManifest(filename, text);
-  if (!parsed) throw new Error(`Unsupported manifest: ${filename}. Expected package.json, pyproject.toml, requirements*.txt, Cargo.toml or go.mod.`);
+  if (!parsed) throw new Error(`Unsupported manifest: ${filename}. Expected package.json, pyproject.toml, requirements*.txt, Cargo.toml, go.mod, a Dockerfile or a Compose file.`);
   if (opts.maxDeps && parsed.deps.length > opts.maxDeps) throw new Error(`Manifest has more than ${opts.maxDeps} dependencies`);
   const file = { path: filename, relPath: filename, ecosystem: parsed.ecosystem, text, deps: parsed.deps };
   await resolveFiles([file], opts);
@@ -83,7 +83,9 @@ async function resolveFiles(files, opts) {
         dep.status = 'skipped';
         dep.reason = 'not used by tracked AI tools';
       } else {
-        lookups.set(`${file.ecosystem}:${dep.name}`, [file.ecosystem, dep.name]);
+        // Some ecosystems (docker) resolve against more than the name: the tag's shape.
+        const name = dep.lookupName ?? dep.name;
+        lookups.set(`${file.ecosystem}:${name}`, [file.ecosystem, name]);
       }
     }
   }
@@ -100,7 +102,7 @@ async function resolveFiles(files, opts) {
   for (const file of files) {
     for (const dep of file.deps) {
       if (dep.status) continue;
-      const found = latest.get(`${file.ecosystem}:${dep.name}`);
+      const found = latest.get(`${file.ecosystem}:${dep.lookupName ?? dep.name}`);
       if (found.error) {
         dep.status = 'error';
         dep.reason = found.error;

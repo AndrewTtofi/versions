@@ -176,3 +176,65 @@ require (
   assert.equal(d['golang.org/x/sync'].section, 'indirect');
   assert.equal(d['example.com/fork'].skip, 'pseudo-version');
 });
+
+test('Dockerfile: FROM, stages, COPY --from and skips', () => {
+  const text = `# syntax=docker/dockerfile:1
+FROM --platform=$BUILDPLATFORM node:20-alpine AS build
+COPY --from=ghcr.io/astral-sh/uv:0.4.0 /uv /bin/
+FROM build AS test
+FROM python:3.12-slim-bookworm
+COPY --from=build /app /app
+from postgres:16.4
+FROM scratch
+FROM alpine
+FROM ubuntu:latest
+FROM node:22@sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+FROM node:\${NODE_VERSION}
+FROM registry.internal.corp/team/app:1.2.3
+FROM debian:bookworm
+FROM python:3.14.0a1
+`;
+  const { ecosystem, deps } = parseManifest('Dockerfile', text);
+  assert.equal(ecosystem, 'docker');
+  const d = Object.fromEntries(deps.map((x) => [x.spec, x]));
+  assert.equal(at(text, d['node:20-alpine']), '20-alpine');
+  assert.equal(d['node:20-alpine'].name, 'node');
+  assert.equal(d['node:20-alpine'].lookupName, 'docker.io/library/node:x-alpine');
+  assert.equal(d['node:20-alpine'].section, 'FROM');
+  assert.equal(at(text, d['ghcr.io/astral-sh/uv:0.4.0']), '0.4.0');
+  assert.equal(d['ghcr.io/astral-sh/uv:0.4.0'].lookupName, 'ghcr.io/astral-sh/uv:x.x.x');
+  assert.equal(d['ghcr.io/astral-sh/uv:0.4.0'].section, 'COPY --from');
+  assert.equal(d['python:3.12-slim-bookworm'].lookupName, 'docker.io/library/python:x.x-slim-bookworm');
+  assert.equal(at(text, d['postgres:16.4']), '16.4');
+  assert.equal(d.alpine.skip, 'unpinned');
+  assert.equal(d['ubuntu:latest'].skip, 'unpinned');
+  assert.match(Object.keys(d).find((k) => k.includes('@sha256')), /^node:22@/);
+  assert.equal(deps.find((x) => x.spec.includes('@sha256')).skip, 'pinned to a digest');
+  assert.equal(d['node:${NODE_VERSION}'].skip, 'variable');
+  assert.equal(d['registry.internal.corp/team/app:1.2.3'].skip, 'private registry');
+  assert.equal(d['debian:bookworm'].skip, 'not a version tag');
+  assert.equal(d['python:3.14.0a1'].skip, 'not a version tag');
+  assert.equal(d.build, undefined, 'build stages are not images');
+  assert.equal(d.scratch, undefined);
+  assert.equal(deps.length, 11);
+});
+
+test('Compose files and Dockerfile name variants', () => {
+  const text = `services:
+  db:
+    image: "postgres:16-alpine"  # pinned
+  cache:
+    image: redis:7.2
+  app:
+    build: .
+    image: \${REGISTRY}/app:dev
+`;
+  const d = byName(parseManifest('compose.yaml', text).deps);
+  assert.equal(at(text, d.postgres), '16-alpine');
+  assert.equal(at(text, d.redis), '7.2');
+  assert.equal(d['${REGISTRY}/app:dev'].skip, 'variable');
+  for (const f of ['Dockerfile', 'Dockerfile.dev', 'api.Dockerfile', 'Containerfile', 'docker-compose.yml', 'docker-compose.prod.yaml', 'compose.yml']) {
+    assert.equal(parseManifest(f, '')?.ecosystem, 'docker', f);
+  }
+  assert.equal(parseManifest('dockerfile-notes.md', ''), null);
+});
