@@ -106,3 +106,16 @@ test('collect records lookup failures instead of aborting the run', async () => 
   assert.equal(snap.tools.t.packages.npm.zod, '4.1.0');
   assert.ok(snap.errors.some((e) => e.package === 'npm:flaky'));
 });
+
+test('collect skips dependencies a tool lists in ignore', async (t) => {
+  const { collect } = await import('../src/collect.js');
+  const manifest = { dependencies: { zod: '^4.0.0', '@acme/unpublished': '1.0.0' } };
+  t.mock.method(globalThis, 'fetch', async () => new Response(JSON.stringify(manifest)));
+  const sources = {
+    tools: [{ id: 't', name: 'T', packageDeps: { npm: ['acme-cli'] }, ignore: ['npm:@acme/unpublished'] }],
+  };
+  const resolve = async (eco, name) => (name === 'zod' ? '4.1.0' : null);
+  const snap = await collect(sources, { resolve, previous: null });
+  assert.deepEqual(Object.keys(snap.packages.npm), ['zod']);
+  assert.deepEqual(snap.errors, []);
+});

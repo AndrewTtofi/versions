@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- **pyproject.toml:** PEP 735 `{ include-group = "..." }` entries are no longer read as
+  packages, and dependencies that `[tool.uv.sources]` points at a workspace, path, git or
+  url (or a private index) are skipped instead of looked up on PyPI.
+- **Feed:** `sources.json` tools take an `ignore` list for upstream dependencies no
+  registry can resolve. The feed now builds with 0 errors.
+
 ## 0.3.0 - 2026-09-30
 
 - **Auto-merge for update PRs:** the workflow from `init` merges update PRs when the

@@ -51,13 +51,19 @@ function parseRequirementsTxt(text) {
   return deps;
 }
 
-/** Yield [stringValue, startOffsetOfValue] for strings inside a TOML array starting at `open`. */
+/**
+ * Yield [stringValue, startOffsetOfValue] for strings inside a TOML array starting at `open`.
+ * Strings inside inline tables (PEP 735 `{ include-group = "test" }`) are not requirements.
+ */
 function arrayStrings(text, open) {
   const out = [];
+  let depth = 0;
   let i = open + 1;
   while (i < text.length) {
     const c = text[i];
-    if (c === ']') break;
+    if (c === ']' && depth === 0) break;
+    if (c === '{') depth++;
+    if (c === '}' && depth > 0) depth--;
     if (c === '#') {
       while (i < text.length && text[i] !== '\n') i++;
       continue;
@@ -68,7 +74,7 @@ function arrayStrings(text, open) {
       const start = i + q.length;
       let j = start;
       while (j < text.length && !text.startsWith(q, j)) j += text[j] === '\\' && c === '"' ? 2 : 1;
-      out.push([text.slice(start, j), start]);
+      if (depth === 0) out.push([text.slice(start, j), start]);
       i = j + q.length;
       continue;
     }
@@ -104,8 +110,11 @@ function parsePoetryValue(name, raw, valueStart, table) {
   return dep;
 }
 
+const normalizeName = (name) => name.toLowerCase().replace(/[-_.]+/g, '-');
+
 function parsePyproject(text) {
   const deps = [];
+  const uvSources = new Map(); // normalized name -> skip reason
   let table = '';
   const lineRe = /^[^\n]*$/gm;
   let m;
@@ -122,6 +131,13 @@ function parsePyproject(text) {
     if (!kv) continue;
     const key = kv[1].replace(/["']/g, '');
     const valueStart = lineStart + kv[0].length;
+
+    if (table === 'tool.uv.sources') {
+      const inline = text.slice(valueStart).match(/^\{[^}\n]*\}/);
+      if (inline && /\b(workspace|path|git|url)\s*=/.test(inline[0])) uvSources.set(normalizeName(key), 'not a registry version');
+      else if (inline && /\bindex\s*=/.test(inline[0])) uvSources.set(normalizeName(key), 'private registry');
+      continue;
+    }
 
     if (text[valueStart] === '[' && PEP621_ARRAY_TABLES.some((f) => f(table, key))) {
       for (const [value, start] of arrayStrings(text, valueStart)) {
@@ -149,6 +165,16 @@ function parsePyproject(text) {
           deps.push(parsePoetryValue(key, ver[2], at, table));
         }
       }
+    }
+  }
+  for (const dep of deps) {
+    const reason = uvSources.get(normalizeName(dep.name));
+    if (reason) {
+      dep.skip = reason;
+      delete dep.prefix;
+      delete dep.version;
+      delete dep.start;
+      delete dep.end;
     }
   }
   return deps;

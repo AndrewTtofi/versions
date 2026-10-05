@@ -122,11 +122,13 @@ export async function collect(sources, { log = () => {}, resolve = createResolve
   const packages = new Map(); // key -> { ecosystem, name, usedBy: Set }
   const tools = {};
 
-  const add = (toolId, dep) => {
+  // `ignore` lists "ecosystem:name" references a tool declares that no registry can resolve.
+  const add = (tool, dep) => {
     if (!isValidPackageName(dep.ecosystem, dep.name)) return;
     const key = keyFor(dep.ecosystem, dep.name);
+    if (tool.ignore?.some((k) => keyFor(...k.split(/:(.*)/s, 2)) === key)) return;
     if (!packages.has(key)) packages.set(key, { ecosystem: dep.ecosystem, name: dep.name, usedBy: new Set() });
-    packages.get(key).usedBy.add(toolId);
+    packages.get(key).usedBy.add(tool.id);
   };
 
   for (const tool of sources.tools) {
@@ -161,7 +163,7 @@ export async function collect(sources, { log = () => {}, resolve = createResolve
     }
     for (const name of tool.packageDeps?.npm ?? []) {
       try {
-        for (const dep of await npmPackageDependencies(name)) add(tool.id, dep);
+        for (const dep of await npmPackageDependencies(name)) add(tool, dep);
       } catch (err) {
         errors.push({ tool: tool.id, package: `npm:${name}`, error: err.message });
       }
@@ -170,7 +172,7 @@ export async function collect(sources, { log = () => {}, resolve = createResolve
       try {
         const { manifests, deps } = await repoDependencies(repoSpec, log);
         entry.manifests += manifests;
-        for (const dep of deps) add(tool.id, dep);
+        for (const dep of deps) add(tool, dep);
         log(`  ${repoSpec.repo}: ${manifests} manifests, ${deps.length} dependency references`);
       } catch (err) {
         errors.push({ tool: tool.id, repo: repoSpec.repo, error: err.message });

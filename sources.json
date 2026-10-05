@@ -138,6 +138,9 @@
         {
           "repo": "charmbracelet/crush"
         }
+      ],
+      "ignore": [
+        "go:github.com/charmbracelet/openai-go"
       ]
     },
     {
@@ -332,7 +335,10 @@
         "npm": [
           "@tencent-ai/codebuddy-code"
         ]
-      }
+      },
+      "ignore": [
+        "npm:@agentclientprotocol/sdk-server"
+      ]
     },
     {
       "id": "letta-code",
