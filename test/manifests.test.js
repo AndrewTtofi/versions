@@ -95,6 +95,34 @@ local = { path = "../local" }
   assert.equal(d.python, undefined);
 });
 
+test('pyproject.toml: include-group entries and uv workspace sources are not packages', () => {
+  const text = `[project]
+name = "demo"
+dependencies = ["mcp-types==0.1.0", "torch==2.4.0"]
+
+[dependency-groups]
+test = ["pytest>=8.0", { include-group = "format" }]
+dev = [
+  { include-group = "test" },
+  "Example_Stories",
+]
+
+[tool.uv.sources]
+mcp-types = { workspace = true }
+example-stories = { path = "examples" }
+torch = { index = "pytorch" }
+`;
+  const d = byName(parseManifest('pyproject.toml', text).deps);
+  assert.equal(d.test, undefined);
+  assert.equal(d.format, undefined);
+  assert.equal(at(text, d.pytest), '8.0');
+  assert.equal(d['mcp-types'].skip, 'not a registry version');
+  assert.equal(d['mcp-types'].start, undefined);
+  assert.equal(d.Example_Stories.skip, 'not a registry version');
+  assert.equal(d.torch.skip, 'private registry');
+  assert.equal(Object.keys(d).length, 4);
+});
+
 test('Cargo.toml tables, inline tables, renames and workspace refs', () => {
   const text = `[package]
 name = "demo"

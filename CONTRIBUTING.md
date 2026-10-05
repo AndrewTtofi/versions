@@ -58,7 +58,8 @@ Add an entry to `sources.json`:
   "packages": { "npm": ["my-agent"] },     // the tool's own published packages
   "packageDeps": { "npm": ["my-agent"] },  // closed source? read deps from the published package instead
   "releases": "me/my-agent",               // optional: GitHub releases for non-registry tools
-  "repos": [{ "repo": "me/my-agent", "exclude": "optional-regex-of-paths-to-skip" }]
+  "repos": [{ "repo": "me/my-agent", "exclude": "optional-regex-of-paths-to-skip" }],
+  "ignore": ["npm:@me/unpublished-internal"] // optional: dependencies no registry can resolve
 }
 ```
 
