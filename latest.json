@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T09:41:09.788Z",
+  "generatedAt": "2026-10-05T12:17:45.178Z",
   "tools": {
     "claude-code": {
       "name": "Claude Code",
@@ -75,7 +75,7 @@
       "install": "npm install -g @qwen-code/qwen-code",
       "packages": {
         "npm": {
-          "@qwen-code/qwen-code": "0.24.7"
+          "@qwen-code/qwen-code": "0.25.0"
         }
       },
       "manifests": 53
@@ -220,7 +220,7 @@
       "install": "npm install -g @tencent-ai/codebuddy-code",
       "packages": {
         "npm": {
-          "@tencent-ai/codebuddy-code": "2.161.2"
+          "@tencent-ai/codebuddy-code": "2.161.3"
         }
       },
       "manifests": 0
@@ -295,7 +295,7 @@
       "install": "npm install @modelcontextprotocol/sdk",
       "packages": {
         "npm": {
-          "@modelcontextprotocol/sdk": "1.32.0"
+          "@modelcontextprotocol/sdk": "1.32.1"
         },
         "pypi": {
           "mcp": "2.3.0"
@@ -6758,14 +6758,14 @@
         ]
       },
       "@modelcontextprotocol/client": {
-        "latest": "2.3.0",
+        "latest": "2.3.1",
         "usedBy": [
           "openai-agents",
           "qwen-code"
         ]
       },
       "@modelcontextprotocol/core": {
-        "latest": "2.3.0",
+        "latest": "2.3.1",
         "usedBy": [
           "qwen-code"
         ]
@@ -6779,7 +6779,7 @@
         ]
       },
       "@modelcontextprotocol/sdk": {
-        "latest": "1.32.0",
+        "latest": "1.32.1",
         "usedBy": [
           "claude-code",
           "cline",
@@ -9133,7 +9133,7 @@
         ]
       },
       "@vitejs/plugin-react": {
-        "latest": "6.1.1",
+        "latest": "6.1.2",
         "usedBy": [
           "goose",
           "qwen-code"
@@ -9691,7 +9691,7 @@
         ]
       },
       "chromium-bidi": {
-        "latest": "157.0.8084-0",
+        "latest": "157.0.8086-0",
         "usedBy": [
           "kilo-code"
         ]
@@ -11276,7 +11276,7 @@
         ]
       },
       "mailparser": {
-        "latest": "3.9.35",
+        "latest": "3.9.36",
         "usedBy": [
           "qwen-code"
         ]
@@ -11639,7 +11639,7 @@
         ]
       },
       "nodemailer": {
-        "latest": "10.0.14",
+        "latest": "10.0.15",
         "usedBy": [
           "qwen-code"
         ]
@@ -11786,13 +11786,13 @@
         ]
       },
       "oxfmt": {
-        "latest": "0.71.0",
+        "latest": "0.72.0",
         "usedBy": [
           "codex"
         ]
       },
       "oxlint": {
-        "latest": "1.86.0",
+        "latest": "1.87.0",
         "usedBy": [
           "codex",
           "kilo-code",
@@ -14874,7 +14874,7 @@
         ]
       },
       "narwhals": {
-        "latest": "2.26.0",
+        "latest": "2.27.0",
         "usedBy": [
           "aider"
         ]
@@ -16369,186 +16369,5 @@
       }
     }
   },
-  "errors": [
-    {
-      "package": "npm:react-syntax-highlighter",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/react-syntax-highlighter/latest",
-      "kept": "16.1.1"
-    },
-    {
-      "package": "npm:react-select",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/react-select/latest",
-      "kept": "5.10.2"
-    },
-    {
-      "package": "npm:split-type",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/split-type/latest",
-      "kept": "0.3.4"
-    },
-    {
-      "package": "npm:react-toastify",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/react-toastify/latest",
-      "kept": "11.1.0"
-    },
-    {
-      "package": "npm:remark-breaks",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/remark-breaks/latest",
-      "kept": "4.0.0"
-    },
-    {
-      "package": "npm:swr",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/swr/latest",
-      "kept": "2.5.1"
-    },
-    {
-      "package": "npm:@electron-forge/maker-flatpak",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron-forge%2fmaker-flatpak/latest",
-      "kept": "8.0.1"
-    },
-    {
-      "package": "npm:unist-util-visit",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/unist-util-visit/latest",
-      "kept": "5.1.0"
-    },
-    {
-      "package": "npm:tailwindcss-animate",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/tailwindcss-animate/latest",
-      "kept": "1.0.7"
-    },
-    {
-      "package": "npm:@electron-forge/maker-rpm",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron-forge%2fmaker-rpm/latest",
-      "kept": "8.0.1"
-    },
-    {
-      "package": "npm:@electron-forge/cli",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron-forge%2fcli/latest",
-      "kept": "8.0.1"
-    },
-    {
-      "package": "npm:@electron-forge/maker-deb",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron-forge%2fmaker-deb/latest",
-      "kept": "8.0.1"
-    },
-    {
-      "package": "npm:@electron-forge/plugin-auto-unpack-natives",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron-forge%2fplugin-auto-unpack-natives/latest",
-      "kept": "8.0.1"
-    },
-    {
-      "package": "npm:@electron-forge/plugin-fuses",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron-forge%2fplugin-fuses/latest",
-      "kept": "8.0.1"
-    },
-    {
-      "package": "npm:@electron-forge/maker-squirrel",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron-forge%2fmaker-squirrel/latest",
-      "kept": "8.0.1"
-    },
-    {
-      "package": "npm:@electron-forge/maker-zip",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron-forge%2fmaker-zip/latest",
-      "kept": "8.0.1"
-    },
-    {
-      "package": "npm:@electron/fuses",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron%2ffuses/latest",
-      "kept": "2.1.3"
-    },
-    {
-      "package": "npm:@electron-forge/plugin-vite",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@electron-forge%2fplugin-vite/latest",
-      "kept": "8.0.1"
-    },
-    {
-      "package": "npm:@tailwindcss/line-clamp",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@tailwindcss%2fline-clamp/latest",
-      "kept": "0.4.4"
-    },
-    {
-      "package": "npm:@formatjs/icu-messageformat-parser",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@formatjs%2ficu-messageformat-parser/latest",
-      "kept": "3.5.20"
-    },
-    {
-      "package": "npm:@testing-library/jest-dom",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@testing-library%2fjest-dom/latest",
-      "kept": "7.0.1"
-    },
-    {
-      "package": "npm:@tailwindcss/typography",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@tailwindcss%2ftypography/latest",
-      "kept": "0.5.20"
-    },
-    {
-      "package": "npm:@formatjs/cli",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@formatjs%2fcli/latest",
-      "kept": "6.16.32"
-    },
-    {
-      "package": "npm:@testing-library/user-event",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@testing-library%2fuser-event/latest",
-      "kept": "14.6.7"
-    },
-    {
-      "package": "npm:@types/lodash",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2flodash/latest",
-      "kept": "4.17.25"
-    },
-    {
-      "package": "npm:@types/react-syntax-highlighter",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2freact-syntax-highlighter/latest",
-      "kept": "15.5.13"
-    },
-    {
-      "package": "npm:@types/electron-squirrel-startup",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2felectron-squirrel-startup/latest",
-      "kept": "1.0.2"
-    },
-    {
-      "package": "npm:@vitest/ui",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@vitest%2fui/latest",
-      "kept": "5.0.3"
-    },
-    {
-      "package": "npm:electron-devtools-installer",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/electron-devtools-installer/latest",
-      "kept": "4.0.0"
-    },
-    {
-      "package": "npm:knip",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/knip/latest",
-      "kept": "6.39.0"
-    },
-    {
-      "package": "npm:@changesets/cli",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@changesets%2fcli/latest",
-      "kept": "3.0.3"
-    },
-    {
-      "package": "npm:@chat-adapter/linear",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@chat-adapter%2flinear/latest",
-      "kept": "4.41.1"
-    },
-    {
-      "package": "npm:@chat-adapter/discord",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@chat-adapter%2fdiscord/latest",
-      "kept": "4.41.1"
-    },
-    {
-      "package": "npm:@chat-adapter/slack",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@chat-adapter%2fslack/latest",
-      "kept": "4.41.1"
-    },
-    {
-      "package": "npm:@chat-adapter/gchat",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@chat-adapter%2fgchat/latest",
-      "kept": "4.41.1"
-    },
-    {
-      "package": "npm:@chat-adapter/telegram",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@chat-adapter%2ftelegram/latest",
-      "kept": "4.41.1"
-    }
-  ]
+  "errors": []
 }
