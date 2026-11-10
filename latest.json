@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-09T13:55:20.326Z",
+  "generatedAt": "2026-11-10T13:29:29.329Z",
   "tools": {
     "claude-code": {
       "name": "Claude Code",
@@ -8,13 +8,13 @@
       "install": "npm install -g @anthropic-ai/claude-code",
       "packages": {
         "npm": {
-          "@anthropic-ai/claude-code": "2.1.319",
-          "@anthropic-ai/claude-agent-sdk": "0.3.319",
-          "@anthropic-ai/sdk": "1.6.0"
+          "@anthropic-ai/claude-code": "2.1.322",
+          "@anthropic-ai/claude-agent-sdk": "0.3.322",
+          "@anthropic-ai/sdk": "1.7.0"
         },
         "pypi": {
-          "claude-agent-sdk": "0.2.179",
-          "anthropic": "2.6.0"
+          "claude-agent-sdk": "0.2.180",
+          "anthropic": "2.7.0"
         }
       },
       "manifests": 35
@@ -27,10 +27,10 @@
         "npm": {
           "@openai/codex": "0.167.0",
           "@openai/codex-sdk": "0.167.0",
-          "openai": "7.53.0"
+          "openai": "7.55.0"
         },
         "pypi": {
-          "openai": "3.46.0"
+          "openai": "3.49.0"
         }
       },
       "manifests": 192
@@ -53,7 +53,7 @@
       "install": "npm install -g @github/copilot",
       "packages": {
         "npm": {
-          "@github/copilot": "1.0.107"
+          "@github/copilot": "1.0.108"
         }
       },
       "manifests": 0
@@ -67,7 +67,7 @@
           "opencode-ai": "1.19.5"
         }
       },
-      "manifests": 41
+      "manifests": 42
     },
     "qwen-code": {
       "name": "Qwen Code",
@@ -97,7 +97,7 @@
       "install": "curl -fsSL https://github.com/aaif-goose/goose/releases/download/stable/download_cli.sh | bash",
       "packages": {},
       "manifests": 30,
-      "release": "v1.57.0"
+      "release": "v1.58.1"
     },
     "aider": {
       "name": "Aider",
@@ -176,7 +176,7 @@
       "install": "npm install -g @sourcegraph/amp",
       "packages": {
         "npm": {
-          "@sourcegraph/amp": "0.0.1794225648-g45053b"
+          "@sourcegraph/amp": "0.0.1794312042-g538cd5"
         }
       },
       "manifests": 0
@@ -187,7 +187,7 @@
       "install": "npm install -g @augmentcode/auggie",
       "packages": {
         "npm": {
-          "@augmentcode/auggie": "0.37.0"
+          "@augmentcode/auggie": "0.37.1"
         }
       },
       "manifests": 0
@@ -198,7 +198,7 @@
       "install": "npm install -g droid",
       "packages": {
         "npm": {
-          "droid": "1.6.0"
+          "droid": "1.7.1"
         }
       },
       "manifests": 0
@@ -220,7 +220,7 @@
       "install": "npm install -g @tencent-ai/codebuddy-code",
       "packages": {
         "npm": {
-          "@tencent-ai/codebuddy-code": "2.181.0"
+          "@tencent-ai/codebuddy-code": "2.182.0"
         }
       },
       "manifests": 0
@@ -231,7 +231,7 @@
       "install": "npm install -g @letta-ai/letta-code",
       "packages": {
         "npm": {
-          "@letta-ai/letta-code": "0.34.48"
+          "@letta-ai/letta-code": "0.34.51"
         }
       },
       "manifests": 2
@@ -242,7 +242,7 @@
       "install": "uv tool install mistral-vibe",
       "packages": {
         "pypi": {
-          "mistral-vibe": "3.1.0"
+          "mistral-vibe": "3.1.1"
         }
       },
       "manifests": 3
@@ -430,7 +430,7 @@
         ]
       },
       "arc-swap": {
-        "latest": "1.9.4",
+        "latest": "1.9.5",
         "usedBy": [
           "codex",
           "zed"
@@ -574,7 +574,7 @@
         ]
       },
       "aws-config": {
-        "latest": "1.13.0",
+        "latest": "1.13.1",
         "usedBy": [
           "codex",
           "goose",
@@ -595,39 +595,39 @@
         ]
       },
       "aws-sdk-bedrockruntime": {
-        "latest": "1.153.0",
+        "latest": "1.154.0",
         "usedBy": [
           "goose",
           "zed"
         ]
       },
       "aws-sdk-kinesis": {
-        "latest": "1.130.0",
+        "latest": "1.131.0",
         "usedBy": [
           "zed"
         ]
       },
       "aws-sdk-s3": {
-        "latest": "1.157.0",
+        "latest": "1.158.0",
         "usedBy": [
           "zed"
         ]
       },
       "aws-sdk-sagemakerruntime": {
-        "latest": "1.123.0",
+        "latest": "1.124.0",
         "usedBy": [
           "goose"
         ]
       },
       "aws-sigv4": {
-        "latest": "1.6.4",
+        "latest": "1.6.5",
         "usedBy": [
           "codex",
           "zed"
         ]
       },
       "aws-smithy-runtime-api": {
-        "latest": "1.20.0",
+        "latest": "1.21.0",
         "usedBy": [
           "codex",
           "goose",
@@ -635,7 +635,7 @@
         ]
       },
       "aws-smithy-types": {
-        "latest": "1.9.3",
+        "latest": "1.9.4",
         "usedBy": [
           "codex",
           "goose",
@@ -657,7 +657,7 @@
         ]
       },
       "axum-server": {
-        "latest": "0.9.0",
+        "latest": "0.9.1",
         "usedBy": [
           "goose"
         ]
@@ -1282,7 +1282,7 @@
         ]
       },
       "fancy-regex": {
-        "latest": "0.20.0",
+        "latest": "0.20.1",
         "usedBy": [
           "zed"
         ]
@@ -1506,6 +1506,12 @@
           "goose"
         ]
       },
+      "hickory-proto": {
+        "latest": "0.26.3",
+        "usedBy": [
+          "codex"
+        ]
+      },
       "hmac": {
         "latest": "0.13.0",
         "usedBy": [
@@ -1725,7 +1731,7 @@
         ]
       },
       "jsonschema": {
-        "latest": "0.61.0",
+        "latest": "0.61.1",
         "usedBy": [
           "goose",
           "mistral-vibe",
@@ -2176,7 +2182,7 @@
         ]
       },
       "oo7": {
-        "latest": "0.7.0",
+        "latest": "0.7.1",
         "usedBy": [
           "zed"
         ]
@@ -2682,7 +2688,7 @@
         ]
       },
       "regorus": {
-        "latest": "0.14.1",
+        "latest": "0.15.0",
         "usedBy": [
           "qwen-code"
         ]
@@ -3135,6 +3141,12 @@
           "codex"
         ]
       },
+      "socks5-protocol": {
+        "latest": "0.3.5",
+        "usedBy": [
+          "codex"
+        ]
+      },
       "sonora": {
         "latest": "0.3.0",
         "usedBy": [
@@ -3332,19 +3344,19 @@
         ]
       },
       "tauri-plugin-log": {
-        "latest": "2.10.1",
+        "latest": "2.10.2",
         "usedBy": [
           "gptme"
         ]
       },
       "tauri-plugin-notification": {
-        "latest": "2.8.0",
+        "latest": "2.8.1",
         "usedBy": [
           "gptme"
         ]
       },
       "tauri-plugin-opener": {
-        "latest": "2.7.2",
+        "latest": "2.7.3",
         "usedBy": [
           "gptme",
           "qwen-code"
@@ -4280,7 +4292,7 @@
         ]
       },
       "charm.land/catwalk/v3": {
-        "latest": "v3.2.0",
+        "latest": "v3.2.1",
         "usedBy": [
           "crush"
         ]
@@ -4292,7 +4304,7 @@
         ]
       },
       "charm.land/fantasy": {
-        "latest": "v0.46.1",
+        "latest": "v0.47.0",
         "usedBy": [
           "crush"
         ]
@@ -4364,7 +4376,7 @@
         ]
       },
       "github.com/andybalholm/brotli": {
-        "latest": "v1.2.8",
+        "latest": "v1.3.0",
         "usedBy": [
           "crush"
         ]
@@ -4400,13 +4412,13 @@
         ]
       },
       "github.com/aws/aws-sdk-go-v2/config": {
-        "latest": "v1.33.16",
+        "latest": "v1.33.17",
         "usedBy": [
           "crush"
         ]
       },
       "github.com/aws/aws-sdk-go-v2/credentials": {
-        "latest": "v1.20.16",
+        "latest": "v1.20.17",
         "usedBy": [
           "crush"
         ]
@@ -4448,7 +4460,7 @@
         ]
       },
       "github.com/aws/aws-sdk-go-v2/service/signin": {
-        "latest": "v1.12.4",
+        "latest": "v1.13.0",
         "usedBy": [
           "crush"
         ]
@@ -4472,7 +4484,7 @@
         ]
       },
       "github.com/aws/smithy-go": {
-        "latest": "v1.28.8",
+        "latest": "v1.28.9",
         "usedBy": [
           "crush"
         ]
@@ -4987,8 +4999,8 @@
           "crush"
         ]
       },
-      "github.com/ncruces/go-sqlite3-wasm/v5": {
-        "latest": "v5.0.35304",
+      "github.com/ncruces/go-sqlite3-wasm/v6": {
+        "latest": "v6.5.35401",
         "usedBy": [
           "crush"
         ]
@@ -5042,7 +5054,7 @@
         ]
       },
       "github.com/posthog/posthog-go": {
-        "latest": "v1.42.0",
+        "latest": "v1.42.1",
         "usedBy": [
           "crush"
         ]
@@ -5300,19 +5312,19 @@
         ]
       },
       "golang.org/x/exp": {
-        "latest": "v0.0.0-20261106192419-47ce03d25ef0",
+        "latest": "v0.0.0-20261109185158-a52e3aef5920",
         "usedBy": [
           "crush"
         ]
       },
       "golang.org/x/exp/shiny": {
-        "latest": "v0.0.0-20261106192419-47ce03d25ef0",
+        "latest": "v0.0.0-20261109185158-a52e3aef5920",
         "usedBy": [
           "crush"
         ]
       },
       "golang.org/x/image": {
-        "latest": "v0.47.0",
+        "latest": "v0.48.0",
         "usedBy": [
           "crush"
         ]
@@ -5348,13 +5360,13 @@
         ]
       },
       "golang.org/x/term": {
-        "latest": "v0.47.0",
+        "latest": "v0.48.0",
         "usedBy": [
           "crush"
         ]
       },
       "golang.org/x/text": {
-        "latest": "v0.43.0",
+        "latest": "v0.44.0",
         "usedBy": [
           "crush"
         ]
@@ -5378,7 +5390,7 @@
         ]
       },
       "google.golang.org/genproto/googleapis/rpc": {
-        "latest": "v0.0.0-20261104224025-d1e00e9f33ab",
+        "latest": "v0.0.0-20261110000943-09e21b237f2c",
         "usedBy": [
           "crush"
         ]
@@ -5456,7 +5468,7 @@
         ]
       },
       "mvdan.cc/sh/x": {
-        "latest": "v0.0.0-20261109125434-01f593b36f4c",
+        "latest": "v0.0.0-20261109205647-57c2becbf1d2",
         "usedBy": [
           "crush"
         ]
@@ -5671,26 +5683,26 @@
         ]
       },
       "@ampcode/cli": {
-        "latest": "0.0.1794225648-g45053b",
+        "latest": "0.0.1794312042-g538cd5",
         "usedBy": [
           "amp"
         ]
       },
       "@anthropic-ai/claude-agent-sdk": {
-        "latest": "0.3.319",
+        "latest": "0.3.322",
         "usedBy": [
           "github-copilot",
           "opencode"
         ]
       },
       "@anthropic-ai/sandbox-runtime": {
-        "latest": "0.0.81",
+        "latest": "0.0.82",
         "usedBy": [
           "kilo-code"
         ]
       },
       "@anthropic-ai/sdk": {
-        "latest": "1.6.0",
+        "latest": "1.7.0",
         "usedBy": [
           "claude-code",
           "cline",
@@ -5755,7 +5767,7 @@
         ]
       },
       "@aws-sdk/client-bedrock-runtime": {
-        "latest": "3.1164.0",
+        "latest": "3.1165.0",
         "usedBy": [
           "claude-code",
           "cline",
@@ -5764,31 +5776,31 @@
         ]
       },
       "@aws-sdk/client-s3": {
-        "latest": "3.1164.0",
+        "latest": "3.1165.0",
         "usedBy": [
           "kilo-code"
         ]
       },
       "@aws-sdk/client-sagemaker-runtime": {
-        "latest": "3.1164.0",
+        "latest": "3.1165.0",
         "usedBy": [
           "continue"
         ]
       },
       "@aws-sdk/credential-provider-ini": {
-        "latest": "3.973.27",
+        "latest": "3.973.28",
         "usedBy": [
           "kilo-code"
         ]
       },
       "@aws-sdk/credential-provider-node": {
-        "latest": "3.972.94",
+        "latest": "3.972.95",
         "usedBy": [
           "codex"
         ]
       },
       "@aws-sdk/credential-providers": {
-        "latest": "3.1164.0",
+        "latest": "3.1165.0",
         "usedBy": [
           "claude-code",
           "cline",
@@ -5888,7 +5900,7 @@
         ]
       },
       "@blaxel/core": {
-        "latest": "0.3.35",
+        "latest": "0.3.36",
         "usedBy": [
           "openai-agents"
         ]
@@ -5985,13 +5997,13 @@
         ]
       },
       "@cloudflare/build-output-utils": {
-        "latest": "0.9.10",
+        "latest": "0.9.12",
         "usedBy": [
           "opencode"
         ]
       },
       "@cloudflare/config": {
-        "latest": "0.30.2",
+        "latest": "0.31.1",
         "usedBy": [
           "opencode"
         ]
@@ -6004,7 +6016,7 @@
         ]
       },
       "@cloudflare/workers-types": {
-        "latest": "5.20261109.1",
+        "latest": "5.20261110.1",
         "usedBy": [
           "claude-code",
           "codex",
@@ -6098,7 +6110,7 @@
         ]
       },
       "@daytonaio/sdk": {
-        "latest": "0.231.0",
+        "latest": "0.231.1",
         "usedBy": [
           "openai-agents"
         ]
@@ -6176,7 +6188,7 @@
         ]
       },
       "@earendil-works/pi-ai": {
-        "latest": "1.5.0",
+        "latest": "1.5.2",
         "usedBy": [
           "letta-code"
         ]
@@ -6188,35 +6200,35 @@
         ]
       },
       "@effect/opentelemetry": {
-        "latest": "4.1.2",
+        "latest": "4.1.3",
         "usedBy": [
           "kilo-code",
           "opencode"
         ]
       },
       "@effect/platform-node": {
-        "latest": "4.1.2",
+        "latest": "4.1.3",
         "usedBy": [
           "kilo-code",
           "opencode"
         ]
       },
       "@effect/platform-node-shared": {
-        "latest": "4.1.2",
+        "latest": "4.1.3",
         "usedBy": [
           "kilo-code",
           "opencode"
         ]
       },
       "@effect/sql-sqlite-bun": {
-        "latest": "4.1.2",
+        "latest": "4.1.3",
         "usedBy": [
           "kilo-code",
           "opencode"
         ]
       },
       "@effect/sql-sqlite-node": {
-        "latest": "4.1.2",
+        "latest": "4.1.3",
         "usedBy": [
           "opencode"
         ]
@@ -6430,7 +6442,7 @@
         ]
       },
       "@gitbeaker/rest": {
-        "latest": "43.8.0",
+        "latest": "44.0.0",
         "usedBy": [
           "qwen-code"
         ]
@@ -6442,7 +6454,7 @@
         ]
       },
       "@github/copilot": {
-        "latest": "1.0.107",
+        "latest": "1.0.108",
         "usedBy": [
           "github-copilot"
         ]
@@ -6472,7 +6484,7 @@
         ]
       },
       "@google-cloud/logging": {
-        "latest": "12.3.0",
+        "latest": "12.3.1",
         "usedBy": [
           "gemini-cli"
         ]
@@ -6490,7 +6502,7 @@
         ]
       },
       "@google-cloud/pubsub": {
-        "latest": "6.3.2",
+        "latest": "6.4.1",
         "usedBy": [
           "gemini-cli"
         ]
@@ -6579,6 +6591,12 @@
           "openhands"
         ]
       },
+      "@heroui/styles": {
+        "latest": "3.2.7",
+        "usedBy": [
+          "openhands"
+        ]
+      },
       "@heroui/theme": {
         "latest": "2.4.26",
         "usedBy": [
@@ -6594,7 +6612,7 @@
         ]
       },
       "@hona/strobe": {
-        "latest": "0.23.0",
+        "latest": "0.28.0",
         "usedBy": [
           "opencode"
         ]
@@ -6764,7 +6782,7 @@
         ]
       },
       "@letta-ai/letta-agent-sdk": {
-        "latest": "0.8.77",
+        "latest": "0.8.81",
         "usedBy": [
           "letta-code"
         ]
@@ -6874,7 +6892,7 @@
         ]
       },
       "@microlink/react-json-view": {
-        "latest": "1.31.48",
+        "latest": "1.31.50",
         "usedBy": [
           "openhands"
         ]
@@ -7104,13 +7122,13 @@
         ]
       },
       "@openhands/extensions": {
-        "latest": "0.41.0",
+        "latest": "0.41.1",
         "usedBy": [
           "openhands"
         ]
       },
       "@openhands/typescript-client": {
-        "latest": "1.60.1",
+        "latest": "1.61.0",
         "usedBy": [
           "openhands"
         ]
@@ -7146,7 +7164,7 @@
         ]
       },
       "@opentelemetry/context-async-hooks": {
-        "latest": "3.1.0",
+        "latest": "3.1.1",
         "usedBy": [
           "claude-code",
           "cline",
@@ -7155,7 +7173,7 @@
         ]
       },
       "@opentelemetry/core": {
-        "latest": "3.1.0",
+        "latest": "3.1.1",
         "usedBy": [
           "claude-code",
           "cline",
@@ -7164,7 +7182,7 @@
         ]
       },
       "@opentelemetry/exporter-logs-otlp-grpc": {
-        "latest": "0.301.0",
+        "latest": "0.301.1",
         "usedBy": [
           "cline",
           "gemini-cli",
@@ -7173,7 +7191,7 @@
         ]
       },
       "@opentelemetry/exporter-logs-otlp-http": {
-        "latest": "0.301.0",
+        "latest": "0.301.1",
         "usedBy": [
           "cline",
           "gemini-cli",
@@ -7182,13 +7200,13 @@
         ]
       },
       "@opentelemetry/exporter-logs-otlp-proto": {
-        "latest": "0.301.0",
+        "latest": "0.301.1",
         "usedBy": [
           "cline"
         ]
       },
       "@opentelemetry/exporter-metrics-otlp-grpc": {
-        "latest": "0.301.0",
+        "latest": "0.301.1",
         "usedBy": [
           "cline",
           "continue",
@@ -7198,7 +7216,7 @@
         ]
       },
       "@opentelemetry/exporter-metrics-otlp-http": {
-        "latest": "0.301.0",
+        "latest": "0.301.1",
         "usedBy": [
           "cline",
           "continue",
@@ -7208,13 +7226,13 @@
         ]
       },
       "@opentelemetry/exporter-metrics-otlp-proto": {
-        "latest": "0.301.0",
+        "latest": "0.301.1",
         "usedBy": [
           "cline"
         ]
       },
       "@opentelemetry/exporter-trace-otlp-grpc": {
-        "latest": "0.301.0",
+        "latest": "0.301.1",
         "usedBy": [
           "cline",
           "gemini-cli",
@@ -7223,7 +7241,7 @@
         ]
       },
       "@opentelemetry/exporter-trace-otlp-http": {
-        "latest": "0.301.0",
+        "latest": "0.301.1",
         "usedBy": [
           "cline",
           "gemini-cli",
@@ -7234,7 +7252,7 @@
         ]
       },
       "@opentelemetry/exporter-trace-otlp-proto": {
-        "latest": "0.301.0",
+        "latest": "0.301.1",
         "usedBy": [
           "cline"
         ]
@@ -7246,7 +7264,7 @@
         ]
       },
       "@opentelemetry/instrumentation-http": {
-        "latest": "0.301.0",
+        "latest": "0.301.1",
         "usedBy": [
           "continue",
           "gemini-cli",
@@ -7260,14 +7278,14 @@
         ]
       },
       "@opentelemetry/otlp-exporter-base": {
-        "latest": "0.301.0",
+        "latest": "0.301.1",
         "usedBy": [
           "gemini-cli",
           "qwen-code"
         ]
       },
       "@opentelemetry/resources": {
-        "latest": "3.1.0",
+        "latest": "3.1.1",
         "usedBy": [
           "cline",
           "continue",
@@ -7278,7 +7296,7 @@
         ]
       },
       "@opentelemetry/sdk-logs": {
-        "latest": "3.1.0",
+        "latest": "3.1.1",
         "usedBy": [
           "cline",
           "gemini-cli",
@@ -7288,7 +7306,7 @@
         ]
       },
       "@opentelemetry/sdk-metrics": {
-        "latest": "3.1.0",
+        "latest": "3.1.1",
         "usedBy": [
           "cline",
           "gemini-cli",
@@ -7298,7 +7316,7 @@
         ]
       },
       "@opentelemetry/sdk-node": {
-        "latest": "0.301.0",
+        "latest": "0.301.1",
         "usedBy": [
           "continue",
           "gemini-cli",
@@ -7526,6 +7544,7 @@
       "@radix-ui/react-alert-dialog": {
         "latest": "1.2.1",
         "usedBy": [
+          "cline",
           "continue"
         ]
       },
@@ -7725,7 +7744,7 @@
         ]
       },
       "@rive-app/react-webgl2": {
-        "latest": "4.38.1",
+        "latest": "4.39.0",
         "usedBy": [
           "cline"
         ]
@@ -7743,19 +7762,19 @@
         ]
       },
       "@rollup/rollup-linux-arm64-gnu": {
-        "latest": "4.68.1",
+        "latest": "4.68.2",
         "usedBy": [
           "cline"
         ]
       },
       "@rollup/rollup-linux-x64-gnu": {
-        "latest": "4.68.1",
+        "latest": "4.68.2",
         "usedBy": [
           "cline"
         ]
       },
       "@rollup/rollup-win32-x64-msvc": {
-        "latest": "4.68.1",
+        "latest": "4.68.2",
         "usedBy": [
           "cline"
         ]
@@ -8095,45 +8114,45 @@
         ]
       },
       "@storybook/addon-a11y": {
-        "latest": "10.6.6",
+        "latest": "10.6.7",
         "usedBy": [
           "cline",
           "kilo-code"
         ]
       },
       "@storybook/addon-docs": {
-        "latest": "10.6.6",
+        "latest": "10.6.7",
         "usedBy": [
           "cline",
           "kilo-code"
         ]
       },
       "@storybook/addon-links": {
-        "latest": "10.6.6",
+        "latest": "10.6.7",
         "usedBy": [
           "kilo-code"
         ]
       },
       "@storybook/addon-onboarding": {
-        "latest": "10.6.6",
+        "latest": "10.6.7",
         "usedBy": [
           "kilo-code"
         ]
       },
       "@storybook/addon-themes": {
-        "latest": "10.6.6",
+        "latest": "10.6.7",
         "usedBy": [
           "kilo-code"
         ]
       },
       "@storybook/addon-vitest": {
-        "latest": "10.6.6",
+        "latest": "10.6.7",
         "usedBy": [
           "kilo-code"
         ]
       },
       "@storybook/react-vite": {
-        "latest": "10.6.6",
+        "latest": "10.6.7",
         "usedBy": [
           "cline"
         ]
@@ -8299,7 +8318,7 @@
         ]
       },
       "@tauri-apps/plugin-log": {
-        "latest": "2.10.1",
+        "latest": "2.10.2",
         "usedBy": [
           "gptme"
         ]
@@ -8382,7 +8401,7 @@
         ]
       },
       "@testing-library/user-event": {
-        "latest": "14.6.8",
+        "latest": "14.6.9",
         "usedBy": [
           "cline",
           "continue",
@@ -8536,6 +8555,12 @@
         "latest": "9.6.0",
         "usedBy": [
           "cline"
+        ]
+      },
+      "@types/browserify": {
+        "latest": "12.0.40",
+        "usedBy": [
+          "qwen-code"
         ]
       },
       "@types/bun": {
@@ -9236,7 +9261,7 @@
         ]
       },
       "@typescript-eslint/eslint-plugin": {
-        "latest": "8.72.1",
+        "latest": "8.72.2",
         "usedBy": [
           "acp",
           "claude-code",
@@ -9250,7 +9275,7 @@
         ]
       },
       "@typescript-eslint/parser": {
-        "latest": "8.72.1",
+        "latest": "8.72.2",
         "usedBy": [
           "acp",
           "claude-code",
@@ -9264,13 +9289,13 @@
         ]
       },
       "@typescript-eslint/typescript-estree": {
-        "latest": "8.72.1",
+        "latest": "8.72.2",
         "usedBy": [
           "github-copilot"
         ]
       },
       "@typescript-eslint/utils": {
-        "latest": "8.72.1",
+        "latest": "8.72.2",
         "usedBy": [
           "qwen-code"
         ]
@@ -9625,7 +9650,7 @@
         ]
       },
       "agent-browser": {
-        "latest": "0.41.2",
+        "latest": "0.42.0",
         "usedBy": [
           "github-copilot"
         ]
@@ -9747,7 +9772,7 @@
         ]
       },
       "astro": {
-        "latest": "7.4.7",
+        "latest": "7.4.8",
         "usedBy": [
           "opencode"
         ]
@@ -9779,7 +9804,7 @@
         ]
       },
       "axios": {
-        "latest": "1.21.0",
+        "latest": "1.21.1",
         "usedBy": [
           "cline",
           "continue",
@@ -9829,6 +9854,12 @@
         "latest": "5.0.12",
         "usedBy": [
           "codex",
+          "qwen-code"
+        ]
+      },
+      "browserify": {
+        "latest": "17.0.1",
+        "usedBy": [
           "qwen-code"
         ]
       },
@@ -9929,7 +9960,7 @@
         ]
       },
       "chromium-bidi": {
-        "latest": "159.0.8152-0",
+        "latest": "159.0.8154-0",
         "usedBy": [
           "kilo-code"
         ]
@@ -10084,7 +10115,7 @@
         ]
       },
       "cronstrue": {
-        "latest": "3.38.0",
+        "latest": "3.39.0",
         "usedBy": [
           "goose"
         ]
@@ -10189,7 +10220,7 @@
         ]
       },
       "devtools-protocol": {
-        "latest": "0.0.1734725",
+        "latest": "0.0.1740066",
         "usedBy": [
           "opencode"
         ]
@@ -10327,7 +10358,7 @@
         ]
       },
       "effect": {
-        "latest": "4.1.2",
+        "latest": "4.1.3",
         "usedBy": [
           "kilo-code",
           "opencode"
@@ -10672,7 +10703,7 @@
         ]
       },
       "express-rate-limit": {
-        "latest": "8.7.3",
+        "latest": "8.7.4",
         "usedBy": [
           "gemini-cli",
           "mcp"
@@ -10790,7 +10821,7 @@
         ]
       },
       "framer-motion": {
-        "latest": "14.11.1",
+        "latest": "14.12.0",
         "usedBy": [
           "cline",
           "goose",
@@ -10907,7 +10938,7 @@
         ]
       },
       "google-auth-library": {
-        "latest": "11.3.3",
+        "latest": "11.3.4",
         "usedBy": [
           "claude-code",
           "codex",
@@ -10919,7 +10950,7 @@
         ]
       },
       "gpt-tokenizer": {
-        "latest": "4.1.0",
+        "latest": "4.1.1",
         "usedBy": [
           "continue"
         ]
@@ -10971,6 +11002,12 @@
           "continue",
           "kilo-code",
           "opencode"
+        ]
+      },
+      "hast-util-from-html-isomorphic": {
+        "latest": "2.0.0",
+        "usedBy": [
+          "qwen-code"
         ]
       },
       "hast-util-to-text": {
@@ -11100,7 +11137,7 @@
         ]
       },
       "i18next": {
-        "latest": "27.0.1",
+        "latest": "27.1.1",
         "usedBy": [
           "openhands"
         ]
@@ -11287,7 +11324,7 @@
         ]
       },
       "jose": {
-        "latest": "6.2.16",
+        "latest": "6.2.17",
         "usedBy": [
           "opencode"
         ]
@@ -11521,7 +11558,7 @@
         ]
       },
       "lucide-react": {
-        "latest": "1.70.0",
+        "latest": "1.71.0",
         "usedBy": [
           "cline",
           "continue",
@@ -11532,7 +11569,7 @@
         ]
       },
       "lucide-solid": {
-        "latest": "1.70.0",
+        "latest": "1.71.0",
         "usedBy": [
           "kilo-code"
         ]
@@ -11564,7 +11601,7 @@
         ]
       },
       "mailparser": {
-        "latest": "3.14.2",
+        "latest": "3.14.3",
         "usedBy": [
           "qwen-code"
         ]
@@ -11584,7 +11621,7 @@
         ]
       },
       "marked": {
-        "latest": "18.1.3",
+        "latest": "18.2.0",
         "usedBy": [
           "cline",
           "gemini-cli",
@@ -11704,7 +11741,7 @@
         ]
       },
       "mint": {
-        "latest": "4.3.8",
+        "latest": "4.3.12",
         "usedBy": [
           "acp"
         ]
@@ -11788,14 +11825,14 @@
         ]
       },
       "motion": {
-        "latest": "14.11.1",
+        "latest": "14.12.0",
         "usedBy": [
           "cline",
           "kilo-code"
         ]
       },
       "motion-dom": {
-        "latest": "14.11.1",
+        "latest": "14.12.0",
         "usedBy": [
           "kilo-code"
         ]
@@ -11839,7 +11876,7 @@
         ]
       },
       "next": {
-        "latest": "16.4.5",
+        "latest": "16.4.6",
         "usedBy": [
           "codex",
           "continue",
@@ -11943,7 +11980,7 @@
         ]
       },
       "nodemailer": {
-        "latest": "10.4.0",
+        "latest": "10.5.0",
         "usedBy": [
           "qwen-code"
         ]
@@ -11974,12 +12011,6 @@
         "usedBy": [
           "gemini-cli",
           "qwen-code"
-        ]
-      },
-      "number-flow": {
-        "latest": "0.6.2",
-        "usedBy": [
-          "opencode"
         ]
       },
       "ollama": {
@@ -12032,7 +12063,7 @@
         ]
       },
       "openai": {
-        "latest": "7.53.0",
+        "latest": "7.55.0",
         "usedBy": [
           "cline",
           "continue",
@@ -12241,7 +12272,7 @@
         ]
       },
       "plist": {
-        "latest": "5.1.0",
+        "latest": "5.1.1",
         "usedBy": [
           "continue"
         ]
@@ -12282,7 +12313,7 @@
         ]
       },
       "posthog-js": {
-        "latest": "1.447.4",
+        "latest": "1.447.7",
         "usedBy": [
           "cline",
           "kilo-code",
@@ -12290,7 +12321,7 @@
         ]
       },
       "posthog-node": {
-        "latest": "5.63.2",
+        "latest": "5.67.0",
         "usedBy": [
           "cline",
           "kilo-code"
@@ -12486,6 +12517,18 @@
           "opencode",
           "openhands",
           "qwen-code"
+        ]
+      },
+      "react-aria": {
+        "latest": "3.53.1",
+        "usedBy": [
+          "openhands"
+        ]
+      },
+      "react-aria-components": {
+        "latest": "1.22.1",
+        "usedBy": [
+          "openhands"
         ]
       },
       "react-devtools-core": {
@@ -12797,6 +12840,12 @@
           "qwen-code"
         ]
       },
+      "remark-directive": {
+        "latest": "4.0.0",
+        "usedBy": [
+          "opencode"
+        ]
+      },
       "remark-gfm": {
         "latest": "4.0.1",
         "usedBy": [
@@ -12835,7 +12884,7 @@
         ]
       },
       "remeda": {
-        "latest": "2.58.0",
+        "latest": "2.59.0",
         "usedBy": [
           "kilo-code",
           "opencode"
@@ -12888,7 +12937,7 @@
         ]
       },
       "rollup": {
-        "latest": "4.68.1",
+        "latest": "4.68.2",
         "usedBy": [
           "claude-code",
           "continue"
@@ -13163,7 +13212,7 @@
         ]
       },
       "storybook": {
-        "latest": "10.6.6",
+        "latest": "10.6.7",
         "usedBy": [
           "cline",
           "kilo-code"
@@ -13255,7 +13304,7 @@
         ]
       },
       "system-ca": {
-        "latest": "3.0.0",
+        "latest": "3.0.1",
         "usedBy": [
           "continue"
         ]
@@ -13526,6 +13575,7 @@
           "goose",
           "kilo-code",
           "opencode",
+          "openhands",
           "qwen-code"
         ]
       },
@@ -13570,13 +13620,12 @@
           "letta-code",
           "openai-agents",
           "opencode",
-          "openhands",
           "qwen-code",
           "zed"
         ]
       },
       "typescript-eslint": {
-        "latest": "8.72.1",
+        "latest": "8.72.2",
         "usedBy": [
           "claude-code",
           "cline",
@@ -13711,7 +13760,7 @@
         ]
       },
       "vercel": {
-        "latest": "65.12.1",
+        "latest": "65.14.0",
         "usedBy": [
           "codex"
         ]
@@ -13946,7 +13995,7 @@
         ]
       },
       "wrangler": {
-        "latest": "4.158.0",
+        "latest": "4.160.0",
         "usedBy": [
           "claude-code",
           "codex",
@@ -14123,14 +14172,14 @@
         ]
       },
       "anthropic": {
-        "latest": "2.6.0",
+        "latest": "2.7.0",
         "usedBy": [
           "gptme",
           "mcp"
         ]
       },
       "any-llm-sdk": {
-        "latest": "1.47.0",
+        "latest": "1.48.0",
         "usedBy": [
           "openai-agents"
         ]
@@ -14196,7 +14245,7 @@
         ]
       },
       "blaxel": {
-        "latest": "0.4.23",
+        "latest": "0.4.24",
         "usedBy": [
           "openai-agents"
         ]
@@ -14214,20 +14263,20 @@
         ]
       },
       "boto3": {
-        "latest": "1.43.126",
+        "latest": "1.43.127",
         "usedBy": [
           "claude-code",
           "openai-agents"
         ]
       },
       "boto3-stubs": {
-        "latest": "1.43.126",
+        "latest": "1.43.127",
         "usedBy": [
           "claude-code"
         ]
       },
       "botocore": {
-        "latest": "1.43.126",
+        "latest": "1.43.127",
         "usedBy": [
           "claude-code"
         ]
@@ -14377,21 +14426,21 @@
         ]
       },
       "datamodel-code-generator": {
-        "latest": "0.91.0",
+        "latest": "0.92.0",
         "usedBy": [
           "codex",
           "mcp"
         ]
       },
       "datasets": {
-        "latest": "5.1.0",
+        "latest": "5.2.0",
         "usedBy": [
           "gptme",
           "swe-agent"
         ]
       },
       "daytona": {
-        "latest": "0.231.0",
+        "latest": "0.231.1",
         "usedBy": [
           "openai-agents"
         ]
@@ -14509,7 +14558,7 @@
         ]
       },
       "filelock": {
-        "latest": "4.2.9",
+        "latest": "4.2.10",
         "usedBy": [
           "aider",
           "gptme",
@@ -14737,7 +14786,7 @@
         ]
       },
       "gunicorn": {
-        "latest": "26.2.0",
+        "latest": "27.0.0",
         "usedBy": [
           "continue"
         ]
@@ -14871,7 +14920,7 @@
         ]
       },
       "importlib-metadata": {
-        "latest": "10.1.0",
+        "latest": "10.2.0",
         "usedBy": [
           "aider",
           "claude-code"
@@ -14963,7 +15012,7 @@
         ]
       },
       "json-repair": {
-        "latest": "0.64.8",
+        "latest": "0.64.9",
         "usedBy": [
           "gptme"
         ]
@@ -15040,7 +15089,7 @@
         ]
       },
       "litellm": {
-        "latest": "1.108.3",
+        "latest": "1.108.4",
         "usedBy": [
           "aider",
           "openai-agents",
@@ -15352,7 +15401,7 @@
         ]
       },
       "openai": {
-        "latest": "3.46.0",
+        "latest": "3.49.0",
         "usedBy": [
           "aider",
           "gptme",
@@ -15563,7 +15612,7 @@
         ]
       },
       "playwright": {
-        "latest": "1.64.1",
+        "latest": "1.65.0",
         "usedBy": [
           "aider",
           "gptme",
@@ -15584,7 +15633,7 @@
         ]
       },
       "posthog": {
-        "latest": "7.86.3",
+        "latest": "7.86.6",
         "usedBy": [
           "aider"
         ]
@@ -15760,7 +15809,7 @@
         ]
       },
       "pyinstaller-hooks-contrib": {
-        "latest": "2026.9",
+        "latest": "2026.10",
         "usedBy": [
           "mistral-vibe"
         ]
@@ -15815,7 +15864,7 @@
         ]
       },
       "pypdf": {
-        "latest": "7.0.0",
+        "latest": "7.0.1",
         "usedBy": [
           "gptme"
         ]
@@ -16283,7 +16332,7 @@
         ]
       },
       "soupsieve": {
-        "latest": "4.0.1",
+        "latest": "4.1",
         "usedBy": [
           "aider",
           "mistral-vibe"
@@ -16507,7 +16556,7 @@
         ]
       },
       "tornado": {
-        "latest": "6.6",
+        "latest": "6.6.1",
         "usedBy": [
           "aider"
         ]
@@ -16531,7 +16580,7 @@
         ]
       },
       "tree-sitter": {
-        "latest": "0.26.0",
+        "latest": "0.26.1",
         "usedBy": [
           "aider",
           "gptme",
@@ -16601,7 +16650,7 @@
         ]
       },
       "typer": {
-        "latest": "0.28.0",
+        "latest": "0.29.0",
         "usedBy": [
           "aider",
           "mcp",
@@ -16821,8 +16870,7 @@
       "zstandard": {
         "latest": "0.25.0",
         "usedBy": [
-          "codex",
-          "mistral-vibe"
+          "codex"
         ]
       }
     }
