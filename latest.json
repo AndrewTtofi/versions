@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T12:54:03.446Z",
+  "generatedAt": "2026-11-12T13:47:09.127Z",
   "tools": {
     "claude-code": {
       "name": "Claude Code",
@@ -25,15 +25,15 @@
       "install": "npm install -g @openai/codex",
       "packages": {
         "npm": {
-          "@openai/codex": "0.167.1",
-          "@openai/codex-sdk": "0.167.1",
+          "@openai/codex": "0.167.2",
+          "@openai/codex-sdk": "0.167.2",
           "openai": "7.55.0"
         },
         "pypi": {
           "openai": "3.49.0"
         }
       },
-      "manifests": 192
+      "manifests": 193
     },
     "gemini-cli": {
       "name": "Gemini CLI",
@@ -42,7 +42,7 @@
       "packages": {
         "npm": {
           "@google/gemini-cli": "0.68.0",
-          "@google/genai": "3.1.0"
+          "@google/genai": "3.2.0"
         }
       },
       "manifests": 12
@@ -149,7 +149,7 @@
       "install": "curl https://cursor.com/install -fsS | bash",
       "packages": {},
       "manifests": 0,
-      "release": "3.29.15"
+      "release": "3.30.8"
     },
     "github-copilot": {
       "name": "GitHub Copilot Chat (VS Code)",
@@ -176,7 +176,7 @@
       "install": "npm install -g @sourcegraph/amp",
       "packages": {
         "npm": {
-          "@sourcegraph/amp": "0.0.1794398443-g0895e3"
+          "@sourcegraph/amp": "0.0.1794470450-g3a6702"
         }
       },
       "manifests": 0
@@ -198,7 +198,7 @@
       "install": "npm install -g droid",
       "packages": {
         "npm": {
-          "droid": "1.8.0"
+          "droid": "1.9.0"
         }
       },
       "manifests": 0
@@ -231,7 +231,7 @@
       "install": "npm install -g @letta-ai/letta-code",
       "packages": {
         "npm": {
-          "@letta-ai/letta-code": "0.34.51"
+          "@letta-ai/letta-code": "0.34.56"
         }
       },
       "manifests": 2
@@ -268,7 +268,7 @@
         }
       },
       "manifests": 273,
-      "release": "v1.27.0"
+      "release": "v1.28.1"
     },
     "gptme": {
       "name": "gptme",
@@ -387,7 +387,7 @@
         ]
       },
       "annotate-snippets": {
-        "latest": "0.12.17",
+        "latest": "0.12.18",
         "usedBy": [
           "zed"
         ]
@@ -1282,7 +1282,7 @@
         ]
       },
       "fancy-regex": {
-        "latest": "0.20.1",
+        "latest": "0.20.2",
         "usedBy": [
           "zed"
         ]
@@ -1731,7 +1731,7 @@
         ]
       },
       "jsonschema": {
-        "latest": "0.61.1",
+        "latest": "0.61.2",
         "usedBy": [
           "goose",
           "mistral-vibe",
@@ -1873,7 +1873,13 @@
           "zed"
         ]
       },
-      "lyon": {
+      "lyon_extra": {
+        "latest": "1.1.0",
+        "usedBy": [
+          "zed"
+        ]
+      },
+      "lyon_path": {
         "latest": "1.0.19",
         "usedBy": [
           "zed"
@@ -1916,7 +1922,7 @@
         ]
       },
       "merman": {
-        "latest": "0.9.3",
+        "latest": "0.10.0",
         "usedBy": [
           "zed"
         ]
@@ -2715,7 +2721,7 @@
         ]
       },
       "resvg": {
-        "latest": "0.49.0",
+        "latest": "0.50.0",
         "usedBy": [
           "zed"
         ]
@@ -3291,7 +3297,7 @@
         ]
       },
       "sysinfo": {
-        "latest": "0.40.1",
+        "latest": "0.40.3",
         "usedBy": [
           "zed"
         ]
@@ -3465,6 +3471,12 @@
         "latest": "0.12.0",
         "usedBy": [
           "qwen-code"
+        ]
+      },
+      "tiny-skia-path": {
+        "latest": "0.12.0",
+        "usedBy": [
+          "zed"
         ]
       },
       "tokenizers": {
@@ -3882,7 +3894,7 @@
         ]
       },
       "ureq": {
-        "latest": "3.5.1",
+        "latest": "3.5.2",
         "usedBy": [
           "qwen-code"
         ]
@@ -3907,7 +3919,7 @@
         ]
       },
       "usvg": {
-        "latest": "0.49.0",
+        "latest": "0.50.0",
         "usedBy": [
           "zed"
         ]
@@ -4292,7 +4304,7 @@
         ]
       },
       "charm.land/catwalk/v3": {
-        "latest": "v3.2.4",
+        "latest": "v3.2.6",
         "usedBy": [
           "crush"
         ]
@@ -5312,7 +5324,7 @@
         ]
       },
       "golang.org/x/crypto": {
-        "latest": "v0.58.0",
+        "latest": "v0.59.0",
         "usedBy": [
           "crush"
         ]
@@ -5384,7 +5396,7 @@
         ]
       },
       "google.golang.org/api": {
-        "latest": "v0.312.0",
+        "latest": "v0.313.0",
         "usedBy": [
           "crush"
         ]
@@ -5525,7 +5537,7 @@
         ]
       },
       "@ai-sdk/amazon-bedrock": {
-        "latest": "5.0.138",
+        "latest": "5.0.139",
         "usedBy": [
           "cline",
           "kilo-code"
@@ -5541,7 +5553,7 @@
         ]
       },
       "@ai-sdk/azure": {
-        "latest": "4.0.122",
+        "latest": "4.0.123",
         "usedBy": [
           "kilo-code"
         ]
@@ -5571,14 +5583,14 @@
         ]
       },
       "@ai-sdk/gateway": {
-        "latest": "4.0.142",
+        "latest": "4.0.143",
         "usedBy": [
           "cline",
           "kilo-code"
         ]
       },
       "@ai-sdk/google": {
-        "latest": "4.0.117",
+        "latest": "4.0.118",
         "usedBy": [
           "cline",
           "continue",
@@ -5586,7 +5598,7 @@
         ]
       },
       "@ai-sdk/google-vertex": {
-        "latest": "5.0.137",
+        "latest": "5.0.138",
         "usedBy": [
           "cline",
           "kilo-code"
@@ -5599,7 +5611,7 @@
         ]
       },
       "@ai-sdk/mcp": {
-        "latest": "2.0.96",
+        "latest": "2.0.97",
         "usedBy": [
           "grok-cli"
         ]
@@ -5612,7 +5624,7 @@
         ]
       },
       "@ai-sdk/openai": {
-        "latest": "4.0.114",
+        "latest": "4.0.115",
         "usedBy": [
           "cline",
           "continue",
@@ -5628,7 +5640,7 @@
         ]
       },
       "@ai-sdk/otel": {
-        "latest": "1.0.169",
+        "latest": "1.0.170",
         "usedBy": [
           "cline"
         ]
@@ -5657,7 +5669,7 @@
         ]
       },
       "@ai-sdk/react": {
-        "latest": "4.0.173",
+        "latest": "4.0.174",
         "usedBy": [
           "codex"
         ]
@@ -5689,7 +5701,7 @@
         ]
       },
       "@ampcode/cli": {
-        "latest": "0.0.1794398443-g0895e3",
+        "latest": "0.0.1794470450-g3a6702",
         "usedBy": [
           "amp"
         ]
@@ -5743,7 +5755,7 @@
         ]
       },
       "@aws-sdk/client-bedrock-runtime": {
-        "latest": "3.1166.0",
+        "latest": "3.1167.0",
         "usedBy": [
           "claude-code",
           "cline",
@@ -5752,31 +5764,31 @@
         ]
       },
       "@aws-sdk/client-s3": {
-        "latest": "3.1166.0",
+        "latest": "3.1167.0",
         "usedBy": [
           "kilo-code"
         ]
       },
       "@aws-sdk/client-sagemaker-runtime": {
-        "latest": "3.1166.0",
+        "latest": "3.1167.0",
         "usedBy": [
           "continue"
         ]
       },
       "@aws-sdk/credential-provider-ini": {
-        "latest": "3.973.29",
+        "latest": "3.973.30",
         "usedBy": [
           "kilo-code"
         ]
       },
       "@aws-sdk/credential-provider-node": {
-        "latest": "3.972.96",
+        "latest": "3.972.97",
         "usedBy": [
           "codex"
         ]
       },
       "@aws-sdk/credential-providers": {
-        "latest": "3.1166.0",
+        "latest": "3.1167.0",
         "usedBy": [
           "claude-code",
           "cline",
@@ -5810,7 +5822,7 @@
         ]
       },
       "@babel/core": {
-        "latest": "8.1.0",
+        "latest": "8.1.2",
         "usedBy": [
           "codex",
           "kilo-code",
@@ -5832,7 +5844,7 @@
         ]
       },
       "@babel/runtime": {
-        "latest": "8.1.0",
+        "latest": "8.1.2",
         "usedBy": [
           "qwen-code"
         ]
@@ -5868,7 +5880,7 @@
         ]
       },
       "@biomejs/biome": {
-        "latest": "2.6.6",
+        "latest": "2.6.7",
         "usedBy": [
           "cline",
           "continue",
@@ -5973,13 +5985,13 @@
         ]
       },
       "@cloudflare/build-output-utils": {
-        "latest": "0.9.12",
+        "latest": "0.9.13",
         "usedBy": [
           "opencode"
         ]
       },
       "@cloudflare/config": {
-        "latest": "0.31.1",
+        "latest": "0.32.0",
         "usedBy": [
           "opencode"
         ]
@@ -5992,7 +6004,7 @@
         ]
       },
       "@cloudflare/workers-types": {
-        "latest": "5.20261110.1",
+        "latest": "5.20261112.1",
         "usedBy": [
           "claude-code",
           "codex",
@@ -6176,35 +6188,35 @@
         ]
       },
       "@effect/opentelemetry": {
-        "latest": "4.1.3",
+        "latest": "4.1.4",
         "usedBy": [
           "kilo-code",
           "opencode"
         ]
       },
       "@effect/platform-node": {
-        "latest": "4.1.3",
+        "latest": "4.1.4",
         "usedBy": [
           "kilo-code",
           "opencode"
         ]
       },
       "@effect/platform-node-shared": {
-        "latest": "4.1.3",
+        "latest": "4.1.4",
         "usedBy": [
           "kilo-code",
           "opencode"
         ]
       },
       "@effect/sql-sqlite-bun": {
-        "latest": "4.1.3",
+        "latest": "4.1.4",
         "usedBy": [
           "kilo-code",
           "opencode"
         ]
       },
       "@effect/sql-sqlite-node": {
-        "latest": "4.1.3",
+        "latest": "4.1.4",
         "usedBy": [
           "opencode"
         ]
@@ -6417,7 +6429,7 @@
         ]
       },
       "@gitbeaker/rest": {
-        "latest": "44.0.1",
+        "latest": "44.0.5",
         "usedBy": [
           "qwen-code"
         ]
@@ -6489,7 +6501,7 @@
         ]
       },
       "@google/genai": {
-        "latest": "3.1.0",
+        "latest": "3.2.0",
         "usedBy": [
           "cline",
           "continue",
@@ -6587,7 +6599,7 @@
         ]
       },
       "@hona/strobe": {
-        "latest": "0.28.0",
+        "latest": "0.31.0",
         "usedBy": [
           "opencode"
         ]
@@ -6605,7 +6617,7 @@
         ]
       },
       "@hookform/resolvers": {
-        "latest": "7.0.5",
+        "latest": "7.0.6",
         "usedBy": [
           "gptme"
         ]
@@ -6672,7 +6684,7 @@
         ]
       },
       "@jerome-benoit/sap-ai-provider": {
-        "latest": "5.1.1",
+        "latest": "5.1.2",
         "usedBy": [
           "cline"
         ]
@@ -6757,7 +6769,7 @@
         ]
       },
       "@letta-ai/letta-agent-sdk": {
-        "latest": "0.8.81",
+        "latest": "0.8.86",
         "usedBy": [
           "letta-code"
         ]
@@ -6775,7 +6787,7 @@
         ]
       },
       "@lottiefiles/dotlottie-web": {
-        "latest": "0.83.0",
+        "latest": "0.83.2",
         "usedBy": [
           "kilo-code"
         ]
@@ -6950,7 +6962,7 @@
         ]
       },
       "@nestjs/common": {
-        "latest": "12.4.2",
+        "latest": "12.5.0",
         "usedBy": [
           "continue"
         ]
@@ -7031,13 +7043,13 @@
         ]
       },
       "@openai/codex-sdk": {
-        "latest": "0.167.1",
+        "latest": "0.167.2",
         "usedBy": [
           "openai-agents"
         ]
       },
       "@openapitools/openapi-generator-cli": {
-        "latest": "2.42.1",
+        "latest": "2.42.2",
         "usedBy": [
           "continue"
         ]
@@ -7049,55 +7061,55 @@
         ]
       },
       "@opencode/pty-darwin-arm64": {
-        "latest": "0.5.0",
+        "latest": "0.5.2",
         "usedBy": [
           "opencode"
         ]
       },
       "@opencode/pty-darwin-x64": {
-        "latest": "0.5.0",
+        "latest": "0.5.2",
         "usedBy": [
           "opencode"
         ]
       },
       "@opencode/pty-linux-arm64-gnu": {
-        "latest": "0.5.0",
+        "latest": "0.5.2",
         "usedBy": [
           "opencode"
         ]
       },
       "@opencode/pty-linux-arm64-musl": {
-        "latest": "0.5.0",
+        "latest": "0.5.2",
         "usedBy": [
           "opencode"
         ]
       },
       "@opencode/pty-linux-x64-gnu": {
-        "latest": "0.5.0",
+        "latest": "0.5.2",
         "usedBy": [
           "opencode"
         ]
       },
       "@opencode/pty-linux-x64-musl": {
-        "latest": "0.5.0",
+        "latest": "0.5.2",
         "usedBy": [
           "opencode"
         ]
       },
       "@opencode/pty-win32-arm64": {
-        "latest": "0.5.0",
+        "latest": "0.5.2",
         "usedBy": [
           "opencode"
         ]
       },
       "@opencode/pty-win32-x64": {
-        "latest": "0.5.0",
+        "latest": "0.5.2",
         "usedBy": [
           "opencode"
         ]
       },
       "@openhands/extensions": {
-        "latest": "0.41.1",
+        "latest": "0.42.0",
         "usedBy": [
           "openhands"
         ]
@@ -7707,7 +7719,7 @@
         ]
       },
       "@remotion/cli": {
-        "latest": "4.0.542",
+        "latest": "4.0.543",
         "usedBy": [
           "kilo-code"
         ]
@@ -8376,7 +8388,7 @@
         ]
       },
       "@testing-library/user-event": {
-        "latest": "14.6.9",
+        "latest": "14.6.10",
         "usedBy": [
           "cline",
           "continue",
@@ -8422,86 +8434,86 @@
         ]
       },
       "@tiptap/extension-document": {
-        "latest": "3.33.0",
+        "latest": "3.33.1",
         "usedBy": [
           "continue"
         ]
       },
       "@tiptap/extension-dropcursor": {
-        "latest": "3.33.0",
+        "latest": "3.33.1",
         "usedBy": [
           "continue"
         ]
       },
       "@tiptap/extension-history": {
-        "latest": "3.33.0",
+        "latest": "3.33.1",
         "usedBy": [
           "continue"
         ]
       },
       "@tiptap/extension-image": {
-        "latest": "3.33.0",
+        "latest": "3.33.1",
         "usedBy": [
           "continue"
         ]
       },
       "@tiptap/extension-mention": {
-        "latest": "3.33.0",
+        "latest": "3.33.1",
         "usedBy": [
           "continue"
         ]
       },
       "@tiptap/extension-paragraph": {
-        "latest": "3.33.0",
+        "latest": "3.33.1",
         "usedBy": [
           "continue"
         ]
       },
       "@tiptap/extension-placeholder": {
-        "latest": "3.33.0",
+        "latest": "3.33.1",
         "usedBy": [
           "continue"
         ]
       },
       "@tiptap/extension-text": {
-        "latest": "3.33.0",
+        "latest": "3.33.1",
         "usedBy": [
           "continue"
         ]
       },
       "@tiptap/pm": {
-        "latest": "3.33.0",
+        "latest": "3.33.1",
         "usedBy": [
           "continue"
         ]
       },
       "@tiptap/react": {
-        "latest": "3.33.0",
+        "latest": "3.33.1",
         "usedBy": [
           "continue"
         ]
       },
       "@tiptap/starter-kit": {
-        "latest": "3.33.0",
+        "latest": "3.33.1",
         "usedBy": [
           "continue"
         ]
       },
       "@tiptap/suggestion": {
-        "latest": "3.33.0",
+        "latest": "3.33.1",
         "usedBy": [
           "continue"
         ]
       },
       "@tsconfig/bun": {
-        "latest": "1.0.11",
+        "latest": "1.0.12",
         "usedBy": [
           "kilo-code",
           "opencode"
         ]
       },
       "@tsconfig/node22": {
-        "latest": "22.0.6",
+        "latest": "22.0.7",
         "usedBy": [
           "kilo-code",
           "opencode"
@@ -9638,7 +9650,7 @@
         ]
       },
       "ai": {
-        "latest": "7.0.169",
+        "latest": "7.0.170",
         "usedBy": [
           "cline",
           "codex",
@@ -9797,7 +9809,7 @@
         ]
       },
       "baseline-browser-mapping": {
-        "latest": "2.11.35",
+        "latest": "2.11.36",
         "usedBy": [
           "qwen-code"
         ]
@@ -9809,7 +9821,7 @@
         ]
       },
       "better-sqlite3": {
-        "latest": "13.0.3",
+        "latest": "13.1.1",
         "usedBy": [
           "cline"
         ]
@@ -9861,7 +9873,7 @@
         ]
       },
       "cf": {
-        "latest": "1.0.0-beta.29",
+        "latest": "1.0.0-beta.30",
         "usedBy": [
           "opencode"
         ]
@@ -9918,7 +9930,7 @@
         ]
       },
       "chrome-devtools-mcp": {
-        "latest": "1.12.0",
+        "latest": "1.13.0",
         "usedBy": [
           "gemini-cli"
         ]
@@ -9930,7 +9942,7 @@
         ]
       },
       "chromium-bidi": {
-        "latest": "160.0.8155-0",
+        "latest": "160.0.8157-0",
         "usedBy": [
           "kilo-code"
         ]
@@ -10190,7 +10202,7 @@
         ]
       },
       "devtools-protocol": {
-        "latest": "0.0.1740066",
+        "latest": "0.0.1742540",
         "usedBy": [
           "opencode"
         ]
@@ -10283,7 +10295,7 @@
         ]
       },
       "driver.js": {
-        "latest": "1.11.0",
+        "latest": "1.12.1",
         "usedBy": [
           "openhands"
         ]
@@ -10335,7 +10347,7 @@
         ]
       },
       "electron": {
-        "latest": "45.3.0",
+        "latest": "45.3.1",
         "usedBy": [
           "github-copilot",
           "goose",
@@ -10767,7 +10779,7 @@
         ]
       },
       "firebase": {
-        "latest": "13.2.0",
+        "latest": "13.3.0",
         "usedBy": [
           "cline"
         ]
@@ -10871,7 +10883,7 @@
         ]
       },
       "glob": {
-        "latest": "14.0.4",
+        "latest": "14.0.6",
         "usedBy": [
           "cline",
           "continue",
@@ -11699,7 +11711,7 @@
         ]
       },
       "mint": {
-        "latest": "4.3.16",
+        "latest": "4.3.19",
         "usedBy": [
           "acp"
         ]
@@ -12271,7 +12283,7 @@
         ]
       },
       "posthog-js": {
-        "latest": "1.447.12",
+        "latest": "1.447.15",
         "usedBy": [
           "cline",
           "kilo-code",
@@ -12279,7 +12291,7 @@
         ]
       },
       "posthog-node": {
-        "latest": "5.68.2",
+        "latest": "5.70.0",
         "usedBy": [
           "cline",
           "kilo-code"
@@ -12298,7 +12310,7 @@
         ]
       },
       "prettier": {
-        "latest": "3.10.0",
+        "latest": "3.10.1",
         "usedBy": [
           "acp",
           "claude-code",
@@ -12521,7 +12533,7 @@
         ]
       },
       "react-hook-form": {
-        "latest": "7.91.0",
+        "latest": "7.92.0",
         "usedBy": [
           "continue",
           "gptme"
@@ -12666,7 +12678,7 @@
         ]
       },
       "react-virtuoso": {
-        "latest": "4.18.21",
+        "latest": "4.18.22",
         "usedBy": [
           "cline"
         ]
@@ -12856,7 +12868,7 @@
         ]
       },
       "remotion": {
-        "latest": "4.0.542",
+        "latest": "4.0.543",
         "usedBy": [
           "kilo-code"
         ]
@@ -12914,7 +12926,7 @@
         ]
       },
       "sanitize-html": {
-        "latest": "2.18.1",
+        "latest": "2.18.2",
         "usedBy": [
           "gptme"
         ]
@@ -13188,7 +13200,7 @@
         ]
       },
       "string-width": {
-        "latest": "8.3.0",
+        "latest": "9.0.0",
         "usedBy": [
           "gemini-cli",
           "opencode",
@@ -13318,7 +13330,7 @@
         ]
       },
       "tar": {
-        "latest": "7.5.22",
+        "latest": "7.5.23",
         "usedBy": [
           "cline",
           "continue",
@@ -13445,7 +13457,7 @@
         ]
       },
       "ts-proto": {
-        "latest": "2.18.4",
+        "latest": "2.18.5",
         "usedBy": [
           "cline"
         ]
@@ -13503,7 +13515,7 @@
         ]
       },
       "turbo": {
-        "latest": "2.11.10",
+        "latest": "2.11.11",
         "usedBy": [
           "kilo-code",
           "opencode"
@@ -13598,7 +13610,7 @@
         ]
       },
       "ultracite": {
-        "latest": "8.1.1",
+        "latest": "8.2.0",
         "usedBy": [
           "codex"
         ]
@@ -13705,7 +13717,7 @@
         ]
       },
       "venice-ai-sdk-provider": {
-        "latest": "3.1.0",
+        "latest": "3.1.1",
         "usedBy": [
           "kilo-code"
         ]
@@ -13945,7 +13957,7 @@
         ]
       },
       "wrangler": {
-        "latest": "4.160.0",
+        "latest": "4.161.0",
         "usedBy": [
           "claude-code",
           "codex",
@@ -14213,20 +14225,20 @@
         ]
       },
       "boto3": {
-        "latest": "1.44.0",
+        "latest": "1.44.1",
         "usedBy": [
           "claude-code",
           "openai-agents"
         ]
       },
       "boto3-stubs": {
-        "latest": "1.44.0",
+        "latest": "1.44.1",
         "usedBy": [
           "claude-code"
         ]
       },
       "botocore": {
-        "latest": "1.44.0",
+        "latest": "1.44.1",
         "usedBy": [
           "claude-code"
         ]
@@ -14335,7 +14347,7 @@
         ]
       },
       "coverage": {
-        "latest": "7.17.2",
+        "latest": "7.17.3",
         "usedBy": [
           "aider",
           "mcp",
@@ -14376,7 +14388,7 @@
         ]
       },
       "datamodel-code-generator": {
-        "latest": "0.93.0",
+        "latest": "0.95.0",
         "usedBy": [
           "codex",
           "mcp"
@@ -14495,7 +14507,7 @@
         ]
       },
       "fastapi": {
-        "latest": "0.162.4",
+        "latest": "0.162.5",
         "usedBy": [
           "aider",
           "openai-agents"
@@ -14658,7 +14670,7 @@
         ]
       },
       "google-genai": {
-        "latest": "3.1.0",
+        "latest": "3.2.0",
         "usedBy": [
           "gemini-cli"
         ]
@@ -14831,7 +14843,7 @@
         ]
       },
       "humanize": {
-        "latest": "4.16.0",
+        "latest": "4.17.0",
         "usedBy": [
           "mistral-vibe"
         ]
@@ -15039,7 +15051,7 @@
         ]
       },
       "litellm": {
-        "latest": "1.109.0",
+        "latest": "1.109.1",
         "usedBy": [
           "aider",
           "openai-agents",
@@ -15071,13 +15083,13 @@
         ]
       },
       "logfire": {
-        "latest": "5.5.0",
+        "latest": "5.6.0",
         "usedBy": [
           "mcp"
         ]
       },
       "loguru": {
-        "latest": "0.7.3",
+        "latest": "0.8.0",
         "usedBy": [
           "continue"
         ]
@@ -15231,13 +15243,13 @@
         ]
       },
       "mkdocstrings-python": {
-        "latest": "2.0.10",
+        "latest": "2.0.11",
         "usedBy": [
           "mcp"
         ]
       },
       "modal": {
-        "latest": "1.6.3",
+        "latest": "1.6.4",
         "usedBy": [
           "openai-agents",
           "zed"
@@ -15562,7 +15574,7 @@
         ]
       },
       "playwright": {
-        "latest": "1.65.0",
+        "latest": "1.65.1",
         "usedBy": [
           "aider",
           "gptme",
@@ -15583,7 +15595,7 @@
         ]
       },
       "posthog": {
-        "latest": "7.87.0",
+        "latest": "7.87.2",
         "usedBy": [
           "aider"
         ]
@@ -15732,7 +15744,7 @@
         ]
       },
       "pyee": {
-        "latest": "16.0.1",
+        "latest": "16.0.2",
         "usedBy": [
           "aider"
         ]
@@ -15784,7 +15796,7 @@
         ]
       },
       "pymdown-extensions": {
-        "latest": "13.0",
+        "latest": "13.1",
         "usedBy": [
           "openai-agents"
         ]
@@ -16186,14 +16198,14 @@
         ]
       },
       "sentence-transformers": {
-        "latest": "6.2.0",
+        "latest": "6.3.0",
         "usedBy": [
           "aider",
           "gptme"
         ]
       },
       "sentry-sdk": {
-        "latest": "2.74.0",
+        "latest": "2.75.0",
         "usedBy": [
           "mistral-vibe"
         ]
@@ -16825,186 +16837,5 @@
       }
     }
   },
-  "errors": [
-    {
-      "package": "npm:@tiptap/extension-paragraph",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fextension-paragraph/latest",
-      "kept": "3.33.0"
-    },
-    {
-      "package": "npm:@tiptap/extension-history",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fextension-history/latest",
-      "kept": "3.33.0"
-    },
-    {
-      "package": "npm:@tiptap/extension-mention",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fextension-mention/latest",
-      "kept": "3.33.0"
-    },
-    {
-      "package": "npm:@tiptap/extension-image",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fextension-image/latest",
-      "kept": "3.33.0"
-    },
-    {
-      "package": "npm:@tiptap/extension-dropcursor",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fextension-dropcursor/latest",
-      "kept": "3.33.0"
-    },
-    {
-      "package": "npm:@tiptap/extension-document",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fextension-document/latest",
-      "kept": "3.33.0"
-    },
-    {
-      "package": "npm:@tiptap/extension-text",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fextension-text/latest",
-      "kept": "3.33.0"
-    },
-    {
-      "package": "npm:@tiptap/extension-placeholder",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fextension-placeholder/latest",
-      "kept": "3.33.0"
-    },
-    {
-      "package": "npm:@tiptap/react",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2freact/latest",
-      "kept": "3.33.0"
-    },
-    {
-      "package": "npm:@tiptap/pm",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fpm/latest",
-      "kept": "3.33.0"
-    },
-    {
-      "package": "npm:@tiptap/suggestion",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fsuggestion/latest",
-      "kept": "3.33.0"
-    },
-    {
-      "package": "npm:@tiptap/starter-kit",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@tiptap%2fstarter-kit/latest",
-      "kept": "3.33.0"
-    },
-    {
-      "package": "npm:anser",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/anser/latest",
-      "kept": "2.3.5"
-    },
-    {
-      "package": "npm:escape-carriage",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/escape-carriage/latest",
-      "kept": "1.3.1"
-    },
-    {
-      "package": "npm:mustache",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/mustache/latest",
-      "kept": "4.2.0"
-    },
-    {
-      "package": "npm:react-hook-form",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/react-hook-form/latest",
-      "kept": "7.91.0"
-    },
-    {
-      "package": "npm:react-intersection-observer",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/react-intersection-observer/latest",
-      "kept": "11.0.1"
-    },
-    {
-      "package": "npm:react-error-boundary",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/react-error-boundary/latest",
-      "kept": "6.1.6"
-    },
-    {
-      "package": "npm:react-switch",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/react-switch/latest",
-      "kept": "7.1.0"
-    },
-    {
-      "package": "npm:react-router-dom",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/react-router-dom/latest",
-      "kept": "7.18.5"
-    },
-    {
-      "package": "npm:redux-logger",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/redux-logger/latest",
-      "kept": "3.0.6"
-    },
-    {
-      "package": "npm:redux-persist",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/redux-persist/latest",
-      "kept": "6.0.0"
-    },
-    {
-      "package": "npm:react-tooltip",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/react-tooltip/latest",
-      "kept": "6.0.11"
-    },
-    {
-      "package": "npm:redux-persist-transform-filter",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/redux-persist-transform-filter/latest",
-      "kept": "0.0.22"
-    },
-    {
-      "package": "npm:redux-thunk",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/redux-thunk/latest",
-      "kept": "3.1.0"
-    },
-    {
-      "package": "npm:reselect",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/reselect/latest",
-      "kept": "5.3.0"
-    },
-    {
-      "package": "npm:rehype-wrap-all",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/rehype-wrap-all/latest",
-      "kept": "1.1.0"
-    },
-    {
-      "package": "npm:tippy.js",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/tippy.js/latest",
-      "kept": "6.3.7"
-    },
-    {
-      "package": "npm:seti-file-icons",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/seti-file-icons/latest",
-      "kept": "0.0.8"
-    },
-    {
-      "package": "npm:table",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/table/latest",
-      "kept": "6.10.1"
-    },
-    {
-      "package": "npm:@swc/cli",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@swc%2fcli/latest",
-      "kept": "0.8.2"
-    },
-    {
-      "package": "npm:@types/react-router-dom",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2freact-router-dom/latest",
-      "kept": "5.3.3"
-    },
-    {
-      "package": "npm:@types/redux-logger",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fredux-logger/latest",
-      "kept": "3.0.13"
-    },
-    {
-      "package": "npm:eslint-plugin-no-barrel-files",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/eslint-plugin-no-barrel-files/latest",
-      "kept": "2.3.0"
-    },
-    {
-      "package": "npm:@types/styled-components",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@types%2fstyled-components/latest",
-      "kept": "5.1.36"
-    },
-    {
-      "package": "npm:@radix-ui/react-checkbox",
-      "error": "429 Too Many Requests for https://registry.npmjs.org/@radix-ui%2freact-checkbox/latest",
-      "kept": "1.4.1"
-    }
-  ]
+  "errors": []
 }
